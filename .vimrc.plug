@@ -21,6 +21,8 @@ colorscheme nord
 
 let g:airline_theme='bubblegum'
 
+let b:coc_diagnostic_disable = 1
+
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>F :Rg<CR>
