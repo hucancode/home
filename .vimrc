@@ -13,3 +13,5 @@ set shortmess+=c
 if filereadable(expand("~/.vimrc.plug"))
     source ~/.vimrc.plug
 endif
+
+set number
