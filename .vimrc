@@ -2,6 +2,7 @@ set clipboard+=unnamedplus
 set number
 set mouse=a
 set guitablabel=%t
+set showtabline=2
 set hidden 
 set incsearch
 
