@@ -1,0 +1,87 @@
+2022-03-15	rc.xml KEYBINDS
+-------------------------------
+
+ 0	W-1           				GoToDesktop
+ 1	W-2           				GoToDesktop
+ 2	W-3           				GoToDesktop
+ 3	W-4           				GoToDesktop
+ 4	W-5           				GoToDesktop
+ 5	S-W-1         				SendToDesktop
+ 6	S-W-2         				SendToDesktop
+ 7	S-W-3         				SendToDesktop
+ 8	S-W-4         				SendToDesktop
+ 9	S-W-5         				SendToDesktop
+10	A-Tab         				NextWindow
+11	W-Tab         				NextWindow
+12	W-Left        				UnmaximizeFull
+13	W-Right       				UnmaximizeFull
+14	W-Up          				MaximizeFull
+15	W-Down        				UnmaximizeFull
+16	W-k           				Unmaximize
+17	W-h           				Unmaximize
+18	W-j           				Unmaximize
+19	W-l           				Unmaximize
+20	A-z           				Unmaximize
+21	A-x           				Unmaximize
+22	A-c           				Unmaximize
+23	W-KP_1        				UnmaximizeFull
+24	W-KP_2        				UnmaximizeFull
+25	W-KP_3        				UnmaximizeFull
+26	W-KP_4        				UnmaximizeFull
+27	W-KP_5        				MaximizeFull
+28	W-KP_6        				UnmaximizeFull
+29	W-KP_7        				UnmaximizeFull
+30	W-KP_8        				UnmaximizeFull
+31	W-KP_9        				UnmaximizeFull
+32	W-A-Up        				MoveRelative
+33	W-A-Down      				MoveRelative
+34	W-A-Left      				MoveRelative
+35	W-A-Right     				MoveRelative
+36	C-A-Right     				ResizeRelative
+37	C-A-Left      				ResizeRelative
+38	C-A-Down      				ResizeRelative
+39	C-A-Up        				ResizeRelative
+40	W-S-Left      				SendToDesktopLeft
+41	W-S-Right     				SendToDesktopRight
+42	XF86AudioRaiseVolume	volume --inc
+43	XF86AudioLowerVolume	volume --dec
+44	XF86AudioMute  			volume --toggle
+45	XF86AudioStop  			mpc stop
+46	XF86AudioPlay  			mpc toggle
+47	XF86AudioPrev  			mpc prev
+48	XF86AudioNext  			mpc next
+49	XF86MonBrightnessUp	brightness --inc
+50	XF86MonBrightnessDown	brightness --dec
+51	Print         				takeshot --now
+52	A-Print       				takeshot --in5
+53	S-Print       				takeshot --in10
+54	C-Print       				takeshot --win
+55	C-A-Print     				takeshot --area
+56	W-Return      				alacritty
+57	W-t           				furminal
+58	W-f           				thunar
+59	W-w           				google-chrome-stable
+60	W-e           				code
+61	A-F1          				~/.config/openbox/rofi/bin/launcher
+62	W-m           				~/.config/openbox/rofi/bin/music
+63	W-x           				~/.config/openbox/rofi/bin/powermenu
+64	W-s           				~/.config/openbox/rofi/bin/screenshot
+65	W-r           				~/.config/openbox/rofi/bin/runner
+66	C-A-v         				alacritty -e vim
+67	C-A-r         				alacritty -e ranger
+68	C-A-h         				alacritty -e htop
+69	C-A-l         				betterlockscreen --lock
+70	C-S-Escape     			Exit
+71	C-S-BackSpace  			Restart
+72	C-S-R         				Reconfigure
+73	W-Escape      				xkill
+74	W-q           				Close
+75	A-F5          				Iconify
+76	A-F6          				ToggleMaximize
+77	A-F7          				ToggleDecorations
+78	W-d           				ToggleShowDesktop
+79	A-r           				Resize
+80	A-m           				Move
+81	W-S-space     				root-menu
+82	C-A-space     				app-menu
+83	A-space       				client-menu
