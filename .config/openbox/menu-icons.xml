@@ -151,7 +151,7 @@
 					<command>xfce4-appearance-settings</command>
 				</action>
 			</item>
-			<item label="QT5 Settings">
+			<!-- <item label="QT5 Settings">
 				<action name="Execute">
 					<command>qt5ct</command>
 				</action>
@@ -160,7 +160,7 @@
 				<action name="Execute">
 					<command>kvantummanager</command>
 				</action>
-			</item>
+			</item> -->
 			<separator/>
 			<item label="Power Settings">
 				<action name="Execute">

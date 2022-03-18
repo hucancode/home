@@ -66,7 +66,6 @@
 62	W-m           				~/.config/openbox/rofi/bin/music
 63	W-x           				~/.config/openbox/rofi/bin/powermenu
 64	W-s           				~/.config/openbox/rofi/bin/screenshot
-65	W-r           				~/.config/openbox/rofi/bin/runner
 66	C-A-v         				alacritty -e vim
 67	C-A-r         				alacritty -e ranger
 68	C-A-h         				alacritty -e htop
@@ -76,9 +75,6 @@
 72	C-S-R         				Reconfigure
 73	W-Escape      				xkill
 74	W-q           				Close
-75	A-F5          				Iconify
-76	A-F6          				ToggleMaximize
-77	A-F7          				ToggleDecorations
 78	W-d           				ToggleShowDesktop
 79	A-r           				Resize
 80	A-m           				Move

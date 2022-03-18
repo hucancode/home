@@ -528,11 +528,11 @@
         <command>~/.config/openbox/rofi/bin/network</command>
       </action>
     </keybind> -->
-    <keybind key="W-r">
+    <!-- <keybind key="W-r">
       <action name="Execute">
         <command>~/.config/openbox/rofi/bin/runner</command>
       </action>
-    </keybind>
+    </keybind> -->
     <!-- <keybind key="W-p">
       <action name="Execute">
         <command>color-gpick</command>
@@ -598,7 +598,7 @@
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-F5">
+    <!-- <keybind key="A-F5">
       <action name="Iconify"/>
     </keybind>
     <keybind key="A-F6">
@@ -606,7 +606,7 @@
     </keybind>
     <keybind key="A-F7">
       <action name="ToggleDecorations"/>
-    </keybind>
+    </keybind> -->
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>

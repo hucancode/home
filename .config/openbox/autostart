@@ -32,9 +32,6 @@ exec dunst &
 ## Start Music Player Daemon
 exec mpd &
 
-## Launch Plank
-exec plank &
-
 ## Thunar Daemon
 exec thunar --daemon &
 
