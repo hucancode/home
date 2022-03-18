@@ -366,6 +366,23 @@ content-background = ${color.BACKGROUND}
 content-foreground = ${color.BLACK}
 content-padding = 2
 
+[module/menu]
+type = custom/text
+content = ﯨ
+content-font = 2
+content-background = ${color.BGL}
+content-foreground = ${color.LIME}
+content-padding = 0
+click-left = ~/.config/bspwm/rofi/bin/launcher
+
+[module/sysmenu]
+type = custom/text
+content = 襤
+content-font = 2
+content-background = ${color.BGL}
+content-foreground = ${color.RED}
+content-padding = 0
+click-left = ~/.config/bspwm/rofi/bin/powermenu
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______
 ;;	   / ____/ __ \/ ____/
