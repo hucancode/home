@@ -7,13 +7,13 @@
 super + Return
 	bspterm
 
-# Terminal (floating)
-super + shift + Return
-	bspterm -f
-
 # Terminal (fullscreen)
+super + shift + Return
+	bspterm -s
+
+# Terminal (floating)
 super + t
-	bspterm -s	
+	bspterm -f	
 
 ##---------- Rofi Launcher & Menus ----------##
 
@@ -22,8 +22,8 @@ alt + F1
 	sh ~/.config/bspwm/rofi/bin/launcher
 
 # Rofi Network Menu
-super + n
-	nmd
+# super + n
+#	nmd
 
 # Rofi Themes Menu
 ctrl + alt + t
@@ -39,17 +39,7 @@ super + {m,x,s}
 
 # Launch Apps
 super + {w,e}
-    {google-chrome-stable,code}
-#super + shift + {f,w,e}
-#	{thunar,google-chrome-stable,code}
-
-# Terminal Apps
-ctrl + alt + {v,r,h}
-	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e {vim,ranger,htop}
-
-# Color Picker
-# super + p
-# 	color-gpick
+    {google-chrome-stable,thunar}
 
 # Lockscreen
 ctrl + alt + l
@@ -63,19 +53,7 @@ Print
 	
 # Take screenshot in 5 second
 alt + Print	
-	takeshot --in5
-
-# Take screenshot in 10 second
-shift + Print	
-	takeshot --in10
-
-# Take screenshot of active window
-ctrl + Print
 	takeshot --win
-
-# Take screenshot of area
-ctrl + alt + Print
-	takeshot --area
 
 # Brighness control
 XF86MonBrightness{Up,Down}
