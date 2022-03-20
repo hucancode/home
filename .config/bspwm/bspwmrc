@@ -28,7 +28,7 @@ workspaces() {
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
 		#bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
-		bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' ''
+		bspc monitor ${monitor} -n "$name" -d 'ﲵ' '' '﬏' ''
 		let name++
 	done
 }
@@ -61,31 +61,15 @@ bspc rule -a Alacritty desktop='^1' follow=on focus=on
 bspc rule -a chromium desktop='^2' follow=on focus=on
 bspc rule -a Google-chrome desktop='^2' follow=on focus=on
 
-# 3 > files
-declare -a files=(Thunar qBittorrent)
-for i in ${files[@]}; do
+# 3 > code
+declare -a code=(Geany code-oss code)
+for i in ${code[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-# 4 > code
-bspc rule -a UnrealEditor state=floating
-bspc rule -a UE4Editor state=floating
-declare -a code=(Geany code-oss code UnrealEditor UE4Editor)
-for i in ${code[@]}; do
-   bspc rule -a $i desktop='^4' follow=on focus=on; done
-
-# 7 > media
-declare -a media=(Audacity Music MPlayer Lxmusic Inkscape Gimp-2.10 obs)
-for i in ${media[@]}; do
-   bspc rule -a $i desktop='^5' state=floating follow=on focus=on; done
-
-# 8 > settings
-bspc rule -a 'VirtualBox Manager' desktop='^6' follow=on focus=on
-bspc rule -a GParted desktop='^6' follow=on focus=on
-declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
-System-config-printer.py Pavucontrol Exo-helper-1 \
-Xfce4-power-manager-settings)
-for i in ${settings[@]}; do
-   bspc rule -a $i desktop='^6' state=floating follow=on focus=on; done
+# 4 > game
+declare -a game=(UnrealEditor UE4Editor)
+for i in ${game[@]}; do
+   bspc rule -a $i desktop='^4' state=floating follow=on focus=on; done
 
 # special rules
 declare -a floating=(alacritty-float Pcmanfm Onboard Yad 'Firefox:Places' \
