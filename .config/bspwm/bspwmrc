@@ -59,7 +59,7 @@ bspc rule -a Alacritty desktop='^1' follow=on focus=on
 
 # 2 > web
 bspc rule -a chromium desktop='^2' follow=on focus=on
-bspc rule -a google-chrome-stable desktop='^2' follow=on focus=on
+bspc rule -a Google-chrome desktop='^2' follow=on focus=on
 
 # 3 > files
 declare -a files=(Thunar qBittorrent)
@@ -132,7 +132,7 @@ exec mpd &
 # Start bspwm scripts
 bspcolors
 bspbar
-bspcomp
+#bspcomp
 bspdunst
 bspfloat &
 
