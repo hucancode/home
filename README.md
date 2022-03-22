@@ -10,3 +10,8 @@ Work best with [Archcraft](https://archcraft.io/)
 - [vim](https://wiki.archlinux.org/title/vim)
 - [ZSH](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty), [Power Level 10k](https://github.com/romkatv/powerlevel10k)
 - [XOrg](https://wiki.archlinux.org/title/Xorg)
+# Screenshots
+![](screenshots/1.png)
+![](screenshots/2.png)
+![](screenshots/3.png)
+![](screenshots/4.png)
