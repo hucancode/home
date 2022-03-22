@@ -8,7 +8,7 @@ Work best with [Archcraft](https://archcraft.io/)
 - [dunst](https://wiki.archlinux.org/title/dunst)
 - [thunar](https://wiki.archlinux.org/title/thunar)
 - [vim](https://wiki.archlinux.org/title/vim)
-- [ZSH](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty), [Power Level 10k](https://github.com/romkatv/powerlevel10k)
+- [ZSH](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty)
 - [XOrg](https://wiki.archlinux.org/title/Xorg)
 # Screenshots
 ![](screenshots/1.png)
