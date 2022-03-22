@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+while :; do
+    bspc subscribe --count 1 node_focus > /dev/null || break
+    bspc node focused.floating --layer above
+    bspc node focused.floating --layer normal
+done

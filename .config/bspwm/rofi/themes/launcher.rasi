@@ -4,7 +4,7 @@
 configuration {
     location: 						0;
     fixed-num-lines: 				true;
-    show-icons: 					false;
+    show-icons: 					true;
     sidebar-mode: 					true;
     scroll-method: 					1;
     window-format: 					"[{w}] ··· {c} ···   {t}";
@@ -96,6 +96,11 @@ listview {
 element-text, element-icon {
     background-color: inherit;
     text-color:       inherit;
+    vertical-align:   0.5;
+}
+element-icon {
+    size: 24px;
+    margin: 0px 5px 0px 0px;
 }
 
 element {

@@ -93,8 +93,8 @@ super + {h,v,q}
 	bspc node -p {east,south,cancel}
 
 # Preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+# super + ctrl + {1-9}
+#  	bspc node -o 0.{1-9}
 
 # Fullscreen or Monocle
 super + f
@@ -131,8 +131,8 @@ super + {Tab,grave}
 	bspc {node,desktop} -f last
 
 # Send focused window to another workspace
-super + {_,shift + }{1-8}
-	bspc {desktop -f,node -d} '^{1-8}'
+super + {_,shift + }{1-4}
+	bspc {desktop -f,node -d} '^{1-4}'
 
 # Expanding windows
 super + control + {Left,Right,Up,Down}
