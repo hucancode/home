@@ -72,7 +72,7 @@ for i in ${game[@]}; do
    bspc rule -a $i desktop='^4' state=floating follow=on focus=on; done
 
 # special rules
-declare -a floating=(alacritty-float Pcmanfm Onboard Yad 'Firefox:Places' \
+declare -a floating=(alacritty-float Onboard Yad 'Firefox:Places' \
 Viewnior feh Nm-connection-editor)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done

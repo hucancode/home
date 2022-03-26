@@ -2,6 +2,7 @@
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
 configuration {
+    font:                           "Iosevka 10";
     show-icons:                     false;
     display-drun: 					"";
     drun-display-format:            "{icon} {name}";
@@ -9,18 +10,16 @@ configuration {
 	click-to-exit: 					true;
 }
 
-@import "font.rasi"
 @import "colors.rasi"
-
-/* Line Responsible For Button Layouts */
-/* BUTTON = FALSE */
 
 window {
     transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border-radius:                  10px;
-    width:                          300px;
+    background-color:               @background;
+    text-color:                     @foreground;
+    border:                  		1px;
+    border-color:                  	@selected;
+    border-radius:                  0px;
+    width:                          416px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
@@ -30,86 +29,88 @@ window {
 prompt {
     enabled: 						true;
 	margin: 						0px 0px 0px 8px;
-	padding: 						8px;
-	background-color: 				@BGA;
-	text-color: 					@FG;
-    border:                  		0px 0px 2px 0px;
-    border-color:                  	@BDR;
-    border-radius:                  10px;
+    padding:    					6px 0px 6px 0px;
+	background-color: 				@background;
+	text-color: 					@foreground;
+    border:                  		0px 0px 0px 0px;
+    border-color:                  	@selected;
+    border-radius:                  0px;
 }
 
 textbox-prompt-colon {
 	expand: 						false;
 	str: 							"";
-    border-radius:                  100%;
-    background-color:               @SEL;
-    text-color:                     @BG;
-    padding:                        8px 12px 8px 12px;
+    border-radius:                  0px;
+    background-color:               @selected;
+    text-color:                     @background;
+    padding:    					6px 10px 6px 10px;
 	font:							"Iosevka Nerd Font 10";
 }
 
 entry {
-    background-color:               @BGA;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
+    background-color:               @background;
+    text-color:                     @background;
+    placeholder-color:              @background;
+    placeholder:                    "";
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Search...";
-    blink:                          true;
-    border:                  		0px 0px 2px 0px;
-    border-color:                  	@BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+    blink:                          false;
+    padding:                        6px;
 }
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  		0px 0px 0px 0px;
+    spacing:                        0;
+    background-color:               @background;
+    text-color:                     @foreground;
+    border:                  		0px 0px 1px 0px;
     border-radius:                  0px;
-    border-color:                  	@BDR;
+    border-color:                  	@selected;
+    expand:                         false;
     margin:                         0px 0px 0px 0px;
     padding:                        0px;
     position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
+    background-color:               @background;
+    text-color:                     @foreground;
     spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
+    background-color:               @background;
     columns:                        1;
     lines:							5;
-    spacing:                        4px;
+    spacing:                        10px;
     cycle:                          true;
     dynamic:                        true;
-    layout:                         vertical;
+    layout:                         horizontal;
 }
 
 mainbox {
-    background-color:               @BG;
+    background-color:               @background;
     children:                       [ inputbar, listview ];
-    spacing:                       	15px;
-    padding:                        15px;
+    spacing:                       	10px;
+    padding:                        10px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
+    background-color:               @background;
+    text-color:                     @foreground;
     orientation:                    horizontal;
-    border-radius:                  10px;
-    padding:                        6px 6px 6px 6px;
+    border:                  		1px;
+    border-radius:                  0px;
+    border-color:                  	@selected;
+    padding:                        23.5px 25px 23.5px 25px;
 }
 
 element-icon {
     background-color: 				inherit;
     text-color:       				inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
     size:                           0px;
     border:                         0px;
 }
@@ -117,38 +118,39 @@ element-icon {
 element-text {
     background-color: 				inherit;
     text-color:       				inherit;
+	font:							"feather 14";
     expand:                         true;
-    horizontal-align:               0;
+    horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         2px 0px 2px 6px;
+    margin:                         0px 0px 0px 0px;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    border:                  		0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                  	@BDR;
+    background-color:               @selected;
+    text-color:                     @background;
+    border:                  		0px;
+    border-radius:                  0px;
+    border-color:                  	@selected;
 }
 
 element.active,
 element.selected.urgent {
-  background-color: @ON;
-  text-color: @BG;
-  border-color: @ON;
+  background-color: @on;
+  text-color: @background;
+  border-color: @on;
 }
 
 element.selected.urgent {
-  border-color: @BDR;
+  border-color: @selected;
 }
 
 element.urgent,
 element.selected.active {
-  background-color: @OFF;
-  text-color: @BG;
-  border-color: @OFF;
+  background-color: @off;
+  text-color: @background;
+  border-color: @off;
 }
 
 element.selected.active {
-  border-color: @BDR;
+  border-color: @selected;
 }

@@ -26,7 +26,7 @@
 			</action>
 		</item>
 		<separator/>
-		<item icon="&icons;/editor.png" label="Text Editor">
+		<item icon="&icons;/editor.png" label="Code Editor">
 			<action name="Execute">
 				<command>code</command>
 			</action>
@@ -34,7 +34,7 @@
 		<separator/>
 		<separator/>
 		<separator/>
-		<menu icon="&icons;/apps.png" id="app-menu" execute="obmenu-generator" label="Applications"/>
+		<!-- <menu icon="&icons;/apps.png" id="app-menu" execute="obmenu-generator" label="Applications"/> -->
 		<separator/>
 		<!-- <menu icon="&icons;/root.png" id="apps-as-root" label="Apps As Root">
 			<item label="Terminal (alacritty)">
@@ -80,14 +80,14 @@
 				</action>
 			</item>
 		</menu>
-		<separator/> -->
+		<separator/> 
 		<menu icon="&icons;/cmd.png" id="quick-commands" label="Quick CMDs">
 			<separator label="Quick Commands"/>
 			<menu id="PacmanPipeMenu" execute="&pipes;/ac-pacman" label="Package Management"/>
 			<menu id="FilesPipeMenu" execute="&pipes;/ac-files" label="Files &amp; Directories"/>
 			<menu id="SysdPipeMenu" execute="&pipes;/ac-systemd" label="Systemd &amp; Services"/>
 		</menu>
-		<separator/>
+		<separator/>-->
 		<menu icon="&icons;/shots.png" id="ac-shots" execute="&pipes;/ac-shots" label="Screenshot"/>
 		<separator/>
 		<menu icon="&icons;/record.png" id="ac-record" execute="&pipes;/ac-record" label="Screen Recorder"/>
@@ -130,7 +130,7 @@
 					<action name="Restart"/>
 				</item>
 			</menu>
-			<menu id="CompositingPipeMenu" execute="&pipes;/ac-compositor" label="Compositor"/>
+			<!-- <menu id="CompositingPipeMenu" execute="&pipes;/ac-compositor" label="Compositor"/> -->
 			<menu id="XrandrPipeMenu" execute="&pipes;/ac-randr" label="Display / Monitor"/>
 			<separator/>
 			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Change Style"/>
@@ -160,7 +160,7 @@
 				<action name="Execute">
 					<command>kvantummanager</command>
 				</action>
-			</item> -->
+			</item> 
 			<separator/>
 			<item label="Power Settings">
 				<action name="Execute">
@@ -176,7 +176,7 @@
 				<action name="Execute">
 					<command>xfce4-settings-manager</command>
 				</action>
-			</item>
+			</item>-->
 		</menu>
 		<separator/>
 		<menu icon="&icons;/keyboard.png" id="KeybindsPipeMenu" execute="&pipes;/ac-kb-pipemenu" label="Keybinds"/>
@@ -185,7 +185,7 @@
 		<separator/>
 		<item icon="&icons;/sys-lock.png" label="Lock Screen">
 			<action name="Execute">
-				<command>betterlockscreen --lock</command>
+				<command>~/.config/openbox/bin/lockscreen</command>
 			</action>
 		</item>
 		<separator/>

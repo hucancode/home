@@ -507,12 +507,12 @@
       <action name="Execute">
         <command>networkmanager_dmenu</command>
       </action>
-    </keybind> -->
+    </keybind>
     <keybind key="W-m">
       <action name="Execute">
         <command>~/.config/openbox/rofi/bin/music</command>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="W-x">
       <action name="Execute">
         <command>~/.config/openbox/rofi/bin/powermenu</command>
@@ -548,17 +548,17 @@
       <action name="Execute">
         <command>xfce4-terminal</command>
       </action>
-    </keybind> -->
+    </keybind>
     <keybind key="C-A-v">
       <action name="Execute">
         <command>alacritty -e vim</command>
       </action>
     </keybind>
-    <!-- <keybind key="C-A-n">
+    <keybind key="C-A-n">
       <action name="Execute">
         <command>alacritty -e nvim</command>
       </action>
-    </keybind> -->
+    </keybind>
     <keybind key="C-A-r">
       <action name="Execute">
         <command>alacritty -e ranger</command>
@@ -569,7 +569,7 @@
         <command>alacritty -e htop</command>
       </action>
     </keybind>
-    <!-- <keybind key="C-A-b">
+    <keybind key="C-A-b">
       <action name="Execute">
         <command>alacritty -e bashtop</command>
       </action>
@@ -577,7 +577,7 @@
     <!-- Lockscreen -->
     <keybind key="C-A-l">
       <action name="Execute">
-        <command>betterlockscreen --lock</command>
+        <command>~/.config/openbox/bin/lockscreen</command>
       </action>
     </keybind>
     <!-- Openbox -->
