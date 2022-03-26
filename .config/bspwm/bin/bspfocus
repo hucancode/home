@@ -2,8 +2,15 @@
 
 ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
-while :; do
-    bspc subscribe --count 1 node_focus > /dev/null || break
-    bspc node focused.floating --layer above
-    bspc node focused.floating --layer normal
+# while :; do
+#     bspc subscribe --count 1 node_focus > /dev/null || break
+#     bspc node focused.floating --layer above
+#     bspc node focused.floating --layer normal
+# done
+FLOATING_DESKTOP_ID=$(bspc query -D -d '^5')
+
+bspc subscribe node_focus | while read -a msg ; do
+   desk_id=${msg[2]}
+   [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && 
+   (bspc node active#last --layer normal; bspc node active --layer above)
 done

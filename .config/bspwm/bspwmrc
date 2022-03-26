@@ -28,7 +28,7 @@ workspaces() {
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
 		#bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
-		bspc monitor ${monitor} -n "$name" -d 'ﲵ' '' '﬏' ''
+		bspc monitor ${monitor} -n "$name" -d '' '' '﬏' '' 'ﭾ'
 		let name++
 	done
 }
@@ -118,5 +118,5 @@ bspcolors
 bspbar
 #bspcomp
 bspdunst
-# bspfloat &
-# bspfocus &
+bspfloat &
+bspfocus &

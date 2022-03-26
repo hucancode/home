@@ -38,8 +38,8 @@ super + {m,x,s}
 ##---------- Applications ----------##
 
 # Launch Apps
-super + {w,e}
-    {google-chrome-stable,thunar}
+super + {w,f,e}
+    {google-chrome-stable,thunar,code}
 
 # Lockscreen
 ctrl + alt + l
@@ -89,20 +89,20 @@ ctrl + shift + {q,r}
 	bspc {quit,wm -r}
 	
 # Split horizontal, vertical or cancel
-super + {h,v,q}
-	bspc node -p {east,south,cancel}
+# super + {h,v,q}
+#	bspc node -p {east,south,cancel}
 
 # Preselect the ratio
 # super + ctrl + {1-9}
 #  	bspc node -o 0.{1-9}
 
 # Fullscreen or Monocle
-super + f
+alt + shift + space
 #	bspc desktop -l next
     bspc node -t "~"fullscreen
 
 # Toggle beetwen floating & tiled
-super + space
+alt + space
     bspc node -t "~"{floating,tiled}
 
 # Pseudo Tiled & tiled mode
@@ -111,8 +111,8 @@ super + shift + space
     bspc node -t "~"{pseudo_tiled,tiled}
 
 # Set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+#super + ctrl + {m,x,y,z}
+#	bspc node -g {marked,locked,sticky,private}
 
 # Send the window to another edge of the screen
 super + {_,shift + }{Left,Down,Up,Right}
@@ -131,8 +131,8 @@ super + {Tab,grave}
 	bspc {node,desktop} -f last
 
 # Send focused window to another workspace
-super + {_,shift + }{1-4}
-	bspc {desktop -f,node -d} '^{1-4}'
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '^{1-5}'
 
 # Expanding windows
 super + control + {Left,Right,Up,Down}
