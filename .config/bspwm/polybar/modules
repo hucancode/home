@@ -368,7 +368,7 @@ content-padding = 2
 
 [module/menu]
 type = custom/text
-content = ﯨ
+content = 
 content-font = 2
 content-background = ${color.BGL}
 content-foreground = ${color.LIME}

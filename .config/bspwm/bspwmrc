@@ -28,7 +28,7 @@ workspaces() {
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
 		#bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
-		bspc monitor ${monitor} -n "$name" -d '' '' '﬏' '' 'ﭾ'
+		bspc monitor ${monitor} -n "$name" -d 'ﲵ' '' '﬏' '' ''
 		let name++
 	done
 }
@@ -67,9 +67,13 @@ for i in ${code[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
 # 4 > game
-declare -a game=(UnrealEditor UE4Editor)
+declare -a game=(steam)
 for i in ${game[@]}; do
-   bspc rule -a $i desktop='^4' state=floating follow=on focus=on; done
+   bspc rule -a $i desktop='^4' follow=on focus=on; done
+# 5 > unreal
+declare -a unreal=(UnrealEditor UE4Editor)
+for i in ${unreal[@]}; do
+   bspc rule -a $i desktop='^5' state=floating follow=on focus=on; done
 
 # special rules
 declare -a floating=(alacritty-float Onboard Yad 'Firefox:Places' \
