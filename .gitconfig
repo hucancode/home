@@ -1,2 +1,2 @@
 [credential]
-	helper = cache
+	helper = gnome-keyring
