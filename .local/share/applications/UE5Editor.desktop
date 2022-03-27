@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=UE5 Editor
+Exec=/unreal/5/UnrealEngine/Engine/Binaries/Linux/UnrealEditor %U
+Terminal=false
+Type=Application
+Categories=Development
+Icon=ue4editor
+MimeType=application/unreal-engine;

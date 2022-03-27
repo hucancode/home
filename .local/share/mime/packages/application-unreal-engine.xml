@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/unreal-engine">
+         <comment>Unreal Engine Project</comment>
+         <icon name="application-unreal-engine"/>
+         <glob-deleteall/>
+         <glob pattern="*.uproject"/>
+    </mime-type>
+</mime-info>
