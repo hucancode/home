@@ -581,15 +581,15 @@
       </action>
     </keybind>
     <!-- Openbox -->
-    <keybind key="C-S-Escape">
+    <keybind key="C-A-Escape">
       <action name="Exit"/>
     </keybind>
-    <keybind key="C-S-BackSpace">
+    <!-- <keybind key="C-S-BackSpace">
       <action name="Restart"/>
-    </keybind>
-    <keybind key="C-S-R">
+    </keybind> -->
+    <!-- <keybind key="C-S-R">
       <action name="Reconfigure"/>
-    </keybind>
+    </keybind> -->
     <keybind key="W-Escape">
       <action name="Execute">
         <command>xkill</command>
@@ -623,11 +623,11 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <keybind key="C-A-space">
+    <!-- <keybind key="C-A-space">
       <action name="ShowMenu">
         <menu>app-menu</menu>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>

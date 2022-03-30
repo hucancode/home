@@ -63,14 +63,11 @@ x A-F1            	~/.config/openbox/rofi/bin/launcher
 x W-x             	~/.config/openbox/rofi/bin/powermenu
 x W-s             	~/.config/openbox/rofi/bin/screenshot
 x C-A-l           	~/.config/openbox/bin/lockscreen
-o C-S-Escape      	Exit
-o C-S-BackSpace   	Restart
-o C-S-R           	Reconfigure
+o C-A-Escape      	Exit
 x W-Escape        	xkill
 o W-q             	Close
 o W-d             	ToggleShowDesktop
 o A-r             	Resize
 o A-m             	Move
 o W-S-space       	root-menu
-o C-A-space       	app-menu
 o A-space         	client-menu
