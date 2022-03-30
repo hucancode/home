@@ -3,7 +3,7 @@
 
 Net/ThemeName "Arc-Dark"
 Net/IconThemeName "Qogir-Dark"
-Gtk/CursorThemeName "Fluent-dark"
+Gtk/CursorThemeName "Qogir-dark"
 Net/EnableEventSounds "0"
 Net/EnableInputFeedbackSounds "0"
 Xft/DPI "-1"
