@@ -3,27 +3,18 @@
 ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
-rofi_command="rofi -theme $HOME/.config/bspwm/rofi/screenshot.rasi"
+## Openbox Pipemenu to take screenshots with maim
 
 time=`date +%Y-%m-%d-%I-%M-%S`
 geometry=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
 dir="`xdg-user-dir PICTURES`/Screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
-# Buttons
-layout=`cat $HOME/.config/bspwm/rofi/screenshot.rasi | grep BUTTON | cut -d'=' -f2 | tr -d '[:blank:],*/'`
-if [[ "$layout" == "TRUE" ]]; then
-	screen=""
-	area=""
-	window=""
-	infive=""
-	inten=""
-else
-	screen=" Capture Desktop"
-	area=" Capture Area"
-	window=" Capture Window"
-	infive=" Take in 5s"
-	inten=" Take in 10s"
+# Variables and functions
+MENUS_LIBDIR="$HOME/.config/openbox/bin/menu"
+if ! . "$MENUS_LIBDIR/archcraft.cfg" 2> /dev/null; then
+	echo "Error: Failed to locate archcraft.cfg in $MENUS_LIBDIR" >&2
+	exit 1
 fi
 
 # notify and view screenshot
@@ -34,7 +25,7 @@ notify_view () {
 		dunstify -u low --replace=699 -i ~/.config/dunst/icons/picture.png "Screenshot Saved."
 	else
 		dunstify -u low --replace=699 -i ~/.config/dunst/icons/picture.png "Screenshot Deleted."
-	fi	
+	fi
 }
 
 # countdown
@@ -77,25 +68,24 @@ if [[ ! -d "$dir" ]]; then
 	mkdir -p "$dir"
 fi
 
-# Variable passed to rofi
-options="$screen\n$area\n$window\n$infive\n$inten"
+if [[ "$1" == "--now" ]]; then
+	shotnow
+elif [[ "$1" == "--in5" ]]; then
+	shot5
+elif [[ "$1" == "--in10" ]]; then
+	shot10
+elif [[ "$1" == "--win" ]]; then
+	shotwin
+elif [[ "$1" == "--area" ]]; then
+	shotarea
+else
+    menuStart
+        menuItem 'Screenshot Now' "$0 --now"
+        menuItem 'Screenshot In 5s' "$0 --in5"
+        menuItem 'Screenshot In 10s' "$0 --in10"
+        menuItem 'Screenshot Area' "$0 --area"
+        menuItem 'Screenshot Window' "$0 --win"
+    menuEnd
+fi
 
-chosen="$(echo -e "$options" | $rofi_command -p 'Take A Shot' -dmenu -selected-row 0)"
-case $chosen in
-    $screen)
-		shotnow
-        ;;
-    $area)
-		shotarea
-        ;;
-    $window)
-		shotwin
-		;;
-    $infive)
-		shot5
-		;;
-    $inten)
-		shot10
-        ;;
-esac
-
+exit 0

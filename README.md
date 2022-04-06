@@ -29,13 +29,13 @@ These packages below should be installed during arch installation (When it asks 
 ```
 sudo pacman -S dhcpcd vim git \
     lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme \
-    bspwm sxhkd openbox rofi dunst xsettingsd nitrogen \ 
+    bspwm sxhkd openbox rofi dunst xsettingsd xdg-user-dirs nitrogen \ 
     maim ffmpeg ffmpegthumbnailer \
     mpd mpc ncmpcpp mpv \
     thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug \
     alacritty zsh \
     ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji \
-    gnome-keyring;
+    gnome-keyring libgnome-keyring;
 ```
 ## Install `yay`
 ```
@@ -48,7 +48,7 @@ yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color \
 ```
 Additionally I need some more packages, you can skip this if you don't want them.
 ```
-sudo pacman -S ibus-anthy docker mono;
+sudo pacman -S ibus-anthy docker mono steam;
 yay -Sy visual-studio-code-bin ibus-bamboo megacmd;
 echo $'\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im=\'ibus\'\n# Toolbar for ibus\nibus-daemon -drx' >> ~/.xprofile
 ```
@@ -98,10 +98,18 @@ icon-theme-name = Qogir-dark
 indicators = ~spacer;~clock;~spacer;~session;~power
 ```
 ## Config `mpd`
-Enable `mpd` service
+Assume that `mpd` is running safe and sound, if not, check for `~/.config/mpd/mpd.conf`. My configuration looks like follow.
 ```
-systemctl --user enable mpd;
-systemctl --user start mpd;
+pid_file "/run/mpd/mpd.pid"
+state_file "/var/lib/mpd/mpdstate"
+db_file "~/.config/mpd/database"
+music_directory "~/Music"
+playlist_directory "~/.config/mpd/playlists"
+
+audio_output {
+    type  "pipewire"
+    name  "PipeWire Sound Server"
+}
 ```
 Open `ncmpcpp` and edit your playlist
 ```

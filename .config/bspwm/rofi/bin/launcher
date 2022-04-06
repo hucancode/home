@@ -15,4 +15,4 @@ rofi \
 	-no-drun-show-actions \
 	-terminal alacritty \
 	-kb-cancel Escape,Alt-F1 \
-	-theme "$DIR"/rofi/themes/launcher.rasi
+	-theme "$HOME/.config/bspwm/rofi/launcher.rasi"

@@ -21,7 +21,7 @@ fi
 xfce4-power-manager &
 
 ## Start Compositing Manager
-exec picom &
+# exec picom &
 
 ## Launch Polybar
 bash ~/.config/openbox/polybar/launch.sh

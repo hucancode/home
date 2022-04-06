@@ -3,16 +3,16 @@
 ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
-rofi_command="rofi -theme ~/.config/openbox/rofi/default/powermenu.rasi"
+rofi_command="rofi -theme ~/.config/openbox/rofi/powermenu.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
 # Options
-shutdown=""
-reboot=""
-lock=""
-suspend=""
-logout=""
+shutdown="襤"
+reboot="ﰇ"
+lock=""
+suspend="鈴"
+logout=""
 
 # Variable passed to rofi
 options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
@@ -27,7 +27,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme ~/.config/openbox/rofi/default/askpass.rasi -e "$_msg"
+        rofi -theme ~/.config/openbox/rofi/askpass.rasi -e "$_msg"
         fi
         ;;
     $reboot)
@@ -37,7 +37,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme ~/.config/openbox/rofi/default/askpass.rasi -e "$_msg"
+        rofi -theme ~/.config/openbox/rofi/askpass.rasi -e "$_msg"
         fi
         ;;
     $lock)
@@ -52,7 +52,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme ~/.config/openbox/rofi/default/askpass.rasi -e "$_msg"
+        rofi -theme ~/.config/openbox/rofi/askpass.rasi -e "$_msg"
         fi
         ;;
     $logout)
@@ -62,7 +62,7 @@ case $chosen in
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
         else
-        rofi -theme ~/.config/openbox/rofi/default/askpass.rasi -e "$_msg"
+        rofi -theme ~/.config/openbox/rofi/askpass.rasi -e "$_msg"
         fi
         ;;
 esac

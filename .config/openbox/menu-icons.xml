@@ -2,8 +2,8 @@
 <!-- Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> -->
 <!-- Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 -->
 <!DOCTYPE menu [
-  <!ENTITY icons "~/.local/share/archcraft/openbox/icons">
-  <!ENTITY pipes "~/.local/share/archcraft/openbox/pipemenus">
+  <!ENTITY icons "~/.config/openbox/icons">
+  <!ENTITY pipes "~/.config/openbox/bin/menu">
 ]>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
   <menu id="root-menu" title="Menu" label="Openbox 3">
@@ -72,9 +72,14 @@
 					<command>nitrogen</command>
 				</action>
 			</item>
-			<item label="Appearance Settings">
+			<item label="Appearance Settings (XFCE)">
 				<action name="Execute">
 					<command>xfce4-appearance-settings</command>
+				</action>
+			</item>
+			<item label="Appearance Settings (GTK)">
+				<action name="Execute">
+					<command>lxappearance</command>
 				</action>
 			</item>
 		</menu>
@@ -90,25 +95,25 @@
 		<menu icon="&icons;/sys-poweroff.png" id="Exit" label="System">
 				<item icon="&icons;/sys-exit.png" label="Logout">
 					<action name="Execute">
-						<command>~/.local/share/archcraft/openbox/pipemenus/ac-powermenu --logout</command>
+						<command>~/.config/openbox/bin/menu/ac-powermenu --logout</command>
 					</action>
 				</item>
 				<separator/>
 				<item icon="&icons;/sys-sleep.png" label="Suspend">
 					<action name="Execute">
-						<command>~/.local/share/archcraft/openbox/pipemenus/ac-powermenu --suspent</command>
+						<command>~/.config/openbox/bin/menu/ac-powermenu --suspent</command>
 					</action>
 				</item>
 				<separator/>
 				<item icon="&icons;/sys-reboot.png" label="Reboot">
 					<action name="Execute">
-						<command>~/.local/share/archcraft/openbox/pipemenus/ac-powermenu --reboot</command>
+						<command>~/.config/openbox/bin/menu/ac-powermenu --reboot</command>
 					</action>
 				</item>
 				<separator/>
 				<item icon="&icons;/sys-poweroff-alt.png" label="Shutdown">
 					<action name="Execute">
-						<command>~/.local/share/archcraft/openbox/pipemenus/ac-powermenu --shutdown</command>
+						<command>~/.config/openbox/bin/menu/ac-powermenu --shutdown</command>
 					</action>
 				</item>
 		</menu>

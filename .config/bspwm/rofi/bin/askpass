@@ -4,7 +4,8 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 rofi -dmenu\
+     -password\
      -i\
      -no-fixed-num-lines\
-     -p "Are You Sure? : "\
-     -theme "$HOME/.config/bspwm/rofi/confirm.rasi"
+     -p "User Password: "\
+     -theme "$HOME/.config/bspwm/rofi/askpass.rasi"
