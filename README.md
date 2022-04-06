@@ -27,15 +27,14 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 Assume that you use `archinstall`.
 These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `vim` to make sure we have internet and a debug tool after reboot.
 ```
-sudo pacman -S dhcpcd \
-    lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme\
-    vim git \
-    bspwm sxhkd openbox rofi dunst ksuperkey xsettingsd nitrogen \ 
+sudo pacman -S dhcpcd vim git \
+    lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme \
+    bspwm sxhkd openbox rofi dunst xsettingsd nitrogen \ 
     maim ffmpeg ffmpegthumbnailer \
     mpd mpc ncmpcpp mpv \
-    thunar xarchiver thunar-archive-plugin ranger ueberzug \
+    thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug \
     alacritty zsh \
-    ttf-iosevka-nerd ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji \
+    ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji \
     gnome-keyring;
 ```
 ## Install `yay`
@@ -44,8 +43,8 @@ git clone https://aur.archlinux.org/yay-bin.git; cd yay-bin; makepkg -si;
 ```
 ## Use `yay` to install what's missing
 ```
-yay -S polybar qogir-icon-theme vimix-cursors i3lock-color \
-    google-chrome nerd-fonts-jetbrains-mono ttf-iosevka zsh-theme-powerlevel10k-git;
+yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color \
+    google-chrome ttf-iosevka zsh-theme-powerlevel10k-git;
 ```
 Additionally I need some more packages, you can skip this if you don't want them.
 ```
@@ -101,17 +100,14 @@ indicators = ~spacer;~clock;~spacer;~session;~power
 ## Config `mpd`
 Enable `mpd` service
 ```
-systemctl enable mpd;
-mkdir -p ~/.config/mpd/playlists;
-cp /etc/mpd.conf ~/.config/mpd
+systemctl --user enable mpd;
+systemctl --user start mpd;
 ```
-Set music directory
+Open `ncmpcpp` and edit your playlist
 ```
-vim ~/.config/mpd/mpd.conf
-
-# Recommended location for database
-db_file "~/.config/mpd/database"
-music_directory "~/Music"
-auto_update "yes"
-playlist_directory "~/.config/mpd/playlists"
+ncmpcpp
+# press 2 to open browse
+# select your folder and press A to add all songs in that folder to playelist
+# or press 4 to open library
+# press space to add current song to playlist
 ```
