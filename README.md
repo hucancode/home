@@ -27,7 +27,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 Assume that you use `archinstall`.
 These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `vim` to make sure we have internet and a debug tool after reboot.
 ```
-sudo pacman -S dhcpcd xorg \
+sudo pacman -S dhcpcd \
     lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme\
     vim git \
     bspwm sxhkd openbox rofi dunst ksuperkey xsettingsd nitrogen \ 
@@ -36,7 +36,7 @@ sudo pacman -S dhcpcd xorg \
     thunar xarchiver thunar-archive-plugin ranger ueberzug \
     alacritty zsh \
     ttf-iosevka-nerd ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji \
-    base-devel gnome-keyring;
+    gnome-keyring;
 ```
 ## Install `yay`
 ```
@@ -76,7 +76,7 @@ Set `lightdm` as your default display manager.
 ```
 systemctl enable lightdm;
 ```
-Enable `lightdm-gtk-greeter`
+Enable `lightdm-gtk-greeter` (`lightdm` default to gtk greeter, but just in case something went wrong, please check `lightdm.conf`)
 ```
 vim /etc/lightdm/lightdm.conf
 # enable [Seat:*]
@@ -97,4 +97,21 @@ default-user-image = /usr/share/lightdm-gtk-greeter-settings/avatar.jpeg
 theme-name = Arc-Dark
 icon-theme-name = Qogir-dark
 indicators = ~spacer;~clock;~spacer;~session;~power
+```
+## Config `mpd`
+Enable `mpd` service
+```
+systemctl enable mpd;
+mkdir -p ~/.config/mpd/playlists;
+cp /etc/mpd.conf ~/.config/mpd
+```
+Set music directory
+```
+vim ~/.config/mpd/mpd.conf
+
+# Recommended location for database
+db_file "~/.config/mpd/database"
+music_directory "~/Music"
+auto_update "yes"
+playlist_directory "~/.config/mpd/playlists"
 ```
