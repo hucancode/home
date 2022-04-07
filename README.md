@@ -98,10 +98,10 @@ icon-theme-name = Qogir-dark
 indicators = ~spacer;~clock;~spacer;~session;~power
 ```
 ## Config `mpd`
-Assume that `mpd` is running safe and sound, if not, check for `~/.config/mpd/mpd.conf`. My configuration looks like follow.
+Assume that `mpd` is running safe and sound, if not, check for `~/.config/mpd/mpd.conf`. My configuration looks like this:
 ```
-pid_file "/run/mpd/mpd.pid"
-state_file "/var/lib/mpd/mpdstate"
+pid_file "~/.config/mpd/mpd.pid"
+state_file "~/.config/mpd/mpdstate"
 db_file "~/.config/mpd/database"
 music_directory "~/Music"
 playlist_directory "~/.config/mpd/playlists"
