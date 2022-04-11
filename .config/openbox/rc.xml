@@ -447,27 +447,27 @@
     <!-- Screenshot Keys -->
     <keybind key="Print">
       <action name="Execute">
-        <command>takeshot --now</command>
+        <command>~/.config/openbox/bin/menu/ac-shots --now</command>
       </action>
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>takeshot --in5</command>
+        <command>~/.config/openbox/bin/menu/ac-shots --in5</command>
       </action>
     </keybind>
     <keybind key="S-Print">
       <action name="Execute">
-        <command>takeshot --in10</command>
+        <command>~/.config/openbox/bin/menu/ac-shots --in10</command>
       </action>
     </keybind>
     <keybind key="C-Print">
       <action name="Execute">
-        <command>takeshot --win</command>
+        <command>~/.config/openbox/bin/menu/ac-shots --win</command>
       </action>
     </keybind>
     <keybind key="C-A-Print">
       <action name="Execute">
-        <command>takeshot --area</command>
+        <command>~/.config/openbox/bin/menu/ac-shots --area</command>
       </action>
     </keybind>
     <!-- ################################ Launch Applications ################################ -->

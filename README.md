@@ -29,7 +29,7 @@ These packages below should be installed during arch installation (When it asks 
 ```
 sudo pacman -S dhcpcd vim git \
     lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme \
-    bspwm sxhkd openbox rofi dunst xsettingsd xdg-user-dirs nitrogen \ 
+    bspwm sxhkd openbox rofi dunst xsettingsd xdg-user-dirs nitrogen xclip \ 
     maim ffmpeg ffmpegthumbnailer \
     mpd mpc ncmpcpp mpv \
     thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug \
