@@ -251,7 +251,7 @@ time = %I:%M %p
 time-alt = %A, %d %B %Y
 
 format = <label>
-format-prefix = " "
+format-prefix = " "
 format-prefix-font = 3
 format-prefix-foreground = ${color.RED}
 
