@@ -13,17 +13,17 @@ file="Screenshot_${time}_${geometry}.png"
 # Buttons
 layout=`cat $HOME/.config/openbox/rofi/screenshot.rasi | grep BUTTON | cut -d'=' -f2 | tr -d '[:blank:],*/'`
 if [[ "$layout" == "TRUE" ]]; then
-	screen=""
-	area=""
-	window=""
-	infive=""
-	inten=""
+	screen=""
+	area="麗"
+	window=""
+	infive=""
+	inten=""
 else
-	screen=" Capture Desktop"
-	area=" Capture Area"
-	window=" Capture Window"
-	infive=" Take in 5s"
-	inten=" Take in 10s"
+	screen=" Capture Desktop"
+	area="麗 Capture Area"
+	window=" Capture Window"
+	infive=" Take in 5s"
+	inten=" Take in 10s"
 fi
 
 # notify and view screenshot
