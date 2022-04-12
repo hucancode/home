@@ -24,7 +24,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 ![](screenshots/4.png)
 # Installation
 ## Install Arch
-Assume that you use `archinstall`.
+Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
 These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `vim` to make sure we have internet and a debug tool after reboot.
 ```
 sudo pacman -S dhcpcd vim git \
