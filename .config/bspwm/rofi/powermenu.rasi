@@ -19,7 +19,7 @@ window {
     border:                  		1px;
     border-color:                  	@selected;
     border-radius:                  0px;
-    width:                          376px;
+    width:                          385px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
