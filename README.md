@@ -49,6 +49,7 @@ yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color \
 Additionally I need some more packages, you can skip this if you don't want them.
 ```
 sudo pacman -S ibus-anthy docker mono steam gimp inkscape;
+sudo usermod -aG docker $USER;
 yay -Sy visual-studio-code-bin ibus-bamboo megacmd;
 echo $'\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im=\'ibus\'\n# Toolbar for ibus\nibus-daemon -drx' >> ~/.xprofile
 ```
