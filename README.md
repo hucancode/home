@@ -90,7 +90,7 @@ lightdm-gtk-greeter-settings
 # select theme, wallpaper, avatar
 ```
 This is how `/etc/lightdm/lightdm-gtk-greeter.conf` should looks like after configuration. Alternatively you can skip GUI setting program and straight up copy this.
-```bash
+```ini
 [greeter]
 background = /usr/share/lightdm-gtk-greeter-settings/wallpaper.jpg
 default-user-image = /usr/share/lightdm-gtk-greeter-settings/avatar.jpeg
