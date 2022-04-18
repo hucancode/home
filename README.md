@@ -26,7 +26,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 ## Install Arch
 Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
 These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `vim` to make sure we have internet and a debug tool after reboot.
-```
+```bash
 sudo pacman -S dhcpcd vim git \
     lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme \
     bspwm sxhkd openbox rofi dunst xdg-user-dirs nitrogen xclip \ 
@@ -38,46 +38,46 @@ sudo pacman -S dhcpcd vim git \
     gnome-keyring libgnome-keyring;
 ```
 ## Install `yay`
-```
+```bash
 git clone https://aur.archlinux.org/yay-bin.git; cd yay-bin; makepkg -si;
 ```
 ## Use `yay` to install what's missing
-```
+```bash
 yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color \
     google-chrome ttf-iosevka zsh-theme-powerlevel10k-git;
 ```
 Additionally I need some more packages, you can skip this if you don't want them.
-```
+```bash
 sudo pacman -S ibus-anthy docker mono steam gimp inkscape;
 sudo usermod -aG docker $USER;
 yay -Sy visual-studio-code-bin ibus-bamboo megacmd;
 echo $'\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im=\'ibus\'\n# Toolbar for ibus\nibus-daemon -drx' >> ~/.xprofile
 ```
 ## Change default shell to zsh
-```
+```bash
 chsh -s $(which zsh)
 ```
 ## Checkout rice configurations, move everything to `~`
-```
+```bash
 git clone https://github.com/hucancode/dotfiles
 cd dotfiles; cp . ~;
 ```
 You may want to clean some git things after that
-```
+```bash
 cd ~; rm -r .git .gitignore README.md screenshots;
 ```
 Then copy avatar and wallpaper to somewhere `lightdm` have access to.
-```
+```bash
 cp {avatar.jpeg,wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings
 ```
 You can alternatively put those picture at `~` and give `lightdm` access to your `~` folder
 ## Config `lightdm`
 Set `lightdm` as your default display manager.
-```
+```bash
 systemctl enable lightdm;
 ```
 Enable `lightdm-gtk-greeter` (`lightdm` default to gtk greeter, but just in case something went wrong, please check `lightdm.conf`)
-```
+```bash
 vim /etc/lightdm/lightdm.conf
 # enable [Seat:*]
 # ...
@@ -85,12 +85,12 @@ vim /etc/lightdm/lightdm.conf
 # ...
 ```
 Rice your greeter with this
-```
+```bash
 lightdm-gtk-greeter-settings
 # select theme, wallpaper, avatar
 ```
 This is how `/etc/lightdm/lightdm-gtk-greeter.conf` should looks like after configuration. Alternatively you can skip GUI setting program and straight up copy this.
-```
+```bash
 [greeter]
 background = /usr/share/lightdm-gtk-greeter-settings/wallpaper.jpg
 default-user-image = /usr/share/lightdm-gtk-greeter-settings/avatar.jpeg
@@ -100,7 +100,7 @@ indicators = ~spacer;~clock;~spacer;~session;~power
 ```
 ## Config `mpd`
 Assume that `mpd` is running safe and sound, if not, check for `~/.config/mpd/mpd.conf`. My configuration looks like this:
-```
+```bash
 pid_file "~/.config/mpd/mpd.pid"
 state_file "~/.config/mpd/mpdstate"
 db_file "~/.config/mpd/database"
@@ -113,7 +113,7 @@ audio_output {
 }
 ```
 Open `ncmpcpp` and edit your playlist
-```
+```bash
 ncmpcpp
 # press 2 to open browse
 # select your folder and press A to add all songs in that folder to playelist
