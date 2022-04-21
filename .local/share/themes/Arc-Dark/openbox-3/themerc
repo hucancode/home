@@ -5,7 +5,7 @@
 #-- Window geometry -----------------------------------------------
 padding.width: 8
 padding.height: 10
-border.width: 0
+border.width: 1
 window.client.padding.width: 0
 window.client.padding.height: 0
 window.handle.width: 0
@@ -19,7 +19,7 @@ menu.separator.padding.width: 0
 menu.separator.padding.height: 2
 
 #-- Border colors -------------------------------------------------
-window.active.border.color: #2F343F
+window.active.border.color: #0077FF
 window.inactive.border.color: #2F343F
 window.active.client.color: #2F343F
 window.inactive.client.color: #2F343F
