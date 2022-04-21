@@ -60,7 +60,6 @@ chsh -s $(which zsh)
 ```bash
 git clone https://github.com/hucancode/home .;
 git submodule update --init;
-cp ./home ~;
 ```
 Then copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```bash
