@@ -2,7 +2,6 @@
 This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Heavily influenced by [Archcraft](https://archcraft.io/).
 <details>
   <summary> What is ricing? </summary>
-   
     The term ‘rice’ is used to describe a person’s unix desktop where ‘ricing’ is when someone is custom their desktop such as the icons, panels, or system interface. When it comes to ricing a tiling window manager though, the ricing of a user’s system becomes much more involved. Basic things such as the panel bar and application launcher must be configured by the user.
     The reddit community /r/unixporn is a great place to stay up to date on what people are using for their setups.
     // by [thatnixguy](https://thatnixguy.github.io/)
@@ -14,7 +13,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - File manager [thunar](https://wiki.archlinux.org/title/thunar)
-- Loved by many, hated by some, known to all text editor [vim](https://wiki.archlinux.org/title/vim)
+- Text editor [helix](https://helix-editor.com/)
 - Terminal emulator [ZSH](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty)
 - Music player [mpd](https://www.musicpd.org/)
 # Screenshots
@@ -27,7 +26,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
 These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `vim` to make sure we have internet and a debug tool after reboot.
 ```bash
-sudo pacman -S dhcpcd vim git \
+sudo pacman -S dhcpcd helix git \
     lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme \
     bspwm sxhkd openbox rofi dunst xdg-user-dirs nitrogen xclip \ 
     maim ffmpeg ffmpegthumbnailer \
@@ -59,12 +58,9 @@ chsh -s $(which zsh)
 ```
 ## Checkout rice configurations, move everything to `~`
 ```bash
-git clone https://github.com/hucancode/dotfiles
-cd dotfiles; cp . ~;
-```
-You may want to clean some git things after that
-```bash
-cd ~; rm -r .git .gitignore README.md screenshots;
+git clone https://github.com/hucancode/home .;
+git submodule update --init;
+cp ./home ~;
 ```
 Then copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```bash
