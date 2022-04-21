@@ -41,11 +41,11 @@ ctrl + alt + l
 
 # Take a screenshot
 Print
-	takeshot --now
+	sh ~/.config/bspwm/bin/ac-shots --now
 	
 # Take screenshot in 5 second
 alt + Print	
-	takeshot --win
+	sh ~/.config/bspwm/bin/ac-shots --win
 
 # Brighness control
 XF86MonBrightness{Up,Down}

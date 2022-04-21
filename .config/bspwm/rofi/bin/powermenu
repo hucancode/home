@@ -41,7 +41,7 @@ case $chosen in
         fi
         ;;
     $lock)
-        $HOME/.config/bspwm/bin/lockscreen
+        $HOME/.config/bspwm/bin/bsplock
         ;;
     $suspend)
 		ans=$($HOME/.config/bspwm/rofi/bin/confirm)
