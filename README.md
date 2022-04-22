@@ -24,15 +24,15 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 # Installation
 ## Install Arch
 Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
-These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `vim` to make sure we have internet and a debug tool after reboot.
+These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `nano/vim/neovim/kakoune/helix` to make sure we have internet and a debug tool after reboot.
 ```bash
-sudo pacman -S dhcpcd helix git \
+sudo pacman -S dhcpcd git \
     lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme \
     bspwm sxhkd openbox rofi dunst xdg-user-dirs nitrogen xclip \ 
     maim ffmpeg ffmpegthumbnailer \
     mpd mpc ncmpcpp mpv \
     thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug \
-    alacritty zsh \
+    alacritty zsh helix fzf fd\
     ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji \
     gnome-keyring libgnome-keyring;
 ```
@@ -47,7 +47,7 @@ yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color \
 ```
 Additionally I need some more packages, you can skip this if you don't want them.
 ```bash
-sudo pacman -S ibus-anthy docker mono steam gimp inkscape;
+sudo pacman -S ibus-anthy docker docker-compose mono steam gimp inkscape;
 sudo usermod -aG docker $USER;
 yay -Sy visual-studio-code-bin ibus-bamboo megacmd;
 echo $'\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im=\'ibus\'\n# Toolbar for ibus\nibus-daemon -drx' >> ~/.xprofile
