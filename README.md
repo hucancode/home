@@ -8,13 +8,14 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 </details>
 
 ## Contain settings for:
-- Window manager, [bspwm](https://wiki.archlinux.org/title/bspwm), [sxhkd](https://wiki.archlinux.org/title/sxhkd). `bspwm` is pretty harsh, if something went wrong you are welcomed with a black screen and no mouse/keyboard input. In case `bspwm` didn't work or you just don't like a tiling window manager, login with [Openbox](https://wiki.archlinux.org/title/openbox)
+- Window manager, [bspwm](https://wiki.archlinux.org/title/bspwm), [sxhkd](https://wiki.archlinux.org/title/sxhkd). `bspwm` is pretty harsh, if something went wrong you are welcomed with a black screen and no mouse/keyboard input. In case `bspwm` didn't work or you just don't like a tiling window manager, login with [openbox](https://wiki.archlinux.org/title/openbox)
+- Display manager (the login thing) [lightdm](https://wiki.archlinux.org/title/lightdm)
 - Status bar. [polybar](https://wiki.archlinux.org/title/polybar)
 - Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - File manager [thunar](https://wiki.archlinux.org/title/thunar)
 - Text editor [helix](https://helix-editor.com/)
-- Terminal emulator [ZSH](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty)
+- Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty)
 - Music player [mpd](https://www.musicpd.org/)
 # Screenshots
 ![](screenshots/1.png)
@@ -22,53 +23,62 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 ![](screenshots/3.png)
 ![](screenshots/4.png)
 # Installation
+## TL;DR
+Use this script 
+```bash
+git clone https://github.com/hucancode/home
+mv home/* . && rm -rf home
+git submodule update --init
+chmod +x rice.sh && ./rice.sh
+```
 ## Install Arch
 Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
 These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `nano/vim/neovim/kakoune/helix` to make sure we have internet and a debug tool after reboot.
+## Checkout rice configurations
+My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenient, I recommend you doing the same.
 ```bash
-sudo pacman -S dhcpcd git \
-    lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme \
-    bspwm sxhkd openbox rofi dunst xdg-user-dirs nitrogen xclip \ 
-    maim ffmpeg ffmpegthumbnailer \
-    mpd mpc ncmpcpp mpv \
-    thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug \
-    alacritty zsh helix fzf fd\
-    ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji \
-    gnome-keyring libgnome-keyring;
+git clone https://github.com/hucancode/home
+mv home/* . && rm -rf home
+git submodule update --init
 ```
-## Install `yay`
+## Install needed packages
 ```bash
-git clone https://aur.archlinux.org/yay-bin.git; cd yay-bin; makepkg -si;
-```
-## Use `yay` to install what's missing
-```bash
-yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color \
-    google-chrome ttf-iosevka zsh-theme-powerlevel10k-git;
-```
-Additionally I need some more packages, you can skip this if you don't want them.
-```bash
-sudo pacman -S ibus-anthy docker docker-compose mono steam gimp inkscape;
-sudo usermod -aG docker $USER;
-yay -Sy visual-studio-code-bin ibus-bamboo megacmd;
-echo $'\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im=\'ibus\'\n# Toolbar for ibus\nibus-daemon -drx' >> ~/.xprofile
+sudo pacman -Syu
+
+BASE="dhcpcd base-devel git"
+THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
+WM="bspwm sxhkd openbox rofi dunst xdg-user-dirs nitrogen xclip maim ffmpeg ffmpegthumbnailer mpd mpc ncmpcpp mpv"
+FILE_MANAGER="thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug"
+TERMINAL="alacritty zsh helix fzf fd"
+FONTS="ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji"
+KEYRING="gnome-keyring libgnome-keyring"
+YAY_THEME="polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color "
+YAY_TERMINAL="ttf-iosevka zsh-theme-powerlevel10k-git"
+
+sudo pacman -S $BASE $THEME $WM $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 ```
 ## Change default shell to zsh
 ```bash
 chsh -s $(which zsh)
 ```
-## Checkout rice configurations
-My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenient, I recommend you doing the same.
+## Install `yay`
 ```bash
-git clone https://github.com/hucancode/home .;
-git submodule update --init;
-curl -L -o avatar.png https://github.com/hucancode.png
+git clone https://aur.archlinux.org/yay-bin.git
+(cd yay-bin && makepkg -si)
 ```
-Then copy avatar and wallpaper to somewhere `lightdm` have access to.
+Use `yay` to install what's missing
 ```bash
-cp {avatar.png,wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings
+YAY_THEME="polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color "
+YAY_TERMINAL="ttf-iosevka zsh-theme-powerlevel10k-git"
+
+yay -S $YAY_THEME $YAY_TERMINAL
+```
+## Config `lightdm`
+Copy avatar and wallpaper to somewhere `lightdm` have access to.
+```bash
+curl -L -o avatar.png https://github.com/hucancode.png && sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings && rm avatar.png
 ```
 You can alternatively put those picture at `~` and give `lightdm` access to your `~` folder
-## Config `lightdm`
 Set `lightdm` as your default display manager.
 ```bash
 systemctl enable lightdm;
