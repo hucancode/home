@@ -34,7 +34,7 @@ case $yn in
 	* ) exit 0;;
 esac
 
-sudo pacman -S ibus-anthy docker docker-compose mono gimp inkscape
+sudo pacman -S ibus-anthy docker docker-compose mono gimp inkscape clang llvm
 sudo groupadd docker && sudo usermod -aG docker $USER
 yay -S google-chrome visual-studio-code-bin ibus-bamboo megacmd
 IBUS_SETTING="\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im='ibus'\n# Toolbar for ibus\nibus-daemon -drx"
