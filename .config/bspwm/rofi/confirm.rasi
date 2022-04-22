@@ -8,7 +8,7 @@
 * {
     background-color:       @background;
     text-color:             @foreground;
-	font:				 	"Iosevka Nerd Font 10";
+	font:				 	"MesloLGS NF 10";
 }
 
 window {

@@ -49,11 +49,9 @@ BASE="dhcpcd base-devel git"
 THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 WM="bspwm sxhkd openbox rofi dunst xdg-user-dirs nitrogen xclip maim ffmpeg ffmpegthumbnailer mpd mpc ncmpcpp mpv"
 FILE_MANAGER="thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug"
-TERMINAL="alacritty zsh helix fzf fd"
-FONTS="ttf-jetbrains-mono noto-fonts noto-fonts-cjk noto-fonts-emoji"
+TERMINAL="alacritty zsh zsh-theme-powerlevel10k helix fzf fd"
+FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
-YAY_THEME="polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color "
-YAY_TERMINAL="ttf-iosevka zsh-theme-powerlevel10k-git"
 
 sudo pacman -S $BASE $THEME $WM $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 ```
@@ -68,10 +66,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 ```
 Use `yay` to install what's missing
 ```bash
-YAY_THEME="polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color "
-YAY_TERMINAL="ttf-iosevka zsh-theme-powerlevel10k-git"
-
-yay -S $YAY_THEME $YAY_TERMINAL
+yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color
 ```
 ## Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.

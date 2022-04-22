@@ -47,7 +47,7 @@ i3lock \
 --pass-screen-keys			\
 --pass-power-keys			\
 --pass-volume-keys			\
---{time,date,layout,verif,wrong,greeter}-font="Iosevka"			\
+--{time,date,layout,verif,wrong,greeter}-font="Noto Sans"			\
 --{layout,verif,wrong,greeter}-size=18							\
 --time-size=34													\
 --date-size=18													\

@@ -2,7 +2,7 @@
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
 configuration {
-    font:                           "Iosevka 10";
+    font:                           "Noto Sans 10";
     show-icons:                     false;
     display-drun: 					"";
     drun-display-format:            "{icon} {name}";
@@ -19,7 +19,7 @@ window {
     border:                  		1px;
     border-color:                  	@selected;
     border-radius:                  0px;
-    width:                          385px;
+    width:                          381px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
@@ -44,7 +44,7 @@ textbox-prompt-colon {
     background-color:               @selected;
     text-color:                     @background;
     padding:    					6px 10px 6px 10px;
-	font:							"Iosevka Nerd Font 10";
+	font:							"MesloLGS NF 12";
 }
 
 entry {
@@ -118,7 +118,7 @@ element-icon {
 element-text {
     background-color: 				inherit;
     text-color:       				inherit;
-	font:							"feather 14";
+	font:							"MesloLGS NF 15";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;

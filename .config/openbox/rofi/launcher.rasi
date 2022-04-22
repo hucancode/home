@@ -21,7 +21,7 @@ configuration {
 @import "colors.rasi"
 
 * {
-    font:                           "Iosevka 10";
+    font:                           "Iosevka Nerd Font 12";
     background-color:             	@background;
 }
 
