@@ -5,23 +5,23 @@
 font:
   # Normal (roman) font face
   normal:
-    family: "JetBrainsMono Nerd Font"
-    #style: Regular
+    family: "MesloLGS NF"
+    style: Regular
 
   # Bold font face
   bold:
-    family: "JetBrainsMono Nerd Font"
-    #style: Bold
+    family: "MesloLGS NF"
+    style: Bold
 
   # Italic font face
   italic:
-    family: "JetBrainsMono Nerd Font"
-    #style: Italic
+    family: "MesloLGS NF"
+    style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: "JetBrainsMono Nerd Font"
-    #style: Bold Italic
+    family: "MesloLGS NF"
+    style: Bold Italic
 
   # Point size
   size: 10
