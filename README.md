@@ -56,14 +56,16 @@ echo $'\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIF
 ```bash
 chsh -s $(which zsh)
 ```
-## Checkout rice configurations, move everything to `~`
+## Checkout rice configurations
+My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenient, I recommend you doing the same.
 ```bash
 git clone https://github.com/hucancode/home .;
 git submodule update --init;
+curl -L -o avatar.png https://github.com/hucancode.png
 ```
 Then copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```bash
-cp {avatar.jpeg,wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings
+cp {avatar.png,wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings
 ```
 You can alternatively put those picture at `~` and give `lightdm` access to your `~` folder
 ## Config `lightdm`
@@ -73,7 +75,7 @@ systemctl enable lightdm;
 ```
 Enable `lightdm-gtk-greeter` (`lightdm` default to gtk greeter, but just in case something went wrong, please check `lightdm.conf`)
 ```bash
-vim /etc/lightdm/lightdm.conf
+helix /etc/lightdm/lightdm.conf
 # enable [Seat:*]
 # ...
 # greeter-session=lightdm-gtk-greeter
