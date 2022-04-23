@@ -54,7 +54,7 @@ x A-Print         	~/.config/openbox/bin/ac-shots --in5
 x S-Print         	~/.config/openbox/bin/ac-shots --in10
 x C-Print         	~/.config/openbox/bin/ac-shots --win
 x C-A-Print       	~/.config/openbox/bin/ac-shots --area
-x W-Return        	alacritty
+x W-Return        	kitty
 x W-f             	thunar
 x W-w             	google-chrome-stable
 x W-e             	code

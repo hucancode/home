@@ -15,7 +15,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - File manager [ranger]() and [thunar](https://wiki.archlinux.org/title/thunar)
 - Text editor [helix](https://helix-editor.com/)
-- Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty)
+- Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [Kitty](https://sw.kovidgoyal.net/kitty/)
 - Music player [mpd](https://www.musicpd.org/)
 # Screenshots
 ![](Pictures/Screenshots/1.png)
@@ -48,8 +48,8 @@ sudo pacman -Syu base-devel git
 THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 MEDIA="ffmpeg mpd mpc ncmpcpp mpv"
-FILE_MANAGER="ranger ueberzug"
-TERMINAL="zsh alacritty helix fzf fd"
+FILE_MANAGER="ranger python-pillow"
+TERMINAL="zsh kitty helix fzf fd"
 FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING

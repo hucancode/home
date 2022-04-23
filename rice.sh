@@ -12,9 +12,9 @@ THEME_AUR="vimix-cursors i3lock-color"
 WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 WM_AUR="polybar ksuperkey"
 MEDIA="ffmpeg mpd mpc ncmpcpp mpv viewnior"
-FILE_MANAGER="ranger ueberzug"
-TERMINAL="zsh alacritty helix fzf fd"
-FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
+FILE_MANAGER="ranger python-pillow"
+TERMINAL="zsh kitty helix fzf fd"
+FONTS="ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 yay -S $THEME_AUR $WM_AUR

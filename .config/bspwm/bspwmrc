@@ -40,13 +40,14 @@ bspc rule -r *:*
 
 # 1 > terminal
 bspc rule -a Alacritty desktop='^1' follow=on focus=on
+bspc rule -a Kitty desktop='^1' follow=on focus=on
 
 # 2 > web
 bspc rule -a chromium desktop='^2' follow=on focus=on
 bspc rule -a Google-chrome desktop='^2' follow=on focus=on
 
 # 3 > code
-declare -a code=(Geany code-oss code)
+declare -a code=(code-oss code)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
@@ -60,8 +61,7 @@ for i in ${unreal[@]}; do
    bspc rule -a $i desktop='^5' state=floating follow=on focus=on; done
 
 # special rules
-declare -a floating=(alacritty-float Onboard Yad 'Firefox:Places' \
-Viewnior feh Nm-connection-editor)
+declare -a floating=(Yad 'Firefox:Places' Viewnior)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 

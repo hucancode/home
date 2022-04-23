@@ -9,7 +9,7 @@
   <menu id="root-menu" title="Menu" label="Openbox 3">
 		<item icon="&icons;/terminal.png" label="Terminal Emulator">
 			<action name="Execute">
-				<command>alacritty</command>
+				<command>kitty</command>
 			</action>
 		</item>
 		<separator/>
