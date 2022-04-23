@@ -10,18 +10,19 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 ## Contain settings for:
 - Window manager, [bspwm](https://wiki.archlinux.org/title/bspwm), [sxhkd](https://wiki.archlinux.org/title/sxhkd). `bspwm` is pretty harsh, if something went wrong you are welcomed with a black screen and no mouse/keyboard input. In case `bspwm` didn't work or you just don't like a tiling window manager, login with [openbox](https://wiki.archlinux.org/title/openbox)
 - Display manager (the login thing) [lightdm](https://wiki.archlinux.org/title/lightdm)
-- Status bar. [polybar](https://wiki.archlinux.org/title/polybar)
+- Status bar [polybar](https://wiki.archlinux.org/title/polybar)
 - Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
-- File manager [thunar](https://wiki.archlinux.org/title/thunar)
+- File manager [ranger]() and [thunar](https://wiki.archlinux.org/title/thunar)
 - Text editor [helix](https://helix-editor.com/)
 - Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [Alacritty](https://wiki.archlinux.org/title/alacritty)
 - Music player [mpd](https://www.musicpd.org/)
 # Screenshots
-![](screenshots/1.png)
-![](screenshots/2.png)
-![](screenshots/3.png)
-![](screenshots/4.png)
+![](Pictures/Screenshots/1.png)
+![](Pictures/Screenshots/2.png)
+![](Pictures/Screenshots/3.png)
+![](Pictures/Screenshots/4.png)
+![](Pictures/Screenshots/5.png)
 # Installation
 ## TL;DR
 Use this script 
@@ -33,7 +34,6 @@ chmod +x rice.sh && ./rice.sh
 ```
 ## Install Arch
 Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
-These packages below should be installed during arch installation (When it asks you to `arch-chroot` into your new disk, please accept). If you don't want to install everything right now, at least install `dhcpcd` and `nano/vim/neovim/kakoune/helix` to make sure we have internet and a debug tool after reboot.
 ## Checkout rice configurations
 My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenient, I recommend you doing the same.
 ```bash
@@ -43,18 +43,16 @@ git submodule update --init
 ```
 ## Install needed packages
 ```bash
-sudo pacman -Syu
-
-BASE="dhcpcd base-devel git"
+sudo pacman -Syu base-devel git
+# install packages
 THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
-MEDIA="ffmpeg ffmpegthumbnailer mpd mpc ncmpcpp mpv"
-FILE_MANAGER="thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug"
-TERMINAL="alacritty zsh zsh-theme-powerlevel10k helix fzf fd"
+MEDIA="ffmpeg mpd mpc ncmpcpp mpv"
+FILE_MANAGER="ranger ueberzug"
+TERMINAL="zsh alacritty zsh-theme-powerlevel10k helix fzf fd"
 FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
-
-sudo pacman -S $BASE $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 ```
 ## Change default shell to zsh
 ```bash
@@ -67,7 +65,9 @@ git clone https://aur.archlinux.org/yay-bin.git
 ```
 Use `yay` to install what's missing
 ```bash
-yay -S polybar ksuperkey qogir-icon-theme vimix-cursors i3lock-color
+THEME_AUR="vimix-cursors i3lock-color"
+WM_AUR="polybar ksuperkey"
+yay -S $THEME_AUR $WM_AUR
 ```
 ## Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
