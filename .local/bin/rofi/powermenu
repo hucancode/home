@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+rofi_command="rofi -theme $SCRIPT_DIR/powermenu.rasi"
+
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+shutdown="襤"
+reboot="ﰇ"
+lock=""
+suspend="鈴"
+logout=""
+
+# Variable passed to rofi
+options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
+_msg="Options  -  yes / y / no / n"
+
+chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 2)"
+case $chosen in
+    $shutdown)
+		ans=$($SCRIPT_DIR/confirm)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+        systemctl poweroff
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+        exit
+        else
+        rofi -theme $SCRIPT_DIR/confirm.rasi -e "$_msg"
+        fi
+        ;;
+    $reboot)
+		ans=$($SCRIPT_DIR/confirm)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+        systemctl reboot
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+        exit
+        else
+        rofi -theme $SCRIPT_DIR/confirm.rasi -e "$_msg"
+        fi
+        ;;
+    $lock)
+        ~/.local/bin/lockscreen
+        ;;
+    $suspend)
+		ans=$($SCRIPT_DIR/confirm)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+        mpc -q pause
+        amixer set Master mute
+        systemctl suspend
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+        exit
+        else
+        rofi -theme $SCRIPT_DIR/confirm.rasi -e "$_msg"
+        fi
+        ;;
+    $logout)
+		ans=$($SCRIPT_DIR/confirm)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+        pidof openbox && openbox --exit
+        pidof bspc && bspc quit
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+        exit
+        else
+        rofi -theme $SCRIPT_DIR/confirm.rasi -e "$_msg"
+        fi
+        ;;
+esac
+

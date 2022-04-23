@@ -500,7 +500,7 @@
     <!-- Rofi -->
     <keybind key="A-F1">
       <action name="Execute">
-        <command>~/.config/openbox/rofi/bin/launcher</command>
+        <command>~/.local/bin/rofi/launcher</command>
       </action>
     </keybind>
     <!-- <keybind key="W-n">
@@ -510,74 +510,23 @@
     </keybind>
     <keybind key="W-m">
       <action name="Execute">
-        <command>~/.config/openbox/rofi/bin/music</command>
+        <command>~/.local/bin/rofi/music</command>
       </action>
     </keybind> -->
     <keybind key="W-x">
       <action name="Execute">
-        <command>~/.config/openbox/rofi/bin/powermenu</command>
+        <command>~/.local/bin/rofi/powermenu</command>
       </action>
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>~/.config/openbox/rofi/bin/screenshot</command>
+        <command>~/.local/bin/rofi/screenshot</command>
       </action>
     </keybind>
-    <!-- <keybind key="W-i">
-      <action name="Execute">
-        <command>~/.config/openbox/rofi/bin/network</command>
-      </action>
-    </keybind> -->
-    <!-- <keybind key="W-r">
-      <action name="Execute">
-        <command>~/.config/openbox/rofi/bin/runner</command>
-      </action>
-    </keybind> -->
-    <!-- <keybind key="W-p">
-      <action name="Execute">
-        <command>color-gpick</command>
-      </action>
-    </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <command>tasks</command>
-      </action>
-    </keybind> -->
-    <!-- CLI Apps -->
-    <!-- <keybind key="C-A-t">
-      <action name="Execute">
-        <command>xfce4-terminal</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-v">
-      <action name="Execute">
-        <command>alacritty -e vim</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-n">
-      <action name="Execute">
-        <command>alacritty -e nvim</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-r">
-      <action name="Execute">
-        <command>alacritty -e ranger</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-h">
-      <action name="Execute">
-        <command>alacritty -e htop</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-b">
-      <action name="Execute">
-        <command>alacritty -e bashtop</command>
-      </action>
-    </keybind> -->
     <!-- Lockscreen -->
     <keybind key="C-A-l">
       <action name="Execute">
-        <command>~/.config/openbox/bin/lockscreen</command>
+        <command>~/.local/bin/lockscreen</command>
       </action>
     </keybind>
     <!-- Openbox -->
@@ -590,23 +539,9 @@
     <!-- <keybind key="C-S-R">
       <action name="Reconfigure"/>
     </keybind> -->
-    <keybind key="W-Escape">
-      <action name="Execute">
-        <command>xkill</command>
-      </action>
-    </keybind>
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
-    <!-- <keybind key="A-F5">
-      <action name="Iconify"/>
-    </keybind>
-    <keybind key="A-F6">
-      <action name="ToggleMaximize"/>
-    </keybind>
-    <keybind key="A-F7">
-      <action name="ToggleDecorations"/>
-    </keybind> -->
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>

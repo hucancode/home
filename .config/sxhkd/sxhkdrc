@@ -11,21 +11,14 @@ super + Return
 
 # Rofi App Launcher
 alt + F1
-	sh ~/.config/bspwm/rofi/bin/launcher
+	sh ~/.local/bin/rofi/launcher
 
-# Rofi Network Menu
-# super + n
-#	nmd
-
-# Rofi Themes Menu
-ctrl + alt + t
-	sh ~/.config/bspwm/rofi/bin/themes
 
 # Rofi Menus/Applets
 ctrl + alt + tab
 	sh ~/.config/bspwm/rofi/bin/windows
-super + {m,x,s}
-	sh ~/.config/bspwm/rofi/bin/{mpd,powermenu,screenshot}
+super + {x,s}
+	sh ~/.local/bin/rofi/{powermenu,screenshot}
 
 ##---------- Applications ----------##
 
@@ -35,17 +28,17 @@ super + {w,f,e}
 
 # Lockscreen
 ctrl + alt + l
-    bsplock
+    sh ~/.local/bin/lockscreen
 
 ##---------- System Keys ----------##
 
 # Take a screenshot
 Print
-	sh ~/.config/bspwm/bin/ac-shots --now
+	sh ~/.local/bin/screenshot --now
 	
 # Take screenshot in 5 second
 alt + Print	
-	sh ~/.config/bspwm/bin/ac-shots --win
+	sh ~/.local/bin/screenshot --win
 
 # Brighness control
 XF86MonBrightness{Up,Down}

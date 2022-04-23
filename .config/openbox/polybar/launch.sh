@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
@@ -7,13 +8,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 SFILE="$DIR/system.ini"
 RFILE="$DIR/.system"
+CARD=$(light -L | grep 'backlight' | head -n1 | cut -d'/' -f3)
+INTERFACE=$(ip link | awk '/state UP/ {print $2}' | tr -d :)
 
 ## Get system variable values for various modules
 get_values() {
-	CARD=$(light -L | grep 'backlight' | head -n1 | cut -d'/' -f3)
 	BATTERY=$(upower -i `upower -e | grep 'BAT'` | grep 'native-path' | cut -d':' -f2 | tr -d '[:blank:]')
 	ADAPTER=$(upower -i `upower -e | grep 'AC'` | grep 'native-path' | cut -d':' -f2 | tr -d '[:blank:]')
-	INTERFACE=$(ip link | awk '/state UP/ {print $2}' | tr -d :)
 }
 
 ## Write values to `system.ini` file
@@ -32,16 +33,38 @@ set_values() {
 	fi
 }
 
-## Launch Polybar with selected style
-launch_bar() {
-	STYLE="default"
-	bash "$HOME"/.config/openbox/polybar/"$STYLE"/launch.sh
-}
-
 # Execute functions
 if [[ ! -f "$RFILE" ]]; then
 	get_values
 	set_values
 	touch ${RFILE}
 fi
-launch_bar
+
+RFILE="$DIR/.module"
+
+# Fix backlight and network modules
+fix_modules() {
+	if [[ -z "$CARD" ]]; then
+		sed -i -e 's/backlight/bna/g' "$DIR"/config.ini
+	elif [[ "$CARD" != *"intel_"* ]]; then
+		sed -i -e 's/backlight/brightness/g' "$DIR"/config.ini
+	fi
+
+	if [[ "$INTERFACE" == e* ]]; then
+		sed -i -e 's/network/ethernet/g' "$DIR"/config.ini
+	fi
+}
+
+# Execute functions
+if [[ ! -f "$RFILE" ]]; then
+	fix_modules
+	touch "$RFILE"
+fi
+# Terminate already running bar instances
+killall -q polybar
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+# Launch the bar
+polybar -q main -c "$DIR"/config.ini &

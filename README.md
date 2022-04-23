@@ -47,13 +47,14 @@ sudo pacman -Syu
 
 BASE="dhcpcd base-devel git"
 THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-WM="bspwm sxhkd openbox rofi dunst xdg-user-dirs nitrogen xclip maim ffmpeg ffmpegthumbnailer mpd mpc ncmpcpp mpv"
+WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
+MEDIA="ffmpeg ffmpegthumbnailer mpd mpc ncmpcpp mpv"
 FILE_MANAGER="thunar thunar-volman xarchiver thunar-archive-plugin ranger ueberzug"
 TERMINAL="alacritty zsh zsh-theme-powerlevel10k helix fzf fd"
 FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
 
-sudo pacman -S $BASE $THEME $WM $FILE_MANAGER $TERMINAL $FONTS $KEYRING
+sudo pacman -S $BASE $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 ```
 ## Change default shell to zsh
 ```bash
