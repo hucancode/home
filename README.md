@@ -49,7 +49,7 @@ THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 MEDIA="ffmpeg mpd mpc ncmpcpp mpv"
 FILE_MANAGER="ranger ueberzug"
-TERMINAL="zsh alacritty zsh-theme-powerlevel10k helix fzf fd"
+TERMINAL="zsh alacritty helix fzf fd"
 FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
