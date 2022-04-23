@@ -1,75 +1,71 @@
-2022-04-23	rc.xml KEYBINDS
--------------------------------
-
- 0	W-1           				GoToDesktop
- 1	W-2           				GoToDesktop
- 2	W-3           				GoToDesktop
- 3	W-4           				GoToDesktop
- 4	W-5           				GoToDesktop
- 5	S-W-1         				SendToDesktop
- 6	S-W-2         				SendToDesktop
- 7	S-W-3         				SendToDesktop
- 8	S-W-4         				SendToDesktop
- 9	S-W-5         				SendToDesktop
-10	A-Tab         				NextWindow
-11	W-Tab         				NextWindow
-12	W-Left        				UnmaximizeFull
-13	W-Right       				UnmaximizeFull
-14	W-Up          				MaximizeFull
-15	W-Down        				UnmaximizeFull
-16	W-k           				Unmaximize
-17	W-h           				Unmaximize
-18	W-j           				Unmaximize
-19	W-l           				Unmaximize
-20	A-z           				Unmaximize
-21	A-x           				Unmaximize
-22	A-c           				Unmaximize
-23	W-KP_1        				UnmaximizeFull
-24	W-KP_2        				UnmaximizeFull
-25	W-KP_3        				UnmaximizeFull
-26	W-KP_4        				UnmaximizeFull
-27	W-KP_5        				MaximizeFull
-28	W-KP_6        				UnmaximizeFull
-29	W-KP_7        				UnmaximizeFull
-30	W-KP_8        				UnmaximizeFull
-31	W-KP_9        				UnmaximizeFull
-32	W-A-Up        				MoveRelative
-33	W-A-Down      				MoveRelative
-34	W-A-Left      				MoveRelative
-35	W-A-Right     				MoveRelative
-36	C-A-Right     				ResizeRelative
-37	C-A-Left      				ResizeRelative
-38	C-A-Down      				ResizeRelative
-39	C-A-Up        				ResizeRelative
-40	W-S-Left      				SendToDesktopLeft
-41	W-S-Right     				SendToDesktopRight
-42	XF86AudioRaiseVolume	volume --inc
-43	XF86AudioLowerVolume	volume --dec
-44	XF86AudioMute  			volume --toggle
-45	XF86AudioStop  			mpc stop
-46	XF86AudioPlay  			mpc toggle
-47	XF86AudioPrev  			mpc prev
-48	XF86AudioNext  			mpc next
-49	XF86MonBrightnessUp	brightness --inc
-50	XF86MonBrightnessDown	brightness --dec
-51	Print         				~/.config/openbox/bin/menu/ac-shots --now
-52	A-Print       				~/.config/openbox/bin/menu/ac-shots --in5
-53	S-Print       				~/.config/openbox/bin/menu/ac-shots --in10
-54	C-Print       				~/.config/openbox/bin/menu/ac-shots --win
-55	C-A-Print     				~/.config/openbox/bin/menu/ac-shots --area
-56	W-Return      				alacritty
-57	W-t           				furminal
-58	W-f           				thunar
-59	W-w           				google-chrome-stable
-60	W-e           				code
-61	A-F1          				~/.local/bin/rofi/launcher
-62	W-x           				~/.local/bin/rofi/powermenu
-63	W-s           				~/.local/bin/rofi/screenshot
-64	C-A-l         				~/.local/bin/lockscreen
-65	C-A-Escape     			Exit
-66	W-q           				Close
-67	W-d           				ToggleShowDesktop
-68	A-r           				Resize
-69	A-m           				Move
-70	W-S-space     				root-menu
-71	A-space       				client-menu
+o W-1             	GoToDesktop
+o W-2             	GoToDesktop
+o W-3             	GoToDesktop
+o W-4             	GoToDesktop
+o W-5             	GoToDesktop
+o S-W-1           	SendToDesktop
+o S-W-2           	SendToDesktop
+o S-W-3           	SendToDesktop
+o S-W-4           	SendToDesktop
+o S-W-5           	SendToDesktop
+o A-Tab           	NextWindow
+o W-Tab           	NextWindow
+o W-Left          	UnmaximizeFull
+o W-Right         	UnmaximizeFull
+o W-Up            	MaximizeFull
+o W-Down          	UnmaximizeFull
+o W-k             	Unmaximize
+o W-h             	Unmaximize
+o W-j             	Unmaximize
+o W-l             	Unmaximize
+o A-z             	Unmaximize
+o A-x             	Unmaximize
+o A-c             	Unmaximize
+o W-KP_1          	UnmaximizeFull
+o W-KP_2          	UnmaximizeFull
+o W-KP_3          	UnmaximizeFull
+o W-KP_4          	UnmaximizeFull
+o W-KP_5          	MaximizeFull
+o W-KP_6          	UnmaximizeFull
+o W-KP_7          	UnmaximizeFull
+o W-KP_8          	UnmaximizeFull
+o W-KP_9          	UnmaximizeFull
+o W-A-Up          	MoveRelative
+o W-A-Down        	MoveRelative
+o W-A-Left        	MoveRelative
+o W-A-Right       	MoveRelative
+o C-A-Right       	ResizeRelative
+o C-A-Left        	ResizeRelative
+o C-A-Down        	ResizeRelative
+o C-A-Up          	ResizeRelative
+o W-S-Left        	SendToDesktopLeft
+o W-S-Right       	SendToDesktopRight
+x XF86AudioRaiseVolume	volume --inc
+x XF86AudioLowerVolume	volume --dec
+x XF86AudioMute   	volume --toggle
+x XF86AudioStop   	mpc stop
+x XF86AudioPlay   	mpc toggle
+x XF86AudioPrev   	mpc prev
+x XF86AudioNext   	mpc next
+x XF86MonBrightnessUp	brightness --inc
+x XF86MonBrightnessDown	brightness --dec
+x Print           	~/.config/openbox/bin/ac-shots --now
+x A-Print         	~/.config/openbox/bin/ac-shots --in5
+x S-Print         	~/.config/openbox/bin/ac-shots --in10
+x C-Print         	~/.config/openbox/bin/ac-shots --win
+x C-A-Print       	~/.config/openbox/bin/ac-shots --area
+x W-Return        	alacritty
+x W-f             	thunar
+x W-w             	google-chrome-stable
+x W-e             	code
+x A-F1            	~/.local/bin/rofi/launcher
+x W-x             	~/.local/bin/rofi/powermenu
+x W-s             	~/.local/bin/rofi/screenshot
+x C-A-l           	~/.local/bin/lockscreen
+o C-A-Escape      	Exit
+o W-q             	Close
+o W-d             	ToggleShowDesktop
+o A-r             	Resize
+o A-m             	Move
+o W-S-space       	root-menu
+o A-space         	client-menu
