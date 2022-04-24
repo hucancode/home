@@ -1,13 +1,7 @@
-#!/usr/bin/env bash
-
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
-
-## Files and Directories
-DIR="$HOME/.config/bspwm/polybar"
-SFILE="$DIR/system"
-RFILE="$DIR/.system"
-MFILE="$DIR/.module"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SFILE="$SCRIPT_DIR/system"
+RFILE="$SCRIPT_DIR/.system"
+MFILE="$SCRIPT_DIR/.module"
 
 ## Get system variable values for various modules
 get_values() {
@@ -40,19 +34,19 @@ launch_bar() {
 
 	if [[ ! -f "$MFILE" ]]; then
 		if [[ -z "$CARD" ]]; then
-			sed -i -e 's/backlight/bna/g' "$DIR"/config
+			sed -i -e 's/backlight/bna/g' "$SCRIPT_DIR"/config
 		elif [[ "$CARD" != *"intel_"* ]]; then
-			sed -i -e 's/backlight/brightness/g' "$DIR"/config
+			sed -i -e 's/backlight/brightness/g' "$SCRIPT_DIR"/config
 		fi
 
 		if [[ "$INTERFACE" == e* ]]; then
-			sed -i -e 's/network/ethernet/g' "$DIR"/config
+			sed -i -e 's/network/ethernet/g' "$SCRIPT_DIR"/config
 		fi
 		touch "$MFILE"
 	fi
 		
 	if [[ ! `pidof polybar` ]]; then
-		polybar -q main -c "$DIR"/config &
+		polybar -q main -c "$SCRIPT_DIR"/config &
 	else
 		polybar-msg cmd restart
 	fi

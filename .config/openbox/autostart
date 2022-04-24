@@ -24,7 +24,7 @@ xfce4-power-manager &
 # exec picom &
 
 ## Launch Polybar
-bash ~/.config/openbox/polybar/launch.sh
+~/.config/polybar/launch-bar.sh &
 
 ## Notification Daemon
 exec dunst &

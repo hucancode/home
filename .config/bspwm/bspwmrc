@@ -104,7 +104,7 @@ exec mpd &
 exec thunar --daemon &
 
 # Start bspwm scripts
-bspbar
+~/.config/polybar/launch-bar.sh &
 bspdunst
 bspfloat &
 bspfocus &

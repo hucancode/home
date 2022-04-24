@@ -9,9 +9,9 @@
 margin-bottom = 0
 margin-top = 0
 
-include-file = ~/.config/bspwm/polybar/system
-include-file = ~/.config/bspwm/polybar/colors
-include-file = ~/.config/bspwm/polybar/modules
+include-file = ~/.config/polybar/system
+include-file = ~/.config/polybar/colors
+include-file = ~/.config/polybar/modules
 
 [bar/main]
 monitor =
@@ -47,7 +47,7 @@ font-1 = "Iosevka Nerd Font:size=12;3"
 font-2 = "Iosevka Nerd Font:size=12;3"
 font-3 = "Noto Sans Mono:style=bold:size=10;3"
 
-modules-left = menu sep bspwm
+modules-left = menu sep bspwm openbox
 modules-center = mpd
 modules-right = volume sep date sep sysmenu sep
 
