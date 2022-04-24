@@ -7,24 +7,24 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
     // by [thatnixguy](https://thatnixguy.github.io/)
 </details>
 
-## Contain settings for:
-- Window manager, [bspwm](https://wiki.archlinux.org/title/bspwm), [sxhkd](https://wiki.archlinux.org/title/sxhkd). `bspwm` is pretty harsh, if something went wrong you are welcomed with a black screen and no mouse/keyboard input. In case `bspwm` didn't work or you just don't like a tiling window manager, login with [openbox](https://wiki.archlinux.org/title/openbox)
-- Display manager (the login thing) [lightdm](https://wiki.archlinux.org/title/lightdm)
-- Status bar [polybar](https://wiki.archlinux.org/title/polybar)
-- Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
-- Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
-- File manager [ranger]() and [thunar](https://wiki.archlinux.org/title/thunar)
-- Text editor [helix](https://helix-editor.com/)
-- Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [Kitty](https://sw.kovidgoyal.net/kitty/)
-- Music player [mpd](https://www.musicpd.org/)
-# Screenshots
+## ✨ Features:
+- 🪟 Window manager, [bspwm](https://wiki.archlinux.org/title/bspwm), [sxhkd](https://wiki.archlinux.org/title/sxhkd). `bspwm` is pretty harsh, if something went wrong you are welcomed with a black screen and no mouse/keyboard input. In case `bspwm` didn't work or you just don't like a tiling window manager, login with [openbox](https://wiki.archlinux.org/title/openbox)
+- 🔑 Display manager (the login thing) [lightdm](https://wiki.archlinux.org/title/lightdm)
+- 📊 Status bar [polybar](https://wiki.archlinux.org/title/polybar)
+- 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
+- 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
+- 📂 File manager [ranger]() and [thunar](https://wiki.archlinux.org/title/thunar)
+- 📋 Text editor [helix](https://helix-editor.com/)
+- 🐱 Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [Kitty](https://sw.kovidgoyal.net/kitty/)
+- 🎧 Music player [mpd](https://www.musicpd.org/)
+# 👀 Screenshots
 ![](Pictures/Screenshots/1.png)
 ![](Pictures/Screenshots/2.png)
 ![](Pictures/Screenshots/3.png)
 ![](Pictures/Screenshots/4.png)
 ![](Pictures/Screenshots/5.png)
-# Installation
-## TL;DR
+# 🚀 Installation
+## 🐌 TL;DR
 Use this script 
 ```bash
 git clone https://github.com/hucancode/home
@@ -32,16 +32,16 @@ mv home/* . && rm -rf home
 git submodule update --init
 chmod +x rice.sh && ./rice.sh
 ```
-## Install Arch
+## ⚙️ Install Arch
 Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
-## Checkout rice configurations
+## 🌾 Checkout rice configurations
 My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenient, I recommend you doing the same.
 ```bash
 git clone https://github.com/hucancode/home
 mv home/* . && rm -rf home
 git submodule update --init
 ```
-## Install needed packages
+## 📦 Install softwares
 ```bash
 sudo pacman -Syu base-devel git
 # install packages
@@ -54,11 +54,11 @@ FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 ```
-## Change default shell to zsh
+## 🐚 Change default shell to zsh
 ```bash
 chsh -s $(which zsh)
 ```
-## Install `yay`
+## 📦 Install `yay`
 ```bash
 git clone https://aur.archlinux.org/yay-bin.git
 (cd yay-bin && makepkg -si)
@@ -69,7 +69,7 @@ THEME_AUR="vimix-cursors i3lock-color"
 WM_AUR="polybar ksuperkey"
 yay -S $THEME_AUR $WM_AUR
 ```
-## Config `lightdm`
+## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```bash
 curl -L -o avatar.png https://github.com/hucancode.png && sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings && rm avatar.png
@@ -101,7 +101,7 @@ theme-name = Arc-Dark
 icon-theme-name = Qogir-dark
 indicators = ~spacer;~clock;~spacer;~session;~power
 ```
-## Config `mpd`
+## 🎧 Config `mpd`
 Assume that `mpd` is running safe and sound, if not, check for `~/.config/mpd/mpd.conf`. My configuration looks like this:
 ```bash
 pid_file "~/.config/mpd/mpd.pid"
