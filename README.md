@@ -48,6 +48,7 @@ sudo pacman -S git
 git clone https://github.com/hucancode/home
 mv home/* . && rm -rf home
 git submodule update --init
+fisher update
 ```
 ## 📦 Install softwares
 ```fish
