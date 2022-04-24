@@ -54,11 +54,7 @@ FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 ```
-## 🐚 Change default shell to zsh
-```bash
-chsh -s $(which zsh)
-```
-## 📦 Install `yay`
+Install `yay`
 ```bash
 git clone https://aur.archlinux.org/yay-bin.git
 (cd yay-bin && makepkg -si)
@@ -68,6 +64,10 @@ Use `yay` to install what's missing
 THEME_AUR="vimix-cursors i3lock-color"
 WM_AUR="polybar ksuperkey"
 yay -S $THEME_AUR $WM_AUR
+```
+## 🐚 Change default shell to zsh
+```bash
+chsh -s $(which zsh)
 ```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
