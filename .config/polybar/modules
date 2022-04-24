@@ -154,6 +154,7 @@ animation-charging-framerate = 750
 
 [module/bspwm]
 type = internal/bspwm
+hidden = true
 
 pin-workspaces = true
 inline-mode = false
@@ -368,6 +369,7 @@ content-padding = 2
 
 [module/openbox]
 type = internal/xworkspaces
+hidden = true
 
 ; Only show workspaces defined on the same output as the bar
 ;

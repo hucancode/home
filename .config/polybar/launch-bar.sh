@@ -50,6 +50,13 @@ launch_bar() {
 	else
 		polybar-msg cmd restart
 	fi
+	
+	if [[ `pidof openbox` ]]; then
+		polybar-msg action openbox module_show
+	fi
+	if [[ `pidof bspwm` ]]; then
+		polybar-msg action bspwm module_show
+	fi
 }
 
 # Execute functions
