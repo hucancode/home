@@ -8,10 +8,10 @@ git clone https://aur.archlinux.org/yay-bin.git
 (cd yay-bin && makepkg -si)
 # install packages
 THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-THEME_AUR="vimix-cursors i3lock-color"
+THEME_AUR="qogir-icon-theme vimix-cursors i3lock-color"
 WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 WM_AUR="polybar ksuperkey"
-MEDIA="ffmpeg mpd mpc ncmpcpp mpv viewnior"
+MEDIA="ffmpeg mpd mpc mpv viewnior"
 FILE_MANAGER="ranger python-pillow"
 TERMINAL="zsh kitty helix fzf fd"
 FONTS="ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
@@ -37,7 +37,7 @@ esac
 PERSONAL_BLOAT="ibus-anthy"
 PERSONAL_BLOAT_AUR="ibus-bamboo"
 QOL_BLOAT="ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
-QOL_BLOAT_AUR="qogir-icon-theme google-chrome megacmd"
+QOL_BLOAT_AUR="google-chrome megacmd"
 DEV_BLOAT="docker docker-compose mono gimp inkscape clang llvm"
 DEV_BLOAT_AUR="visual-studio-code-bin"
 sudo pacman -S $PERSONAL_BLOAT $QOL_BLOAT $DEV_BLOAT

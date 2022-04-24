@@ -45,7 +45,7 @@ git submodule update --init
 ```bash
 sudo pacman -Syu base-devel git
 # install packages
-THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
+THEME="lightdm lightdm-gtk-greeter arc-gtk-theme"
 WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 MEDIA="ffmpeg mpd mpc ncmpcpp mpv"
 FILE_MANAGER="ranger python-pillow"
@@ -61,7 +61,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 ```
 Use `yay` to install what's missing
 ```bash
-THEME_AUR="vimix-cursors i3lock-color"
+THEME_AUR="qogir-icon-theme vimix-cursors i3lock-color"
 WM_AUR="polybar ksuperkey"
 yay -S $THEME_AUR $WM_AUR
 ```
@@ -73,8 +73,9 @@ chsh -s $(which zsh)
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```bash
 curl -L -o avatar.png https://github.com/hucancode.png && sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings && rm avatar.png
+sudo mkdir -p /etc/lightdm
+sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 ```
-You can alternatively put those picture at `~` and give `lightdm` access to your `~` folder
 Set `lightdm` as your default display manager.
 ```bash
 systemctl enable lightdm;
@@ -86,40 +87,4 @@ helix /etc/lightdm/lightdm.conf
 # ...
 # greeter-session=lightdm-gtk-greeter
 # ...
-```
-Rice your greeter with this
-```bash
-lightdm-gtk-greeter-settings
-# select theme, wallpaper, avatar
-```
-This is how `/etc/lightdm/lightdm-gtk-greeter.conf` should looks like after configuration. Alternatively you can skip GUI setting program and straight up copy this.
-```ini
-[greeter]
-background = /usr/share/lightdm-gtk-greeter-settings/wallpaper.jpg
-default-user-image = /usr/share/lightdm-gtk-greeter-settings/avatar.jpeg
-theme-name = Arc-Dark
-icon-theme-name = Qogir-dark
-indicators = ~spacer;~clock;~spacer;~session;~power
-```
-## 🎧 Config `mpd`
-Assume that `mpd` is running safe and sound, if not, check for `~/.config/mpd/mpd.conf`. My configuration looks like this:
-```bash
-pid_file "~/.config/mpd/mpd.pid"
-state_file "~/.config/mpd/mpdstate"
-db_file "~/.config/mpd/database"
-music_directory "~/Music"
-playlist_directory "~/.config/mpd/playlists"
-
-audio_output {
-    type  "pulse"
-    name  "pulse audio"
-}
-```
-Open `ncmpcpp` and edit your playlist
-```bash
-ncmpcpp
-# press 2 to open browse
-# select your folder and press A to add all songs in that folder to playelist
-# or press 4 to open library
-# press space to add current song to playlist
 ```
