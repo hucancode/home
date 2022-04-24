@@ -458,7 +458,7 @@ content-font = 2
 content-background = ${color.BACKGROUND}
 content-foreground = ${color.ALTGREEN}
 content-padding = 0
-click-left = ~/.local/bin/rofi/launcher
+click-left = ~/.config/rofi/launcher
 
 [module/sysmenu]
 type = custom/text
@@ -467,7 +467,7 @@ content-font = 2
 content-background = ${color.BACKGROUND}
 content-foreground = ${color.RED}
 content-padding = 0
-click-left = ~/.local/bin/rofi/powermenu
+click-left = ~/.config/rofi/powermenu
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______
 ;;	   / ____/ __ \/ ____/

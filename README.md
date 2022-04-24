@@ -13,7 +13,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - 📊 Status bar [polybar](https://wiki.archlinux.org/title/polybar)
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
-- 📂 File manager [ranger]() and [thunar](https://wiki.archlinux.org/title/thunar)
+- 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger)
 - 📋 Text editor [helix](https://helix-editor.com/)
 - 🐱 Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [kitty](https://wiki.archlinux.org/title/Kitty)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon)

@@ -36,7 +36,7 @@ case $yn in
 esac
 PERSONAL_BLOAT="ibus-anthy"
 PERSONAL_BLOAT_AUR="ibus-bamboo"
-QOL_BLOAT="thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
+QOL_BLOAT="ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 QOL_BLOAT_AUR="qogir-icon-theme google-chrome megacmd"
 DEV_BLOAT="docker docker-compose mono gimp inkscape clang llvm"
 DEV_BLOAT_AUR="visual-studio-code-bin"
