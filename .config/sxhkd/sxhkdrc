@@ -11,14 +11,14 @@ super + Return
 
 # Rofi App Launcher
 alt + F1
-	sh ~/.local/bin/rofi/launcher
+	sh ~/.config/rofi/launcher
 
 
 # Rofi Menus/Applets
 ctrl + alt + tab
 	sh ~/.config/bspwm/rofi/bin/windows
 super + {x,s}
-	sh ~/.local/bin/rofi/{powermenu,screenshot}
+	sh ~/.config/rofi/{powermenu,screenshot}
 
 ##---------- Applications ----------##
 

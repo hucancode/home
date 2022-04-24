@@ -495,7 +495,7 @@
     <!-- Rofi -->
     <keybind key="A-F1">
       <action name="Execute">
-        <command>~/.local/bin/rofi/launcher</command>
+        <command>~/.config/rofi/launcher</command>
       </action>
     </keybind>
     <!-- <keybind key="W-n">
@@ -505,17 +505,17 @@
     </keybind>
     <keybind key="W-m">
       <action name="Execute">
-        <command>~/.local/bin/rofi/music</command>
+        <command>~/.config/rofi/music</command>
       </action>
     </keybind> -->
     <keybind key="W-x">
       <action name="Execute">
-        <command>~/.local/bin/rofi/powermenu</command>
+        <command>~/.config/rofi/powermenu</command>
       </action>
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>~/.local/bin/rofi/screenshot</command>
+        <command>~/.config/rofi/screenshot</command>
       </action>
     </keybind>
     <!-- Lockscreen -->

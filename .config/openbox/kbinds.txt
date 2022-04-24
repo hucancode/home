@@ -58,9 +58,9 @@ x W-Return        	kitty
 x W-f             	thunar
 x W-w             	google-chrome-stable
 x W-e             	code
-x A-F1            	~/.local/bin/rofi/launcher
-x W-x             	~/.local/bin/rofi/powermenu
-x W-s             	~/.local/bin/rofi/screenshot
+x A-F1            	~/.config/rofi/launcher
+x W-x             	~/.config/rofi/powermenu
+x W-s             	~/.config/rofi/screenshot
 x C-A-l           	~/.local/bin/lockscreen
 o C-A-Escape      	Exit
 o W-q             	Close
