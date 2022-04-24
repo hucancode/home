@@ -15,8 +15,8 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [ranger]() and [thunar](https://wiki.archlinux.org/title/thunar)
 - 📋 Text editor [helix](https://helix-editor.com/)
-- 🐱 Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [Kitty](https://sw.kovidgoyal.net/kitty/)
-- 🎧 Music player [mpd](https://www.musicpd.org/)
+- 🐱 Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [kitty](https://wiki.archlinux.org/title/Kitty)
+- 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon)
 # 👀 Screenshots
 ![](Pictures/Screenshots/1.png)
 ![](Pictures/Screenshots/2.png)
