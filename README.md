@@ -13,10 +13,10 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - 📊 Status bar [polybar](https://wiki.archlinux.org/title/polybar)
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
-- 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger)
+- 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger), and [thunar](https://wiki.archlinux.org/title/thunar)
 - 📋 Text editor [helix](https://helix-editor.com/)
 - 🐱 Terminal emulator [zsh](https://wiki.archlinux.org/title/zsh), [kitty](https://wiki.archlinux.org/title/Kitty)
-- 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon)
+- 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon), and [ario](http://ario-player.sourceforge.net/)
 # 👀 Screenshots
 ![](Pictures/Screenshots/1.png)
 ![](Pictures/Screenshots/2.png)
@@ -45,14 +45,15 @@ git submodule update --init
 ```bash
 sudo pacman -Syu base-devel git
 # install packages
-THEME="lightdm lightdm-gtk-greeter arc-gtk-theme"
+THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
-MEDIA="ffmpeg mpd mpc ncmpcpp mpv"
+MEDIA="ffmpeg mpd mpc mpv viewnior"
 FILE_MANAGER="ranger python-pillow"
+QOL="ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 TERMINAL="zsh kitty helix fzf fd"
-FONTS="noto-fonts noto-fonts-cjk noto-fonts-emoji"
+FONTS="ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
 ```
 Install `yay`
 ```bash

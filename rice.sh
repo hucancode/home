@@ -13,10 +13,11 @@ WM="bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim
 WM_AUR="polybar ksuperkey"
 MEDIA="ffmpeg mpd mpc mpv viewnior"
 FILE_MANAGER="ranger python-pillow"
+QOL="ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 TERMINAL="zsh kitty helix fzf fd"
 FONTS="ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 KEYRING="gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
 yay -S $THEME_AUR $WM_AUR
 # set default shell to zsh
 chsh -s $(which zsh)
@@ -35,13 +36,11 @@ case $yn in
 	* ) exit 0;;
 esac
 PERSONAL_BLOAT="ibus-anthy"
-PERSONAL_BLOAT_AUR="ibus-bamboo"
-QOL_BLOAT="ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
-QOL_BLOAT_AUR="google-chrome megacmd"
+PERSONAL_BLOAT_AUR="ibus-bamboo google-chrome megacmd"
 DEV_BLOAT="docker docker-compose mono gimp inkscape clang llvm"
 DEV_BLOAT_AUR="visual-studio-code-bin"
-sudo pacman -S $PERSONAL_BLOAT $QOL_BLOAT $DEV_BLOAT
-yay -S $PERSONAL_BLOAT_AUR $QOL_BLOAT_AUR $DEV_BLOAT_AUR
+sudo pacman -S $PERSONAL_BLOAT $DEV_BLOAT
+yay -S $PERSONAL_BLOAT_AUR $DEV_BLOAT_AUR
 # post-install setup
 sudo groupadd docker && sudo usermod -aG docker $USER
 IBUS_SETTING="\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im='ibus'\n# Toolbar for ibus\nibus-daemon -drx"
