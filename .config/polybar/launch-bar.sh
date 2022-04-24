@@ -1,3 +1,4 @@
+#!/usr/bin/env bash 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 SFILE="$SCRIPT_DIR/system"
 RFILE="$SCRIPT_DIR/.system"
