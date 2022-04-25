@@ -51,13 +51,8 @@ launch_bar() {
 	else
 		polybar-msg cmd restart
 	fi
-	
-	if [[ `pidof openbox` ]]; then
-		polybar-msg action openbox module_show
-	fi
-	if [[ `pidof bspwm` ]]; then
-		polybar-msg action bspwm module_show
-	fi
+	(pidof openbox && polybar-msg action openbox module_show) || (pidof bspwm && polybar-msg action bspwm module_show)
+	while [ $? -ne 0 ]; do !!; done
 }
 
 # Execute functions

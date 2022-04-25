@@ -26,7 +26,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 # 🚀 Installation
 ## 🐌 TL;DR
 Use this script 
-```fish
+```bash
 sudo pacman -Syu fish git
 git clone https://github.com/hucancode/home
 mv home/* . && rm -rf home
@@ -46,9 +46,9 @@ My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenien
 ```fish
 sudo pacman -S git
 git clone https://github.com/hucancode/home
-mv home/* . && rm -rf home
+mv home/* . ; and rm -rf home
 git submodule update --init
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher; and fisher update
+curl -sL https://git.io/fisher | source ; and fisher install jorgebucaran/fisher; and fisher update
 ```
 ## 📦 Install softwares
 ```fish

@@ -26,7 +26,7 @@ yay -S $THEME_AUR $WM_AUR
 git clone https://github.com/$GH_USERNAME/$GH_REPO
 mv $GH_REPO/* . ; and rm -rf $GH_REPO
 git submodule update --init
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher; and fisher update
+curl -sL https://git.io/fisher | source ; and fisher install jorgebucaran/fisher; and fisher update
 curl -L -o avatar.png https://github.com/$GH_USERNAME.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
 sudo systemctl enable lightdm
 sudo mkdir -p /etc/lightdm
