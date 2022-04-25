@@ -7,7 +7,7 @@ set GH_USERNAME hucancode
 set GH_REPO home
 # install yay
 git clone https://aur.archlinux.org/yay-bin.git
-(cd yay-bin && makepkg -si)
+(cd yay-bin; and makepkg -si)
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set THEME_AUR "qogir-icon-theme vimix-cursors i3lock-color"
@@ -24,10 +24,10 @@ yay -S $THEME_AUR $WM_AUR
 
 # rice settings
 git clone https://github.com/$GH_USERNAME/$GH_REPO
-mv $GH_REPO/* . && rm -rf $GH_REPO
+mv $GH_REPO/* . ; and rm -rf $GH_REPO
 git submodule update --init
 fisher update
-curl -L -o avatar.png https://github.com/$GH_USERNAME.png && sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings && rm avatar.png
+curl -L -o avatar.png https://github.com/$GH_USERNAME.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
 sudo systemctl enable lightdm
 sudo mkdir -p /etc/lightdm
 sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
@@ -45,7 +45,7 @@ set DEV_BLOAT_AUR "visual-studio-code-bin"
 sudo pacman -S $PERSONAL_BLOAT $DEV_BLOAT
 yay -S $PERSONAL_BLOAT_AUR $DEV_BLOAT_AUR
 # post-install setup
-sudo groupadd docker && sudo usermod -aG docker $USER
+sudo groupadd docker; and sudo usermod -aG docker $USER
 set IBUS_SETTING "\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im='ibus'\n# Toolbar for ibus\nibus-daemon -drx"
 echo -e ${IBUS_SETTING} >> ~/.xprofile
 # steam require multilib, uncomment the [multilib] section in /etc/pacman.conf
