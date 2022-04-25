@@ -7,7 +7,7 @@ set GH_USERNAME hucancode
 set GH_REPO home
 # install yay
 git clone https://aur.archlinux.org/yay-bin.git
-(cd yay-bin; and makepkg -si)
+begin cd yay-bin; and makepkg -si; end
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set THEME_AUR "qogir-icon-theme vimix-cursors i3lock-color"
