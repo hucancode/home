@@ -48,7 +48,7 @@ sudo pacman -S git
 git clone https://github.com/hucancode/home
 mv home/* . && rm -rf home
 git submodule update --init
-fisher update
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher; and fisher update
 ```
 ## 📦 Install softwares
 ```fish
@@ -67,7 +67,7 @@ sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
 Install `yay`
 ```fish
 git clone https://aur.archlinux.org/yay-bin.git
-(cd yay-bin && makepkg -si)
+(cd yay-bin; and makepkg -si)
 ```
 Use `yay` to install what's missing
 ```fish
@@ -78,13 +78,13 @@ yay -S $THEME_AUR $WM_AUR
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```fish
-curl -L -o avatar.png https://github.com/hucancode.png && sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings && rm avatar.png
+curl -L -o avatar.png https://github.com/hucancode.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
 sudo mkdir -p /etc/lightdm
 sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 ```
 Set `lightdm` as your default display manager.
 ```fish
-systemctl enable lightdm;
+systemctl enable lightdm
 ```
 Enable `lightdm-gtk-greeter` (`lightdm` default to gtk greeter, but just in case something went wrong, please check `lightdm.conf`)
 ```fish
