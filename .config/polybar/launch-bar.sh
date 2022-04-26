@@ -51,6 +51,7 @@ launch_bar() {
 	else
 		polybar-msg cmd restart
 	fi
+	sleep 0.2 # just for super sure that polybar is ready before we send message
 	(pidof openbox && polybar-msg action openbox module_show) || (pidof bspwm && polybar-msg action bspwm module_show)
 	while [ $? -ne 0 ]; do !!; done
 }
