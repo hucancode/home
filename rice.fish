@@ -17,7 +17,7 @@ set WM_AUR "polybar ksuperkey"
 set MEDIA "ffmpeg mpd mpc mpv viewnior"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
-set TERMINAL "kitty helix fzf fd"
+set TERMINAL "kitty helix starship fzf fd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
@@ -27,7 +27,6 @@ yay -S $THEME_AUR $WM_AUR
 git clone https://github.com/$GH_USERNAME/$GH_REPO
 mv $GH_REPO/* . ; and rm -rf $GH_REPO
 git submodule update --init
-curl -sL https://git.io/fisher | source ; and fisher install jorgebucaran/fisher; and fisher update
 curl -L -o avatar.png https://github.com/$GH_USERNAME.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
 sudo systemctl enable lightdm
 sudo mkdir -p /etc/lightdm
