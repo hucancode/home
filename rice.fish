@@ -1,3 +1,4 @@
+#!/usr/bin/env fish
 # run the following line in bash before running this script
 # sudo pacman -Syu fish && chsh -s $(which fish)
 sudo pacman -S base-devel git

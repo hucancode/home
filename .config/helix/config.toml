@@ -1,4 +1,4 @@
-theme = "dracula"
+theme = "catppuccin"
 
 [editor]
 line-number = "absolute"
