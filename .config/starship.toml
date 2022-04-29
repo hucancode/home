@@ -2,15 +2,18 @@ add_newline = false
 format = """
 $username\
 $hostname\
-$directory\
+$directory \
 $git_branch\
 $git_state\
 $git_status\
+$docker_context\
 $cmd_duration\
 $character"""
 
 [directory]
 style = "blue"
+truncation_length = 1
+format = " [$path]($style)[$read_only]($read_only_style)"
 
 [character]
 success_symbol = "[❯](purple)"
@@ -18,7 +21,7 @@ error_symbol = "[❯](red)"
 vicmd_symbol = "[❮](green)"
 
 [git_branch]
-format = "[$branch]($style)"
+format = " [$branch]($style)"
 style = "bright-black"
 
 [git_status]
