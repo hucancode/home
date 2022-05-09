@@ -2,15 +2,15 @@ add_newline = false
 format = "$hostname$directory$git_branch$git_state$git_status$cmd_duration$character"
 
 [hostname]
-format = "💻 [$hostname]($style) "
+format = "[$hostname]($style) "
 
 [directory]
 style = "blue"
 truncation_length = 2
-format = "📁 [$path]($style)[$read_only]($read_only_style) "
+format = "[$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-format = "🚀 [$branch]($style)"
+format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
@@ -25,3 +25,7 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
+
+[character]
+success_symbol = "[🚀 ❯](bold green) "
+error_symbol = "[🔥 ❯](bold red) "
