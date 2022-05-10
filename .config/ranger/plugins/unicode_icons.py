@@ -14,10 +14,16 @@ from ranger.core.linemode import LinemodeBase
 EXTENSIONS = {}
 for extensions, icon in [
     ('py pyc', '🐍'),
-    ('yml ini conf json toml', '🎲'),
+    ('yml yaml ini conf json toml', '🎲'),
     ('md pdf', '📝'),
     ('sh fish', '🐚'),
     ('java', '☕️'),
+    ('js ts', '📜'),
+    ('h hpp', '📗'),
+    ('c cpp', '📘'),
+    ('cs', '📙'),
+    ('uasset uproject', '👹'),
+    ('blend fbx obj tga glb gltf', '🎨'),
 ]:
     EXTENSIONS.update(dict(zip(extensions.split(), repeat(icon))))
 
@@ -41,9 +47,9 @@ class MyLinemode(LinemodeBase):
         elif fobj.document:
             icon = '📖'
         elif fobj.image:
-            icon = '🖼️ '
+            icon = '📷'
         elif fobj.video:
-            icon = '🎞️ '
+            icon = '📹'
         elif 'Dockerfile' in fobj.relative_path:
             icon = '🐋'
         else:
