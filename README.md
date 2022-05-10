@@ -52,9 +52,7 @@ git submodule update --init
 ## 📦 Install softwares
 ```fish
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set THEME_AUR "qogir-icon-theme vimix-cursors i3lock-color"
-set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
-set WM_AUR "polybar ksuperkey"
+set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 set MEDIA "ffmpeg mpd mpc mpv viewnior"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
@@ -71,7 +69,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 Use `yay` to install what's missing
 ```fish
 set THEME_AUR "qogir-icon-theme vimix-cursors i3lock-color"
-set WM_AUR "polybar ksuperkey"
+set WM_AUR "ksuperkey"
 yay -S $THEME_AUR $WM_AUR
 ```
 ## 🔑 Config `lightdm`

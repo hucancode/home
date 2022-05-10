@@ -12,8 +12,8 @@ begin cd yay-bin; and makepkg -si; end
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set THEME_AUR "qogir-icon-theme vimix-cursors i3lock-color"
-set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
-set WM_AUR "polybar ksuperkey"
+set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
+set WM_AUR "ksuperkey"
 set MEDIA "ffmpeg mpd mpc mpv viewnior"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
