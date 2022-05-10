@@ -30,7 +30,6 @@ Use this script
 sudo pacman -Syu fish git
 git clone https://github.com/hucancode/home
 mv home/* . && rm -rf home
-git submodule update --init
 chmod +x rice.fish && fish ./rice.fish
 ```
 ## ⚙️ Install Arch
@@ -47,7 +46,6 @@ My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenien
 sudo pacman -S git
 git clone https://github.com/hucancode/home
 mv home/* . ; and rm -rf home
-git submodule update --init
 ```
 ## 📦 Install softwares
 ```fish
