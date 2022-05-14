@@ -1,6 +1,6 @@
 require('plugins')
 vim.cmd("colorscheme catppuccin")
-table.insert(vim.opt.mouse, "a")
+vim.cmd("set mouse+=a")
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 vim.opt.number = true
