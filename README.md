@@ -14,7 +14,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger), and [thunar](https://wiki.archlinux.org/title/thunar)
-- 📋 Text editor [helix](https://helix-editor.com/)
+- 📋 Text editor [neovim](https://neovim.io/)
 - 🐱 Terminal emulator [fish](https://wiki.archlinux.org/title/fish), [kitty](https://wiki.archlinux.org/title/Kitty)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon), and [ario](http://ario-player.sourceforge.net/)
 # 👀 Screenshots
@@ -54,7 +54,7 @@ set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip 
 set MEDIA "ffmpeg mpd mpc mpv viewnior"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
-set TERMINAL "kitty starship helix fzf fd"
+set TERMINAL "kitty starship nvim fzf fd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
@@ -83,7 +83,7 @@ systemctl enable lightdm
 ```
 Enable `lightdm-gtk-greeter` (`lightdm` default to gtk greeter, but just in case something went wrong, please check `lightdm.conf`)
 ```fish
-helix /etc/lightdm/lightdm.conf
+vi /etc/lightdm/lightdm.conf
 # enable [Seat:*]
 # ...
 # greeter-session=lightdm-gtk-greeter

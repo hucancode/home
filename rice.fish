@@ -17,7 +17,7 @@ set WM_AUR "ksuperkey"
 set MEDIA "ffmpeg mpd mpc mpv viewnior"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
-set TERMINAL "kitty helix starship fzf fd"
+set TERMINAL "kitty nvim starship fzf fd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
