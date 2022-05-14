@@ -9,7 +9,7 @@ return require('packer').startup(function()
         requires = 'kyazdani42/nvim-web-devicons'
     }
     require("bufferline").setup({
-        options = {show_buffer_close_icons = false, show_close_icon = false}
+        options = {show_close_icon = false}
     })
     -- status line
     use 'feline-nvim/feline.nvim'
@@ -27,7 +27,6 @@ return require('packer').startup(function()
                             {noremap = true})
     vim.api.nvim_set_keymap("n", "<space>ff", ":Telescope find_files<cr>",
                             {noremap = true})
-    vim.api.nvim_set_keymap("n", "<space><tab>", ":bnext<cr>", {noremap = true})
     require('telescope').setup()
     require("telescope").load_extension "file_browser"
     -- LSP
