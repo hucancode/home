@@ -1,4 +1,4 @@
-manager = require('packer')
+local manager = require('packer')
 
 function packer(use)
     use 'wbthomason/packer.nvim'
@@ -85,7 +85,7 @@ function lsp(use)
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'dockerls'}
+    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'dockerls'}
     for i = 1, #servers do
         lsp[servers[i]].setup {
             capabilities = capabilities
