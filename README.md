@@ -30,7 +30,7 @@ Use this script
 sudo pacman -Syu fish git
 git clone https://github.com/hucancode/home
 mv home/* . && rm -rf home
-chmod +x rice.fish && fish ./rice.fish
+chmod +x rice.sh && fish ./rice.sh
 ```
 ## ⚙️ Install Arch
 Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
