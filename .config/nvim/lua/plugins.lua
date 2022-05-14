@@ -54,6 +54,13 @@ function lsp(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'terrortylor/nvim-comment'
+    require('nvim-treesitter.configs').setup({})
+    require('nvim_comment').setup()
+    vim.api.nvim_set_keymap("", "<C-_>", ":CommentToggle<cr>", {
+        noremap = true
+    })
     vim.opt.completeopt = {"menu", "menuone", "noselect"}
     local cmp = require('cmp')
     cmp.setup({
@@ -85,7 +92,7 @@ function lsp(use)
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'dockerls'}
+    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls'}
     for i = 1, #servers do
         lsp[servers[i]].setup {
             capabilities = capabilities
