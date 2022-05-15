@@ -30,6 +30,19 @@ function status(use)
     require('feline').setup({
         components = require('catppuccin.core.integrations.feline')
     })
+    use {
+      "folke/which-key.nvim",
+    }
+    require("which-key").setup {
+      key_labels = {
+        ["<space>"] = "SPACE",
+        ["<cr>"] = "ENTER",
+        ["<tab>"] = "TAB",
+      },
+      layout = {
+        height = { min = 1, max = 4 }, 
+      }
+    }
 end
 
 function explorer(use)
@@ -38,29 +51,36 @@ function explorer(use)
         requires = {{'nvim-lua/plenary.nvim'}}
     }
     use 'nvim-telescope/telescope-file-browser.nvim'
-    vim.api.nvim_set_keymap("n", "<space>fb", ":Telescope file_browser<cr>", {
-        noremap = true
-    })
-    vim.api.nvim_set_keymap("n", "<space>ff", ":Telescope find_files<cr>", {
-        noremap = true
-    })
     require('telescope').setup()
     require("telescope").load_extension "file_browser"
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>"] = {
+        f = {
+          name = "File", -- optional group name
+          f = { "<cmd>Telescope find_files<cr>", "Find File", noremap=true }, -- create a binding with label
+          b = { "<cmd>Telescope file_browser<cr>", "File Browser", noremap=true }, -- additional options for creating the keymap
+        },
+        w = { "<cmd>bdelete<cr>", "Close Buffer", noremap=true },
+        n = { "<cmd>bnext<cr>", "Next Buffer", noremap=true }, 
+        N = { "<cmd>bprevious<cr>", "Previous Buffer", noremap=true }, 
+      }
+    })
 end
 
 function lsp(use)
+    use 'nvim-treesitter/nvim-treesitter'
+    require('nvim-treesitter.configs').setup({})
+    use 'terrortylor/nvim-comment'
+    require('nvim_comment').setup()
+    vim.api.nvim_set_keymap("", "<C-_>", ":CommentToggle<cr>", {
+        noremap = true
+    })
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'terrortylor/nvim-comment'
-    require('nvim-treesitter.configs').setup({})
-    require('nvim_comment').setup()
-    vim.api.nvim_set_keymap("", "<C-_>", ":CommentToggle<cr>", {
-        noremap = true
-    })
     vim.opt.completeopt = {"menu", "menuone", "noselect"}
     local cmp = require('cmp')
     cmp.setup({
@@ -94,9 +114,7 @@ function lsp(use)
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls'}
     for i = 1, #servers do
-        lsp[servers[i]].setup {
-            capabilities = capabilities
-        }
+        lsp[servers[i]].setup { capabilities = capabilities }
     end
 end
 
