@@ -11,17 +11,18 @@ git clone https://aur.archlinux.org/yay-bin.git
 begin cd yay-bin; and makepkg -si; end
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set THEME_AUR "qogir-icon-theme vimix-cursors i3lock-color"
+set THEME_AUR "qogir-icon-theme i3lock-color"
 set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 set WM_AUR "ksuperkey"
 set MEDIA "ffmpeg mpd mpc mpv viewnior"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 set TERMINAL "kitty neovim starship fzf fd"
+set TERMINAL_AUR "nvim-packer-git"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
-yay -S $THEME_AUR $WM_AUR
+yay -S $THEME_AUR $WM_AUR $TERMINAL_AUR 
 
 # rice settings
 git clone https://github.com/$GH_USERNAME/$GH_REPO
