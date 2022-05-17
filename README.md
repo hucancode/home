@@ -51,7 +51,7 @@ mv home/* . ; and rm -rf home
 ```fish
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
-set MEDIA "ffmpeg mpd mpc mpv viewnior"
+set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 set TERMINAL "kitty starship neovim fzf fd"

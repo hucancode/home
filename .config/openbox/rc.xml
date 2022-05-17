@@ -484,7 +484,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>google-chrome-stable</command>
+        <command>chromium</command>
       </action>
     </keybind>
     <keybind key="W-e">

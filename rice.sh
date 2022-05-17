@@ -14,7 +14,7 @@ set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-them
 set THEME_AUR "qogir-icon-theme i3lock-color"
 set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 set WM_AUR "ksuperkey"
-set MEDIA "ffmpeg mpd mpc mpv viewnior"
+set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 set TERMINAL "kitty neovim starship fzf fd"
@@ -39,7 +39,7 @@ switch $yn
 		exit 0
 end
 set PERSONAL_BLOAT "ibus-anthy"
-set PERSONAL_BLOAT_AUR "ibus-bamboo google-chrome megacmd"
+set PERSONAL_BLOAT_AUR "ibus-bamboo megacmd"
 set DEV_BLOAT "docker docker-compose mono gimp inkscape clang llvm"
 set DEV_BLOAT_AUR "visual-studio-code-bin"
 sudo pacman -S $PERSONAL_BLOAT $DEV_BLOAT

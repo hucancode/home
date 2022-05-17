@@ -21,7 +21,7 @@
 		<separator/>
 		<item icon="&icons;/browser.png" label="Web Browser">
 			<action name="Execute">
-				<command>google-chrome-stable</command>
+				<command>chromium</command>
 			</action>
 		</item>
 		<separator/>

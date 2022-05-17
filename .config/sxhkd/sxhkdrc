@@ -24,7 +24,7 @@ super + {x,s}
 
 # Launch Apps
 super + {w,f,e}
-    {google-chrome-stable,thunar,code}
+    {chromium,thunar,code}
 
 # Lockscreen
 ctrl + alt + l
