@@ -41,6 +41,7 @@ function status(use)
       },
       layout = {
         height = { min = 1, max = 4 }, 
+        width = { min = 20, max = 50 },
       }
     }
 end
@@ -62,6 +63,7 @@ function explorer(use)
           b = { "<cmd>Telescope file_browser<cr>", "File Browser", noremap=true }, -- additional options for creating the keymap
         },
         w = { "<cmd>bdelete<cr>", "Close Buffer", noremap=true },
+        W = { "<cmd>enew<cr>", "New Buffer", noremap=true },
         n = { "<cmd>bnext<cr>", "Next Buffer", noremap=true }, 
         N = { "<cmd>bprevious<cr>", "Previous Buffer", noremap=true }, 
       }
