@@ -68,6 +68,26 @@ function explorer(use)
         N = { "<cmd>bprevious<cr>", "Previous Buffer", noremap=true }, 
       }
     })
+    vim.g.loaded_netrwPlugin = true
+    vim.api.nvim_create_autocmd(
+      {
+        "VimEnter"
+      },
+      { 
+        pattern = "*", 
+        callback = function()
+          local no_argv = #vim.v.argv <= 1
+          local directory = #vim.v.argv <= 2 and vim.fn.isdirectory(vim.v.argv[2]) ~= 0
+          if directory then
+            vim.api.nvim_command("cd " .. vim.v.argv[2])
+          end
+          if no_argv or directory then
+            -- require("telescope.builtin").find_files()
+            require("telescope").extensions.file_browser.file_browser()
+          end
+        end,
+      }
+    )
 end
 
 function lsp(use)
