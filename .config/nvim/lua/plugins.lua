@@ -72,7 +72,11 @@ end
 
 function lsp(use)
     use 'nvim-treesitter/nvim-treesitter'
-    require('nvim-treesitter.configs').setup({})
+    require('nvim-treesitter.configs').setup({
+      highlight = {
+        enable = true,
+      }
+    })
     use 'terrortylor/nvim-comment'
     require('nvim_comment').setup()
     vim.api.nvim_set_keymap("", "<C-_>", ":CommentToggle<cr>", {
@@ -93,6 +97,7 @@ function lsp(use)
             end
         },
         window = {
+          -- hide documentation, this window get reduced to unreadable mess when candidate list window grow wide enough
             documentation = {
                 max_width = 0
             }
