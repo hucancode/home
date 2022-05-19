@@ -93,9 +93,8 @@ end
 function lsp(use)
     use 'nvim-treesitter/nvim-treesitter'
     require('nvim-treesitter.configs').setup({
-      highlight = {
-        enable = true,
-      }
+      highlight = { enable = true },
+      indent = { enable = true },
     })
     use 'terrortylor/nvim-comment'
     require('nvim_comment').setup()
