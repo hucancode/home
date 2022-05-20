@@ -59,8 +59,9 @@ function explorer(use)
       ["<leader>"] = {
         f = {
           name = "File", -- optional group name
-          f = { "<cmd>Telescope find_files<cr>", "Find File", noremap=true }, -- create a binding with label
-          b = { "<cmd>Telescope file_browser<cr>", "File Browser", noremap=true }, -- additional options for creating the keymap
+          f = { "<cmd>Telescope find_files<cr>", "Find File", noremap=true }, 
+          b = { "<cmd>Telescope file_browser<cr>", "File Browser", noremap=true }, 
+          g = { "<cmd>Telescope live_grep<cr>", "Find in Files", noremap=true }, 
         },
         w = { "<cmd>bdelete<cr>", "Close Buffer", noremap=true },
         W = { "<cmd>enew<cr>", "New Buffer", noremap=true },
