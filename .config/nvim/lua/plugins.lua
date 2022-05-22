@@ -139,10 +139,18 @@ function lsp(use)
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls'}
+    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'typescript'}
     for i = 1, #servers do
         lsp[servers[i]].setup { capabilities = capabilities }
     end
+    -- hide all errors and warning
+    vim.diagnostic.config({
+      virtual_text = false,
+      signs = false,
+      underline = false,
+      update_in_insert = false,
+      severity_sort = false,
+    })
 end
 
 function setup(use)
