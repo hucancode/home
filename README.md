@@ -54,7 +54,7 @@ set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip 
 set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
-set TERMINAL "kitty starship neovim fzf fd ripgrep"
+set TERMINAL "kitty starship neovim fzf fd ripgrep zoxide"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
