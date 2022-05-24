@@ -15,8 +15,9 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger), and [thunar](https://wiki.archlinux.org/title/thunar)
 - 📋 Text editor [neovim](https://neovim.io/)
-- 🐱 Terminal emulator [fish](https://wiki.archlinux.org/title/fish), [kitty](https://wiki.archlinux.org/title/Kitty)
+- 🐱 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [kitty](https://wiki.archlinux.org/title/Kitty)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon), and [ario](http://ario-player.sourceforge.net/)
+- 💡 Modern tools for modern problems. `cd/zoxide`, `ls/exa`, `sed/sd`, `find/fd`, `grep/ripgrep`
 # 👀 Screenshots
 ![](Pictures/Screenshots/1.png)
 ![](Pictures/Screenshots/2.png)
@@ -54,7 +55,7 @@ set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip 
 set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
-set TERMINAL "kitty starship neovim fzf fd ripgrep zoxide"
+set TERMINAL "kitty starship neovim fzf fd ripgrep zoxide exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
