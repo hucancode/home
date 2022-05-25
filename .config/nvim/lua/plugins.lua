@@ -140,8 +140,8 @@ function lsp(use)
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'tsserver'}
-    for i = 1, #servers do
-        lsp[servers[i]].setup { capabilities = capabilities }
+    for _, server in pairs(servers) do
+        lsp[server].setup { capabilities = capabilities }
     end
     -- hide all errors and warning
     vim.diagnostic.config({
@@ -150,6 +150,14 @@ function lsp(use)
       underline = false,
       update_in_insert = false,
       severity_sort = false,
+    })
+    local wk = require("which-key")
+    wk.register({
+        g = {
+          D = { function() vim.lsp.buf.declaration() end, "Go to declaration", noremap=true },
+          d = { function() vim.lsp.buf.definition() end, "Go to defination", noremap=true },
+          i = { function() vim.lsp.buf.implementation() end, "Go to implementation", noremap=true },
+        }
     })
 end
 

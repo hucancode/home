@@ -4,6 +4,7 @@ if not vim.g.vscode then
   vim.cmd("set mouse+=a")
   vim.opt.relativenumber = true
   vim.opt.number = true
+  vim.opt.cursorline = true
   vim.g.netrw_banner = 0
   vim.opt.timeoutlen = 200
   vim.opt.expandtab = true
