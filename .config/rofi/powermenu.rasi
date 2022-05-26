@@ -19,7 +19,7 @@ window {
     border:                  		1px;
     border-color:                  	@selected;
     border-radius:                  0px;
-    width:                          381px;
+    width:                          393px;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
@@ -43,8 +43,8 @@ textbox-prompt-colon {
     border-radius:                  0px;
     background-color:               @selected;
     text-color:                     @background;
-    padding:    					6px 10px 6px 10px;
-	font:							"MesloLGS NF 12";
+    padding:    					          6px 10px 6px 10px;
+    font:							              "Iosevka Nerd Font 12";
 }
 
 entry {
@@ -63,7 +63,7 @@ inputbar {
     spacing:                        0;
     background-color:               @background;
     text-color:                     @foreground;
-    border:                  		0px 0px 1px 0px;
+    border:                  		    0px 0px 1px 0px;
     border-radius:                  0px;
     border-color:                  	@selected;
     expand:                         false;
@@ -100,7 +100,7 @@ element {
     background-color:               @background;
     text-color:                     @foreground;
     orientation:                    horizontal;
-    border:                  		1px;
+    border:                  		    1px;
     border-radius:                  0px;
     border-color:                  	@selected;
     padding:                        23.5px 25px 23.5px 25px;
@@ -118,7 +118,7 @@ element-icon {
 element-text {
     background-color: 				inherit;
     text-color:       				inherit;
-	font:							"MesloLGS NF 15";
+    font:							"Iosevka Nerd Font 15";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
