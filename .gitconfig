@@ -1,5 +1,0 @@
-[credential]
-	helper = gnome-keyring
-[user]
-	name = hucancode
-	email = hucancode@gmail.com
