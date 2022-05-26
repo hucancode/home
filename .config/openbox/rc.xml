@@ -23,41 +23,41 @@
   </placement>
   <theme>
     <name>Arc-Dark</name>
-    <titleLayout>DLIMC</titleLayout>
+    <titleLayout>LMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Noto Sans Mono</name>
+      <name>Noto Sans Medium</name>
       <size>9</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Noto Sans Mono</name>
+      <name>Noto Sans</name>
       <size>9</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Noto Sans Mono</name>
+      <name>Noto Sans</name>
       <size>9</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Noto Sans Mono</name>
+      <name>Noto Sans</name>
       <size>9</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Noto Sans Mono</name>
+      <name>Noto Sans</name>
       <size>9</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Noto Sans Mono</name>
+      <name>Noto Sans</name>
       <size>9</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
@@ -830,7 +830,7 @@
   <applications>
     <application class="*">
       <focus>yes</focus>
-      <decor>no</decor>
+      <decor>yes</decor>
     </application>
     <application name="obconf">
       <position force="yes">
@@ -841,8 +841,13 @@
         <width>50%</width>
       </size>
     </application>
-    <application title="MPlayer">
+    <application class="kitty">
       <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
+    <application class="Code">
+      <decor>no</decor>
+      <maximized>true</maximized>
     </application>
     <application title="Nitrogen">
       <position force="yes">
