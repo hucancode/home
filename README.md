@@ -47,6 +47,7 @@ My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenien
 sudo pacman -S git
 git clone https://github.com/hucancode/home
 mv home/* . ; and rm -rf home
+sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
 ```
 ## 📦 Install softwares
 ```fish

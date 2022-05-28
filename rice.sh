@@ -28,6 +28,7 @@ yay -S $THEME_AUR $WM_AUR $TERMINAL_AUR
 git clone https://github.com/$GH_USERNAME/$GH_REPO
 mv $GH_REPO/* . ; and rm -rf $GH_REPO
 curl -L -o avatar.png https://github.com/$GH_USERNAME.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
+sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
 sudo systemctl enable lightdm
 sudo mkdir -p /etc/lightdm
 sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm

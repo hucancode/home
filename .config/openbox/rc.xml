@@ -51,14 +51,14 @@
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Noto Sans</name>
-      <size>9</size>
-      <weight>Bold</weight>
+      <name>FiraCode Nerd Font Medium</name>
+      <size>20</size>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Noto Sans</name>
-      <size>9</size>
+      <name>FiraCode Nerd Font Medium</name>
+      <size>20</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
@@ -67,11 +67,11 @@
     <number>5</number>
     <firstdesk>0</firstdesk>
     <names>
-      <name>1</name>
-      <name>2</name>
-      <name>3</name>
-      <name>4</name>
-      <name>5</name>
+      <name>&#xF015;</name>
+      <name>&#xF0AC;</name>
+      <name>&#xF135;</name>
+      <name>&#xF1B6;</name>
+      <name>&#xF03E;</name>
     </names>
     <popupTime>875</popupTime>
   </desktops>

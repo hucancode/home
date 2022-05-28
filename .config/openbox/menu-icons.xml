@@ -2,7 +2,7 @@
 <!-- Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> -->
 <!-- Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 -->
 <!DOCTYPE menu [
-  <!ENTITY icons "~/.config/openbox/icons">
+  <!ENTITY icons "/usr/share/openbox/icons">
   <!ENTITY pipes "~/.config/openbox/bin">
 ]>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
