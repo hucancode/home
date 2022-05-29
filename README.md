@@ -61,15 +61,6 @@ set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
 ```
-Install `yay`
-```fish
-git clone https://aur.archlinux.org/yay-bin.git
-(cd yay-bin; and makepkg -si)
-```
-Use `yay` to install what's missing
-```fish
-yay -S "ksuperkey"
-```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```fish

@@ -6,13 +6,9 @@ sudo pacman -S base-devel git
 set GH_USERNAME hucancode
 # change the following line to your github repository
 set GH_REPO home
-# install yay
-git clone https://aur.archlinux.org/yay-bin.git
-begin cd yay-bin; and makepkg -si; end
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim xscreensaver"
-set WM_AUR "ksuperkey"
 set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
@@ -20,8 +16,6 @@ set TERMINAL "kitty neovim starship fzf fd ripgrep zoxide exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
-yay -S $WM_AUR
-
 # rice settings
 git clone https://github.com/$GH_USERNAME/$GH_REPO
 mv $GH_REPO/* . ; and rm -rf $GH_REPO
@@ -37,12 +31,17 @@ switch $yn
 	case '*'
 		exit 0
 end
+# install yay
+git clone https://aur.archlinux.org/yay-bin.git
+begin cd yay-bin; and makepkg -si; end
+# install bloats
 set PERSONAL_BLOAT "ibus-anthy"
 set PERSONAL_BLOAT_AUR "ibus-bamboo megacmd"
 set DEV_BLOAT "docker docker-compose mono gimp inkscape clang llvm"
 set DEV_BLOAT_AUR "visual-studio-code-bin"
+set WM_AUR "ksuperkey"
 sudo pacman -S $PERSONAL_BLOAT $DEV_BLOAT
-yay -S $PERSONAL_BLOAT_AUR $DEV_BLOAT_AUR
+yay -S $PERSONAL_BLOAT_AUR $DEV_BLOAT_AUR $WM_AUR
 # post-install setup
 sudo groupadd docker; and sudo usermod -aG docker $USER
 set IBUS_SETTING "\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im='ibus'\n# Toolbar for ibus\nibus-daemon -drx"
