@@ -68,7 +68,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 ```
 Use `yay` to install what's missing
 ```fish
-set THEME_AUR "qogir-icon-theme i3lock-color"
+set THEME_AUR "i3lock-color"
 set WM_AUR "ksuperkey"
 set TERMINAL_AUR "nvim-packer-git"
 yay -S $THEME_AUR $WM_AUR $TERMINAL_AUR

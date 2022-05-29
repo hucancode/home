@@ -11,7 +11,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 begin cd yay-bin; and makepkg -si; end
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set THEME_AUR "qogir-icon-theme i3lock-color"
+set THEME_AUR "i3lock-color"
 set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 set WM_AUR "ksuperkey"
 set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
