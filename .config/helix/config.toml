@@ -1,8 +1,8 @@
-theme = "catppuccin"
+theme = "catpuccin"
 
 [editor]
-line-number = "absolute"
-mouse = false
+line-number = "relative"
+mouse = true
 true-color = true
 
 [editor.cursor-shape]
