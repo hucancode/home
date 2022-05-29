@@ -14,7 +14,7 @@ format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = "[$ahead_behind$stashed]($style) "
+format = " [$ahead_behind$stashed]($style) "
 style = "cyan"
 stashed = "≡"
 
