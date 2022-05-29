@@ -25,10 +25,14 @@ function buffer(use)
 end
 
 function status(use)
-    use 'feline-nvim/feline.nvim'
-    vim.opt.termguicolors = true
-    require('feline').setup({
-        components = require('catppuccin.core.integrations.feline')
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    require('lualine').setup({
+      options = {
+        theme = 'catppuccin',
+      }
     })
     use {
       "folke/which-key.nvim",

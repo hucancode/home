@@ -52,7 +52,7 @@ sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbo
 ## 📦 Install softwares
 ```fish
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
+set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim xscreensaver"
 set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
@@ -68,10 +68,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 ```
 Use `yay` to install what's missing
 ```fish
-set THEME_AUR "i3lock-color"
-set WM_AUR "ksuperkey"
-set TERMINAL_AUR "nvim-packer-git"
-yay -S $THEME_AUR $WM_AUR $TERMINAL_AUR
+yay -S "ksuperkey"
 ```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
