@@ -116,12 +116,6 @@ function lsp(use)
                 vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             end
         },
-        window = {
-          -- hide documentation, this window get reduced to unreadable mess when candidate list window grow wide enough
-            documentation = {
-                max_width = 0
-            }
-        },
         view = {
             entries = "native"
         },
@@ -135,7 +129,18 @@ function lsp(use)
             name = 'nvim_lsp'
         }}, {{
             name = 'buffer'
-        }})
+        }}),
+        window = {
+            documentation = {
+                max_width = 70
+            }
+        },
+        formatting = {
+          format = function(entry, vim_item)
+            vim_item.abbr = string.sub(vim_item.abbr, 1, 70)
+            return vim_item
+          end
+        }
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -143,6 +148,10 @@ function lsp(use)
     for _, server in pairs(servers) do
         lsp[server].setup { capabilities = capabilities }
     end
+    -- lsp.clangd.setup {
+    --   capabilities = capabilities,
+    --   cmd = { "clangd", "--completion-style=detailed" }
+    -- }
     -- hide all errors and warning
     vim.diagnostic.config({
       virtual_text = false,
