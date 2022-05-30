@@ -14,7 +14,7 @@ if status is-interactive
     starship init fish | source
   end
   if type -fq zoxide
-    zoxide init fish --cmd cd | source
+    zoxide init fish | source
   end
 end
 if test -e $script_dir/local.fish
