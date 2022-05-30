@@ -23,6 +23,7 @@ function status(use)
       tabline = {
         lualine_a = {{
           'buffers', 
+          hide_filename_extension = true,
           symbols = {
             modified = ' ●',      -- Text to show when the buffer is modified
             alternate_file = '', -- Text to show to indify the alternate file
@@ -38,7 +39,14 @@ function status(use)
       sections = {
         lualine_a = {'mode'},
         lualine_b = {'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_c = {{
+          'filename',
+          symbols = {
+            modified = ' ●',      -- Text to show when the buffer is modified
+            readonly = ' ', -- Text to show to indify the alternate file
+            unnamed =  '[No Name]',     -- Text to show when the buffer is a directory
+          },
+        }},
         lualine_x = {{
           'filetype', 
           icon_only = true
@@ -70,7 +78,7 @@ function explorer(use)
     }
     use 'nvim-telescope/telescope-file-browser.nvim'
     require('telescope').setup()
-    require("telescope").load_extension "file_browser"
+    require("telescope").load_extension("file_browser")
     local wk = require("which-key")
     wk.register({
       ["<leader>"] = {
@@ -86,6 +94,7 @@ function explorer(use)
         N = { "<cmd>bprevious<cr>", "Previous Buffer", noremap=true }, 
       }
     })
+    
     vim.g.loaded_netrwPlugin = true
     vim.api.nvim_create_autocmd(
       {
