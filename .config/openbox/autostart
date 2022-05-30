@@ -19,6 +19,7 @@ fi
 
 ## Enable power management
 xfce4-power-manager &
+xscreensaver &
 
 ## Start Compositing Manager
 # exec picom &
