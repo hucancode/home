@@ -11,19 +11,6 @@ function theme(use)
     }
 end
 
-function buffer(use)
-    use {
-        'akinsho/bufferline.nvim',
-        tag = "v2.*",
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
-    require("bufferline").setup({
-        options = {
-            show_close_icon = false
-        }
-    })
-end
-
 function status(use)
     use {
       'nvim-lualine/lualine.nvim',
@@ -32,7 +19,33 @@ function status(use)
     require('lualine').setup({
       options = {
         theme = 'catppuccin',
-      }
+      },
+      tabline = {
+        lualine_a = {{
+          'buffers', 
+          symbols = {
+            modified = ' ●',      -- Text to show when the buffer is modified
+            alternate_file = '', -- Text to show to indify the alternate file
+            directory =  '',     -- Text to show when the buffer is a directory
+          },
+        }},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
+      sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'diagnostics'},
+        lualine_c = {'filename'},
+        lualine_x = {{
+          'filetype', 
+          icon_only = true
+        }},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+      },
     })
     use {
       "folke/which-key.nvim",
@@ -177,7 +190,6 @@ end
 function setup(use)
     packer(use)
     theme(use)
-    buffer(use)
     status(use)
     explorer(use)
     lsp(use)
