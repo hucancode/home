@@ -25,8 +25,8 @@ function status(use)
           'buffers', 
           hide_filename_extension = true,
           symbols = {
-            modified = ' ●',      -- Text to show when the buffer is modified
-            alternate_file = '', -- Text to show to indify the alternate file
+            modified = '  ',      -- Text to show when the buffer is modified
+            alternate_file = '  ', -- Text to show to indify the alternate file
             directory =  '',     -- Text to show when the buffer is a directory
           },
         }},
@@ -42,9 +42,9 @@ function status(use)
         lualine_c = {{
           'filename',
           symbols = {
-            modified = ' ●',      -- Text to show when the buffer is modified
-            readonly = ' ', -- Text to show to indify the alternate file
-            unnamed =  '[No Name]',     -- Text to show when the buffer is a directory
+            modified = '  ',
+            readonly = ' ',
+            unnamed =  '[No Name]',
           },
         }},
         lualine_x = {{
@@ -83,18 +83,21 @@ function explorer(use)
     wk.register({
       ["<leader>"] = {
         f = {
-          name = "File", -- optional group name
-          f = { "<cmd>Telescope find_files<cr>", "Find File", noremap=true }, 
-          b = { "<cmd>Telescope file_browser<cr>", "File Browser", noremap=true }, 
-          g = { "<cmd>Telescope live_grep<cr>", "Find in Files", noremap=true }, 
+          name = "File",
+          f = { "<cmd>Telescope find_files<cr>", "Find File" }, 
+          b = { "<cmd>Telescope file_browser<cr>", "File Browser" }, 
+          g = { "<cmd>Telescope live_grep<cr>", "Find in Files" }, 
         },
-        w = { "<cmd>bdelete<cr>", "Close Buffer", noremap=true },
-        W = { "<cmd>enew<cr>", "New Buffer", noremap=true },
+        w = { "<cmd>bdelete<cr>", "Close Buffer" },
+        W = { "<cmd>enew<cr>", "New Buffer" },
       },
+      ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
       g = {
-        t = { "<cmd>bnext<cr>", "Next Buffer", noremap=true }, 
-        T = { "<cmd>bprevious<cr>", "Previous Buffer", noremap=true }, 
-      }
+        name = "Go to",
+        ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
+        t = { "<cmd>bnext<cr>", "Next Buffer" },
+        T = { "<cmd>bprevious<cr>", "Previous Buffer" }
+      },
     })
     
     vim.g.loaded_netrwPlugin = true
