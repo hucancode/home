@@ -90,8 +90,10 @@ function explorer(use)
         },
         w = { "<cmd>bdelete<cr>", "Close Buffer", noremap=true },
         W = { "<cmd>enew<cr>", "New Buffer", noremap=true },
-        n = { "<cmd>bnext<cr>", "Next Buffer", noremap=true }, 
-        N = { "<cmd>bprevious<cr>", "Previous Buffer", noremap=true }, 
+      },
+      g = {
+        t = { "<cmd>bnext<cr>", "Next Buffer", noremap=true }, 
+        T = { "<cmd>bprevious<cr>", "Previous Buffer", noremap=true }, 
       }
     })
     
