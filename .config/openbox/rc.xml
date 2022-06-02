@@ -487,27 +487,12 @@
         <command>chromium</command>
       </action>
     </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>code</command>
-      </action>
-    </keybind>
     <!-- Rofi -->
     <keybind key="A-F1">
       <action name="Execute">
         <command>~/.config/rofi/launcher</command>
       </action>
     </keybind>
-    <!-- <keybind key="W-n">
-      <action name="Execute">
-        <command>networkmanager_dmenu</command>
-      </action>
-    </keybind>
-    <keybind key="W-m">
-      <action name="Execute">
-        <command>~/.config/rofi/music</command>
-      </action>
-    </keybind> -->
     <keybind key="W-x">
       <action name="Execute">
         <command>~/.config/rofi/powermenu</command>
@@ -528,12 +513,6 @@
     <keybind key="C-A-Escape">
       <action name="Exit"/>
     </keybind>
-    <!-- <keybind key="C-S-BackSpace">
-      <action name="Restart"/>
-    </keybind> -->
-    <!-- <keybind key="C-S-R">
-      <action name="Reconfigure"/>
-    </keybind> -->
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
@@ -553,11 +532,6 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <!-- <keybind key="C-A-space">
-      <action name="ShowMenu">
-        <menu>app-menu</menu>
-      </action>
-    </keybind> -->
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>

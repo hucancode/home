@@ -23,8 +23,8 @@ super + {x,s}
 ##---------- Applications ----------##
 
 # Launch Apps
-super + {w,f,e}
-    {chromium,thunar,code}
+super + {w,f}
+    {chromium,thunar}
 
 # Lockscreen
 ctrl + alt + l

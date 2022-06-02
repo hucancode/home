@@ -36,12 +36,10 @@ git clone https://aur.archlinux.org/yay-bin.git
 begin cd yay-bin; and makepkg -si; end
 # install bloats
 set PERSONAL_BLOAT "ibus-anthy"
-set PERSONAL_BLOAT_AUR "ibus-bamboo megacmd"
+set PERSONAL_BLOAT_AUR "ibus-bamboo megacmd teamviewer"
 set DEV_BLOAT "docker docker-compose mono gimp inkscape clang llvm"
-set DEV_BLOAT_AUR "visual-studio-code-bin"
-set WM_AUR "ksuperkey"
 sudo pacman -S $PERSONAL_BLOAT $DEV_BLOAT
-yay -S $PERSONAL_BLOAT_AUR $DEV_BLOAT_AUR $WM_AUR
+yay -S $PERSONAL_BLOAT_AUR
 # post-install setup
 sudo groupadd docker; and sudo usermod -aG docker $USER
 set IBUS_SETTING "\n# Settings for Japanese input\nexport GTK_IM_MODULE=QT_IM_MODULE=XMODIFIERS=@im='ibus'\n# Toolbar for ibus\nibus-daemon -drx"
