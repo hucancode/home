@@ -24,6 +24,7 @@ function status(use)
         lualine_a = {{
           'buffers', 
           hide_filename_extension = true,
+          max_length = vim.o.columns,
           symbols = {
             modified = '  ',      -- Text to show when the buffer is modified
             alternate_file = '  ', -- Text to show to indify the alternate file
