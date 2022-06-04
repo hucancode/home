@@ -71,7 +71,7 @@ bspc rule -a stalonetray state=floating manage=off
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager
+killall -9 xsettingsd polybar eww sxhkd dunst ksuperkey xfce4-power-manager mpd
 
 # Lauch xsettingsd daemon
 xsettingsd &
@@ -104,8 +104,10 @@ exec mpd &
 ## Thunar Daemon
 exec thunar --daemon &
 
+eww daemon
+eww open bar
 # Start bspwm scripts
-~/.config/polybar/launch-bar.sh &
+# ~/.config/polybar/launch-bar.sh &
 bspdunst
 bspfloat &
 bspfocus &

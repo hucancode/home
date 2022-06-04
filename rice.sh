@@ -6,16 +6,21 @@ sudo pacman -S base-devel git
 set GH_USERNAME hucancode
 # change the following line to your github repository
 set GH_REPO home
+# install yay
+git clone https://aur.archlinux.org/yay-bin.git
+begin cd yay-bin; and makepkg -si; end
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim xscreensaver"
-set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
+set WM_AUR "i3lock-color eww-git ksuperkey"
+set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 set TERMINAL "kitty neovim starship fzf fd ripgrep zoxide exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
+yay -S $WM_AUR
 # rice settings
 git clone https://github.com/$GH_USERNAME/$GH_REPO
 mv $GH_REPO/* . ; and rm -rf $GH_REPO
@@ -31,9 +36,6 @@ switch $yn
 	case '*'
 		exit 0
 end
-# install yay
-git clone https://aur.archlinux.org/yay-bin.git
-begin cd yay-bin; and makepkg -si; end
 # install bloats
 set PERSONAL_BLOAT "ibus-anthy"
 set PERSONAL_BLOAT_AUR "ibus-bamboo megacmd teamviewer"

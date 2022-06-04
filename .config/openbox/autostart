@@ -4,7 +4,7 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Kill if already running
-killall -9 xfsettingsd picom polybar mpd dunst ksuperkey xfce4-power-manager
+killall -9 xfsettingsd picom eww polybar mpd dunst ksuperkey xfce4-power-manager
 
 ## Restore Wallpaper
 nitrogen --restore
@@ -25,7 +25,9 @@ xscreensaver &
 # exec picom &
 
 ## Launch Polybar
-~/.config/polybar/launch-bar.sh &
+# ~/.config/polybar/launch-bar.sh &
+eww daemon
+eww open bar
 
 ## Notification Daemon
 exec dunst &

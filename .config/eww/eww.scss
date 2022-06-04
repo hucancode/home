@@ -1,0 +1,187 @@
+
+
+$cat_crust: #11111b;
+$cat_mantle: #181825;
+$cat_base: #1e1e2e;
+$cat_surface0: #313244;
+$cat_surface1: #45475a;
+$cat_surface2: #585b70;
+$cat_overlay0: #6c7086;
+$cat_overlay1: #7f849c;
+$cat_overlay2: #9399b2;
+$cat_subtext0: #a6adc8;
+$cat_blue: #89b4fa;
+$cat_green: #a6e3a1;
+$cat_red: #f38ba8;
+$cat_teal: #94e2d5;
+$cat_sky: #91d7e3;
+$cat_text: #cdd6f4;
+$cat_flamingo: #f2cdcd;
+
+* {
+    all: unset; //Unsets everything so you can style everything from scratch
+    font-family: Fira Code,Iosevka Nerd Font,FiraCode Nerd Font;
+}
+
+.volume-icon {
+    font-size: 1.4rem;
+    color: $cat_text;
+}
+scale trough, scale trough highlight {
+  border-radius: 3px;
+}
+scale trough highlight {
+  background-image: linear-gradient(to right, $cat_flamingo 30%, $cat_sky 50%, $cat_sky 100% *50);
+}
+scale trough {
+  background-color: $cat_surface1;
+  min-height: 0.8rem;
+  min-width: 12rem;
+}
+.bar, .screenshot, .screenshottool{
+    background-color: $cat_mantle;
+    padding: 0.6rem 0;
+}
+
+.screenshot, .screenshottool{
+    border: 2px solid $cat_blue;
+    border-radius: 10px;
+}
+
+.bell {
+    color: $cat_teal;
+    font-size: 1.5rem;
+}
+
+.noticontent {
+    color: $cat_surface0;
+}
+
+.sspreview {
+    border-radius: 10px;
+    border: 2px solid $cat_mantle;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 1rem;
+}
+.clock {
+  font-weight: bold;
+  font-size: 1.0rem;
+  background-color: $cat_surface0;
+  color: $cat_text;
+  border-radius: 5px;
+  padding: 0 8px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.ss {
+    background-color: $cat_mantle;
+    border-radius: 100px;
+    padding: 0.6rem;
+    margin: 1rem;
+    font-size: 2rem;
+}
+.ss-text {
+    font-size: 2rem;
+}
+.ss:hover {
+    color: $cat_blue;
+}
+.ss-close:hover {
+    color: $cat_green;
+}
+.cpubar {
+    color: $cat_blue;
+    background-color: $cat_surface0;
+    border-radius: 10px;
+}
+
+.diskbar {
+    color: $cat_teal;
+    background-color: $cat_surface0;
+    border-radius: 10px;
+}
+.membar {
+    color: $cat_text;
+    background-color: $cat_surface0;
+    border-radius: 10px;
+}
+.system-status {
+  font-size: 1.0rem;
+  background-color: $cat_surface0;
+  color: $cat_text;
+  border-radius: 5px;
+  padding: 0 8px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.iconmem {
+    color: $cat_base;
+    font-size: 2.5rem;
+}
+.workspace-focused {
+    color: $cat_subtext0;
+}
+.workspace-empty {
+    color: $cat_surface0;
+}
+.workspace-occupied {
+    color: $cat_surface1;
+}
+.date {
+    font-size: 1.1rem;
+}
+.text-sm {
+  font-size: 1.5rem;
+}
+.text-lg {
+  font-size: 4rem;
+}
+.text-xl {
+  font-size: 10rem;
+}
+.powermenu {
+  background: $cat_crust;
+}
+.button-off {
+  color: $cat_red;
+}
+.button-reb {
+    color: $cat_green;
+}
+.button-lock {
+    color: $cat_blue;
+}
+.button-sleep {
+    color: $cat_green;
+}
+.highlight-hover:hover {
+  color: $cat_sky;
+}
+.nixos { font-size: 1.5rem; padding: 0.3rem; color: $cat_subtext0; }
+
+.volumemicBar trough highlight {
+    background-color: $cat_blue;
+}
+.volumeBar trough highlight {
+    background-color: $cat_text;
+}
+.musicBar trough highlight {
+    background-color: $cat_flamingo;
+}
+
+.music {
+  font-family: sans-serif;
+}
+
+.muted {
+    color: $cat_green;
+}
+
+.nomuted {
+    color: $cat_text;
+}
+
+.loud {
+    color: $cat_teal;
+}
+

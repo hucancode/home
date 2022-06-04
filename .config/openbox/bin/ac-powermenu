@@ -14,7 +14,7 @@ rofi -dmenu\
     -i\
     -no-fixed-num-lines\
     -p "Are You Sure? : "\
-    -theme "~/.local/bin/rofi/confirm.rasi"
+    -theme "~/.config/rofi/confirm.rasi"
 }
 
 ## Options #############################################
@@ -25,7 +25,7 @@ if  [[ $1 = "--logout" ]]; then
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
     else
-        rofi -theme "~/.local/bin/rofi/confirm.rasi" -e "$MSG"
+        rofi -theme "~/.config/rofi/confirm.rasi" -e "$MSG"
     fi
 
 elif  [[ $1 = "--suspent" ]]; then
@@ -37,7 +37,7 @@ elif  [[ $1 = "--suspent" ]]; then
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 		exit
     else
-		rofi -theme "~/.local/bin/rofi/confirm.rasi" -e "$MSG"
+		rofi -theme "~/.config/rofi/confirm.rasi" -e "$MSG"
     fi
 
 elif  [[ $1 = "--reboot" ]]; then
@@ -47,7 +47,7 @@ elif  [[ $1 = "--reboot" ]]; then
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
     else
-        rofi -theme "~/.local/bin/rofi/confirm.rasi" -e "$MSG"
+        rofi -theme "~/.config/rofi/confirm.rasi" -e "$MSG"
     fi
 
 elif  [[ $1 = "--shutdown" ]]; then
@@ -57,7 +57,7 @@ elif  [[ $1 = "--shutdown" ]]; then
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
     else
-        rofi -theme "~/.local/bin/rofi/confirm.rasi" -e "$MSG"
+        rofi -theme "~/.config/rofi/confirm.rasi" -e "$MSG"
     fi
 
 ## Help Menu #############################################
