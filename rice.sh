@@ -13,7 +13,7 @@ begin cd yay-bin; and makepkg -si; end
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim xscreensaver"
 set WM_AUR "i3lock-color eww-git ksuperkey"
-set MEDIA "ffmpeg mpd mpc mpv viewnior chromium"
+set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
 set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
 set TERMINAL "kitty neovim starship fzf fd ripgrep zoxide exa sd"
