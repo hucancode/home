@@ -77,7 +77,7 @@
         :duration "250ms"
         (box :space-evenly true :orientation "h" :spacing 10
           (button	:class "button-off text-sm"
-            :onclick "eww open --toggle powermenu" "")
+            :onclick "eww open --toggle powermenu" " ")
         )
       )
     )
