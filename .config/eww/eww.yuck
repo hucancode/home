@@ -1,0 +1,201 @@
+;;
+(defwidget bar []
+  (centerbox :orientation "h" :vexpand false
+    (box :space-evenly false :halign "start" :valign "center" :vexpand false :hexpand true :orientation "h" :spacing 10
+      (power)
+      (box :class "system-status" :orientation "h" :spacing 20 :hexpand false :active false :vexpand false
+        (mem)
+        (cpu)
+      )
+      (volume)
+    )
+
+    (workspaces :halign "center" :vexpand false :hexpand true :orientation "h")
+
+    (box :halign "end" :hexpand true :vexpand false :orientation "h" :space-evenly false :spacing 10 :style "padding: 0 8px"
+      (music)
+      (time)
+      (weather)
+      ))
+  )
+
+(defwidget screenshot []
+  (box
+    (screenshotmenu)
+    )
+  )
+
+
+;; Variables
+(defpoll temperature :interval "20m" "curl -s 'wttr.in/?format=%c%t'")
+(defpoll volumePercent :interval "3s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll timeVar :interval "10s" "date +'%I:%M %p'")
+(defpoll dateVar :interval "600s" "date +'%a, %b %d, %Y'")
+(deflisten musicStatus :interval "1s" "./scripts/music.sh --status")
+(deflisten song :interval "2s" "./scripts/music.sh --song")
+(deflisten workspaces_listen "./scripts/workspaces.sh")
+
+(defvar screenshotpath "/tmp/screenshot.png")
+(defvar volReveal false)
+(defvar screenshot false)
+(defvar power false)
+(defvar search false)
+(defvar time false)
+(defvar cal false)
+
+;; Widgets
+
+(defwidget mem []
+  (box :vexpand "false" :hexpand "false"
+    (label :halign "start" :wrap "false" :limit-width 40 :text " ${round(EWW_RAM.used_mem_perc,1)}%")
+  )
+)
+
+(defwidget cpu []
+  (box :vexpand "false" :hexpand "false"
+    (label :halign "start" :wrap "false" :limit-width 40 :text " ${round(EWW_CPU.avg,1)}%")
+  )
+  )
+
+(defwidget power []
+  (eventbox   :hexpand false
+              :onhover "eww update power=true"
+              :onhoverlost "eww update power=false"
+              :cursor "hand"
+    (box		:orientation "h"
+                :space-evenly "false"
+                :spacing 10
+                :class "powerLabel label"
+
+      (button		:class "nixos"
+                    :onclick "~/.config/rofi/launcher"	" ")
+      (revealer	:transition "slideright"
+                :reveal power
+                :duration "250ms"
+        (box        :space-evenly true :orientation "h" :spacing 10
+          (button		:class "button-off"
+                        :onclick "~/.config/rofi/powermenu" " ")
+        )
+        ))))
+
+(defwidget music [] 
+			(box :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "false" :vexpand "false" :hexpand "false" 
+        (label :halign "start" :wrap "false" :limit-width 40 :text song)
+				(button :onclick "./scripts/music.sh --prev" " ")
+				(button :onclick "./scripts/music.sh --toggle" "${musicStatus} ")
+				(button :onclick "./scripts/music.sh --next" " ")
+      )
+)
+
+(defwidget volume []
+  (eventbox :onhover "eww update volReveal=true"
+			  :onhoverlost "eww update volReveal=false"
+  (box :space-evenly "false" :orientation "h" :spacing 3 
+	(button :class "volume_icon" " ")
+	(revealer :transition "slideright"
+			  :reveal volReveal
+			  :duration "350ms"
+	(scale :class "volbar"
+			  :value volumePercent
+			  :orientation "h"
+			  :tooltip "${volumePercent}%"
+			  :max 100
+			  :min 0
+			  :onchange "amixer -D pulse sset Master {}%" )
+  ))))
+
+(defwidget weather []
+    (box :orientation "h" :hexpand false :vexpand false :spacing 10 :space-evenly false :class "clock"
+    (button		:class "date"
+                :orientation "v"
+                "${temperature}")
+    )
+  )
+(defwidget time []
+  (eventbox :hexpand false
+                :tooltip "${dateVar}"
+    (box :orientation "h" :hexpand false :vexpand false :spacing 10 :space-evenly false :class "clock"
+    (button		:class "date"
+                :orientation "v"
+                "${timeVar}")
+    )
+    )
+  )
+
+(defwidget workspaces []
+  (literal :content workspaces_listen))
+
+(defwidget screenshotpreview []
+  (box :class "sspreview" :hexpand true :vexpand true :style "background-image: url('${screenshotpath}');")
+  )
+(defwidget screenshotmenu []
+  (box :orientation "v"
+    (box :vexpand true :hexpand true :orientation "h"
+      (label :text "Screenshot taken!" :class "ss-text")
+      )
+    (box :orientation "h"
+      (button       :class "ss-upload ss"
+                    :tooltip "Upload screenshot"
+                    :onclick "./scripts/ss.sh upload &" "")
+      (button       :class "ss-win ss"
+                    :tooltip "Save screenshot"
+                    :onclick "./scripts/ss.sh save &" "")
+      (button       :class "ss-copy ss"
+                    :tooltip "Copy screenshot"
+                    :onclick "./scripts/ss.sh copy &" "")
+      (button       :class "ss-discard ss"
+                    :tooltip "Discard screenshot"
+                    :onclick "./scripts/ss.sh discard &" "")
+      ))
+  )
+
+(defwidget screenshottool []
+  (box
+    (button       :class "ss-area ss"
+                  :tooltip "Select area"
+                  :onclick "./scripts/ss.sh area &" "")
+    (button       :class "ss-screen ss"
+                  :tooltip "Whole screen"
+                  :onclick "./scripts/ss.sh screen &" "")
+    (button       :class "ss-win ss"
+                  :tooltip "Window"
+                  :onclick "./scripts/ss.sh window &" "")
+    (button       :class "ss-cancel ss"
+                  :tooltip "Cancel"
+                  :onclick "eww close screenshottool &" "")
+    )
+  )
+
+(defwindow screenshot
+  :geometry (geometry :x "-50px" :y "-50px"
+  :width "500px"
+  :height "400px"
+  :anchor "bottom right")
+  (box :space-evenly false :orientation "v"
+    (screenshot)
+    (screenshotpreview)
+    ))
+
+(defwindow screenshottool
+  :geometry (geometry :x "-50px" :y "-50px"
+  :width "500px"
+  :height "60"
+  :anchor "bottom right")
+  (box :space-evenly false :orientation "v"
+    (screenshottool)
+    ))
+
+(defwindow bar
+  :monitor 0
+  :reserve (struts :distance "32px" :side "top")
+  :geometry (geometry 
+    ;; :y "40px"
+    :height "32px"
+    :width "100%"
+    :anchor "top left")
+  :hexpand false
+  :stacking "bg"
+  :vexpand false
+  :wm-ignore false
+  (bar))
+

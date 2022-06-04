@@ -1,0 +1,167 @@
+
+
+$catppuccin0: #11111b;
+$catppuccin1: #181825;
+$catppuccin2: #434c5e;
+$catppuccin3: #313244;
+$catppuccin4: #45475a;
+$catppuccin5: #e5e9f0;
+$catppuccin6: #eceff4;
+$catppuccin7: #8fbcbb;
+$catppuccin8: #88c0d0;
+$catppuccin9: #81a1c1;
+$catppuccin10: #5e81ac;
+$catppuccin11: #bf616a;
+$catppuccin12: #d08770;
+$catppuccin13: #ebcb8b;
+$catppuccin14: #a3be8c;
+$catppuccin15: #b48ead;
+
+* {
+    all: unset; //Unsets everything so you can style everything from scratch
+    font-family: monospace;
+}
+
+.volume_icon {
+    font-size: 1.8rem;
+    color: #a1bdce;
+}
+scale trough, scale trough highlight {
+  border-radius: 3px;
+}
+scale trough highlight {
+  background-image: linear-gradient(to right, #afcee0 30%, #a1bdce 50%, #77a5bf 100% *50);
+}
+scale trough {
+  background-color: $catppuccin4;
+  min-height: 0.8rem;
+  min-width: 12rem;
+}
+.bar, .screenshot, .screenshottool{
+    background-color: $catppuccin1;
+    padding: 0.6rem 0;
+}
+
+.screenshot, .screenshottool{
+    border: 2px solid $catppuccin10;
+    border-radius: 10px;
+}
+
+.bell {
+    color: $catppuccin13;
+    font-size: 1.5rem;
+}
+
+.noticontent {
+    color: $catppuccin3;
+}
+
+.sspreview {
+    border-radius: 10px;
+    border: 2px solid $catppuccin1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 1rem;
+}
+.clock {
+  font-weight: bold;
+  font-size: 1.0rem;
+  background-color: $catppuccin3;
+  color: $catppuccin5;
+  border-radius: 5px;
+  padding: 0 8px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.ss {
+    background-color: $catppuccin1;
+    border-radius: 100px;
+    padding: 0.6rem;
+    margin: 1rem;
+    font-size: 2rem;
+}
+.ss-text {
+    font-size: 2rem;
+}
+.ss:hover {
+    color: $catppuccin10;
+}
+.ss-close:hover {
+    color: $catppuccin11;
+}
+.cpubar {
+    color: $catppuccin10;
+    background-color: $catppuccin3;
+    border-radius: 10px;
+}
+
+.diskbar {
+    color: $catppuccin13;
+    background-color: $catppuccin3;
+    border-radius: 10px;
+}
+.membar {
+    color: $catppuccin14;
+    background-color: $catppuccin3;
+    border-radius: 10px;
+}
+.system-status {
+  font-size: 1.0rem;
+  background-color: $catppuccin3;
+  color: $catppuccin5;
+  border-radius: 5px;
+  padding: 0 8px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.iconmem {
+    color: $catppuccin2;
+    font-size: 2.5rem;
+}
+.workspace-focused {
+    color: $catppuccin9;
+}
+.workspace-empty {
+    color: $catppuccin3;
+}
+.workspace-occupied {
+    color: $catppuccin4;
+}
+.date {
+    font-size: 1.1rem;
+}
+.button-off { color: $catppuccin11; font-size: 1.5rem; }
+.button-reb {
+    color: $catppuccin15;
+}
+.button-lock {
+    color: $catppuccin14;
+    font-size: 1.5rem;
+}
+.button-sleep {
+    color: $catppuccin13;
+    font-size: 1.5rem;
+}
+.nixos { font-size: 1.5rem; padding: 0.3rem; color: $catppuccin9; }
+
+.volumemicBar trough highlight {
+    background-color: $catppuccin10;
+}
+.volumeBar trough highlight {
+    background-color: $catppuccin14;
+}
+.musicBar trough highlight {
+    background-color: $catppuccin15;
+}
+
+.muted {
+    color: $catppuccin11;
+}
+
+.nomuted {
+    color: $catppuccin14;
+}
+
+.loud {
+    color: $catppuccin13;
+}
+

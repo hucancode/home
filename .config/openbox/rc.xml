@@ -67,13 +67,13 @@
     <number>5</number>
     <firstdesk>0</firstdesk>
     <names>
-      <name>&#xF015;</name>
-      <name>&#xF0AC;</name>
-      <name>&#xF135;</name>
-      <name>&#xF1B6;</name>
-      <name>&#xF03E;</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+      <name>5</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>0</popupTime>
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
@@ -816,6 +816,10 @@
       </size>
     </application>
     <application class="kitty">
+      <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
+    <application class="Blender">
       <decor>no</decor>
       <maximized>true</maximized>
     </application>
