@@ -10,7 +10,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 ## ✨ Features:
 - 🪟 Window manager, [bspwm](https://wiki.archlinux.org/title/bspwm), [sxhkd](https://wiki.archlinux.org/title/sxhkd). `bspwm` is pretty harsh, if something went wrong you are welcomed with a black screen and no mouse/keyboard input. In case `bspwm` didn't work or you just don't like a tiling window manager, login with [openbox](https://wiki.archlinux.org/title/openbox)
 - 🔑 Display manager (the login thing) [lightdm](https://wiki.archlinux.org/title/lightdm)
-- 📊 Status bar [polybar](https://wiki.archlinux.org/title/polybar)
+- 📊 Status bar [eww](https://github.com/elkowar/eww)
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger), and [thunar](https://wiki.archlinux.org/title/thunar)
@@ -34,7 +34,7 @@ mv home/* . && rm -rf home
 chmod +x rice.sh && fish ./rice.sh
 ```
 ## ⚙️ Install Arch
-Assume that you use `archinstall`. Make sure you use `pulseaudio` instead of `pipewire` for audio driver. `polybar` doesn't work well with `pipewire` yet.
+Assume that you use `archinstall`. 
 ## 🐚 Change default shell to `fish`
 ```bash
 sudo pacman -Syu fish
@@ -58,7 +58,7 @@ begin cd yay-bin; and makepkg -si; end
 Install required packages
 ```fish
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set WM "bspwm sxhkd openbox rofi polybar yad dunst xdg-user-dirs nitrogen xclip xdotool maim xscreensaver"
+set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow"
