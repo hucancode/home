@@ -15,10 +15,10 @@ alt + F1
 
 
 # Rofi Menus/Applets
-ctrl + alt + tab
-	sh ~/.config/bspwm/rofi/bin/windows
-super + {x,s}
-	sh ~/.config/rofi/{powermenu,screenshot}
+super + s
+	sh ~/.config/rofi/screenshot
+super + x
+  eww open --toggle powermenu
 
 ##---------- Applications ----------##
 

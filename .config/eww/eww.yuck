@@ -1,18 +1,18 @@
 ;;
 (defwidget bar []
-  (centerbox :orientation "h" :vexpand false
-    (box :space-evenly false :halign "start" :valign "center" :vexpand false :hexpand true :orientation "h" :spacing 10
+  (centerbox :orientation "h"
+    (box :space-evenly false :halign "start" :valign "center" :hexpand true :orientation "h" :spacing 10
       (power)
-      (box :class "system-status" :orientation "h" :spacing 20 :hexpand false :active false :vexpand false
+      (box :class "system-status" :orientation "h" :spacing 20 :active false
         (mem)
         (cpu)
       )
       (volume)
     )
 
-    (workspaces :halign "center" :vexpand false :hexpand true :orientation "h")
+    (workspaces :halign "center" :hexpand true :orientation "h")
 
-    (box :halign "end" :hexpand true :vexpand false :orientation "h" :space-evenly false :spacing 10 :style "padding: 0 8px"
+    (box :halign "end" :hexpand true :orientation "h" :space-evenly false :spacing 10 :style "padding: 0 8px"
       (music)
       (time)
       (weather)
@@ -39,9 +39,7 @@
 (defvar volReveal false)
 (defvar screenshot false)
 (defvar power false)
-(defvar search false)
 (defvar time false)
-(defvar cal false)
 
 ;; Widgets
 
@@ -58,36 +56,33 @@
   )
 
 (defwidget power []
-  (eventbox   :hexpand false
+  (eventbox 
               :onhover "eww update power=true"
               :onhoverlost "eww update power=false"
               :cursor "hand"
     (box		:orientation "h"
                 :space-evenly "false"
-                :spacing 10
+                :spacing 15
                 :class "powerLabel label"
 
       (button		:class "nixos"
-                    :onclick "~/.config/rofi/launcher"	" ")
+                    :onclick "~/.config/rofi/launcher"	"")
       (revealer	:transition "slideright"
                 :reveal power
                 :duration "250ms"
         (box        :space-evenly true :orientation "h" :spacing 10
-          (button		:class "button-lock"
-                        :onclick "openbox --exit || bspc quit" " ")
-          (button		:class "button-reb"
-                        :onclick "systemctl suspend" "望 ")
-          (button		:class "button-off"
-                        :onclick "systemctl poweroff" " ")
+          (button		:class "button-off text-sm"
+                        :onclick "eww open --toggle powermenu" " ")
         )
-        ))))
+        )))
+)
 
 (defwidget music [] 
-			(box :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "false" :vexpand "false" :hexpand "false" 
-        (label :halign "start" :wrap "false" :limit-width 40 :text song)
-				(button :onclick "./scripts/music.sh --prev" " ")
-				(button :onclick "./scripts/music.sh --toggle" "${musicStatus} ")
-				(button :onclick "./scripts/music.sh --next" " ")
+			(box :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "false"
+        (label :halign "start" :wrap "false" :limit-width 40 :class "music" :text song)
+				(button :onclick "./scripts/music.sh --prev" "")
+				(button :onclick "./scripts/music.sh --toggle" "${musicStatus}")
+				(button :onclick "./scripts/music.sh --next" "")
       )
 )
 
@@ -95,7 +90,7 @@
   (eventbox :onhover "eww update volReveal=true"
 			  :onhoverlost "eww update volReveal=false"
   (box :space-evenly "false" :orientation "h" :spacing 3 
-	(button :class "volume_icon" " ")
+	(button :class "volume-icon" " ")
 	(revealer :transition "slideright"
 			  :reveal volReveal
 			  :duration "350ms"
@@ -109,16 +104,16 @@
   ))))
 
 (defwidget weather []
-    (box :orientation "h" :hexpand false :vexpand false :spacing 10 :space-evenly false :class "clock"
+    (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
     (button		:class "date"
                 :orientation "v"
                 "${temperature}")
     )
   )
 (defwidget time []
-  (eventbox :hexpand false
+  (eventbox 
                 :tooltip "${dateVar}"
-    (box :orientation "h" :hexpand false :vexpand false :spacing 10 :space-evenly false :class "clock"
+    (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
     (button		:class "date"
                 :orientation "v"
                 "${timeVar}")
@@ -197,9 +192,65 @@
     :height "32px"
     :width "100%"
     :anchor "top left")
-  :hexpand false
   :stacking "bg"
-  :vexpand false
   :wm-ignore false
   (bar))
+
+(defwindow powermenu
+  :monitor 0
+  :reserve (struts :distance "32px" :side "top")
+  :geometry (geometry 
+    :height "18%"
+    :width "22%"
+    :anchor "center")
+  :stacking "fg"
+  :wm-ignore true
+  (overlay
+      :valign "fill"
+      :halign "fill"
+      :class "powermenu"
+    (box
+      :orientation "h"
+      :valign "start"
+      :halign "fill"
+            :spacing 10
+            :class "powerLabel label"
+        (eventbox 
+          :cursor "hand"
+          :halign "end"
+                (button		
+                  :class "button-off text-sm highlight-hover"
+                  :onclick "eww close powermenu" " ")
+        )
+    )
+    (box		
+      :orientation "h"
+      :halign "center"
+      :vexpand true
+            :space-evenly "false"
+            :spacing 60
+            :class "powerLabel label"
+        (eventbox 
+                    :cursor "hand"
+          (button		
+            :class "button-lock text-lg highlight-hover"
+            :onclick "openbox --exit || bspc quit" ""
+          )
+        )
+        (eventbox 
+                    :cursor "hand"
+          (button		
+            :class "button-reb text-lg highlight-hover"
+            :onclick "systemctl suspend" "望")
+        )
+        (eventbox 
+                    :cursor "hand"
+                (button		
+                  :class "button-off text-lg highlight-hover"
+                  :onclick "systemctl poweroff" "")
+        )
+    )
+  )
+)
+
 
