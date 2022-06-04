@@ -201,7 +201,7 @@
   :reserve (struts :distance "32px" :side "top")
   :geometry (geometry 
     :height "18%"
-    :width "22%"
+    :width "32%"
     :anchor "center")
   :stacking "fg"
   :wm-ignore true
@@ -234,6 +234,13 @@
                     :cursor "hand"
           (button		
             :class "button-lock text-lg highlight-hover"
+            :onclick "~/.local/bin/lockscreen && eww close powermenu" ""
+          )
+        )
+        (eventbox 
+                    :cursor "hand"
+          (button		
+            :class "button-lock text-lg highlight-hover"
             :onclick "pidof openbox && openbox --exit; pidof bspc && bspc quit" ""
           )
         )
@@ -248,6 +255,12 @@
                 (button		
                   :class "button-off text-lg highlight-hover"
                   :onclick "systemctl poweroff" "")
+        )
+        (eventbox 
+                    :cursor "hand"
+                (button		
+                  :class "button-off text-lg highlight-hover"
+                  :onclick "systemctl restart" "ﰇ")
         )
     )
   )

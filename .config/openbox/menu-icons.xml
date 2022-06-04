@@ -25,11 +25,6 @@
 			</action>
 		</item>
 		<separator/>
-		<item icon="&icons;/editor.png" label="Code Editor">
-			<action name="Execute">
-				<command>code</command>
-			</action>
-		</item>
 		<separator/>
 		<menu icon="&icons;/shots.png" id="ac-shots" execute="&pipes;/ac-shots" label="Screenshot"/>
 		<separator/>
@@ -91,31 +86,6 @@
 				<command>~/.local/bin/lockscreen</command>
 			</action>
 		</item>
-		<separator/>
-		<menu icon="&icons;/sys-poweroff.png" id="Exit" label="System">
-			<item icon="&icons;/sys-exit.png" label="Logout">
-				<action name="Execute">
-					<command>~/.config/openbox/bin/ac-powermenu --logout</command>
-				</action>
-			</item>
-			<separator/>
-			<item icon="&icons;/sys-sleep.png" label="Suspend">
-				<action name="Execute">
-					<command>~/.config/openbox/bin/ac-powermenu --suspent</command>
-				</action>
-			</item>
-			<separator/>
-			<item icon="&icons;/sys-reboot.png" label="Reboot">
-				<action name="Execute">
-					<command>~/.config/openbox/bin/ac-powermenu --reboot</command>
-				</action>
-			</item>
-			<separator/>
-			<item icon="&icons;/sys-poweroff-alt.png" label="Shutdown">
-				<action name="Execute">
-					<command>~/.config/openbox/bin/ac-powermenu --shutdown</command>
-				</action>
-			</item>
 		</menu>
 	</menu>
 </openbox_menu>
