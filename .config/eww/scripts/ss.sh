@@ -29,13 +29,6 @@ discard () {
     rm "${screenshot}"
 }
 
-upload () {
-    eww close screenshot;
-    url="$(curl -F"file=@$screenshot" https://0x0.st)" 
-    echo $url | xclip -selection clipboard 
-    notify-send "Link copied to clipboard" "${url}" -i $screenshot
-}
-
 save () {
     eww close screenshot;
     newname="screenshot-$(date +%H-%M-%S_%d-%m-%y).png"
