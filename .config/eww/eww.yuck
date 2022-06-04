@@ -73,8 +73,12 @@
                 :reveal power
                 :duration "250ms"
         (box        :space-evenly true :orientation "h" :spacing 10
+          (button		:class "button-lock"
+                        :onclick "openbox --exit || bspc quit" " ")
+          (button		:class "button-reb"
+                        :onclick "systemctl suspend" "望 ")
           (button		:class "button-off"
-                        :onclick "~/.config/rofi/powermenu" " ")
+                        :onclick "systemctl poweroff" " ")
         )
         ))))
 
