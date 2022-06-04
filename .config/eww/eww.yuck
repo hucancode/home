@@ -1,7 +1,8 @@
-;;
+;; 
 (defwidget bar []
   (centerbox :orientation "h"
-    (box :space-evenly false :halign "start" :valign "center" :hexpand true :orientation "h" :spacing 10
+    (box :space-evenly false :halign "start" :valign "center"
+      :hexpand true :orientation "h" :spacing 10
       (power)
       (box :class "system-status" :orientation "h" :spacing 20 :active false
         (mem)
@@ -12,23 +13,27 @@
 
     (workspaces :halign "center" :hexpand true :orientation "h")
 
-    (box :halign "end" :hexpand true :orientation "h" :space-evenly false :spacing 10 :style "padding: 0 8px"
+    (box :halign "end" :hexpand true :orientation "h" 
+      :space-evenly false :spacing 10 :style "padding: 0 8px"
       (music)
       (time)
       (weather)
-      ))
+    )
   )
+)
 
 (defwidget screenshot []
   (box
     (screenshotmenu)
-    )
   )
+)
 
 
 ;; Variables
-(defpoll temperature :interval "20m" "curl -s 'wttr.in/Kagawa?format=%c%t' || echo 'Offline'")
-(defpoll volumePercent :interval "3s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll temperature :interval "20m" 
+  "curl -s 'wttr.in/Kagawa?format=%c%t' || echo 'Offline'")
+(defpoll volumePercent :interval "3s" 
+  "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll timeVar :interval "10s" "date +'%I:%M %p'")
 (defpoll dateVar :interval "600s" "date +'%a, %b %d, %Y'")
 (deflisten musicStatus :interval "1s" "./scripts/music.sh --status")
@@ -45,97 +50,95 @@
 
 (defwidget mem []
   (box :vexpand "false" :hexpand "false"
-    (label :halign "start" :wrap "false" :limit-width 40 :text " ${round(EWW_RAM.used_mem_perc,1)}%")
+    (label :halign "start" :wrap "false" :limit-width 40 
+      :text " ${round(EWW_RAM.used_mem_perc,1)}%")
   )
 )
 
 (defwidget cpu []
   (box :vexpand "false" :hexpand "false"
-    (label :halign "start" :wrap "false" :limit-width 40 :text " ${round(EWW_CPU.avg,1)}%")
+    (label :halign "start" :wrap "false" :limit-width 40 
+      :text " ${round(EWW_CPU.avg,1)}%")
   )
-  )
+)
 
 (defwidget power []
-  (eventbox 
-              :onhover "eww update power=true"
-              :onhoverlost "eww update power=false"
-              :cursor "hand"
-    (box		:orientation "h"
-                :space-evenly "false"
-                :spacing 15
-                :class "powerLabel label"
-
-      (button		:class "nixos"
-                    :onclick "~/.config/rofi/launcher"	"")
+  (eventbox :onhover "eww update power=true" 
+    :onhoverlost "eww update power=false"
+    :cursor "hand"
+    (box :orientation "h"
+      :space-evenly "false"
+      :spacing 15
+      :class "powerLabel label"
+      (button	:class "nixos"
+        :onclick "~/.config/rofi/launcher"	"")
       (revealer	:transition "slideright"
-                :reveal power
-                :duration "250ms"
-        (box        :space-evenly true :orientation "h" :spacing 10
-          (button		:class "button-off text-sm"
-                        :onclick "eww open --toggle powermenu" " ")
+        :reveal power
+        :duration "250ms"
+        (box :space-evenly true :orientation "h" :spacing 10
+          (button	:class "button-off text-sm"
+            :onclick "eww open --toggle powermenu" "")
         )
-        )))
+      )
+    )
+  )
 )
 
 (defwidget music [] 
-			(box :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "false"
-        (label :halign "start" :wrap "false" :limit-width 40 :class "music" :text song)
-				(button :onclick "./scripts/music.sh --prev" "")
-				(button :onclick "./scripts/music.sh --toggle" "${musicStatus}")
-				(button :onclick "./scripts/music.sh --next" "")
-      )
+  (box :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "false"
+    (label :halign "start" :wrap "false" :limit-width 40 :class "music" :text song)
+    (button :onclick "./scripts/music.sh --prev" "")
+    (button :onclick "./scripts/music.sh --toggle" "${musicStatus}")
+    (button :onclick "./scripts/music.sh --next" "")
+  )
 )
 
 (defwidget volume []
   (eventbox :onhover "eww update volReveal=true"
-			  :onhoverlost "eww update volReveal=false"
-  (box :space-evenly "false" :orientation "h" :spacing 3 
-	(button :class "volume-icon" " ")
-	(revealer :transition "slideright"
-			  :reveal volReveal
-			  :duration "350ms"
-	(scale :class "volbar"
-			  :value volumePercent
-			  :orientation "h"
-			  :tooltip "${volumePercent}%"
-			  :max 100
-			  :min 0
-			  :onchange "amixer -D pulse sset Master {}%" )
-  ))))
+    :onhoverlost "eww update volReveal=false"
+    (box :space-evenly "false" :orientation "h" :spacing 3 
+      (button :class "volume-icon" " ")
+      (revealer :transition "slideright"
+        :reveal volReveal
+        :duration "350ms"
+        (scale :class "volbar" :value volumePercent
+          :orientation "h"
+          :tooltip "${volumePercent}%"
+          :max 100
+          :min 0
+          :onchange "amixer -D pulse sset Master {}%" )
+      )
+    )
+  )
+)
+
 
 (defwidget weather []
-    (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
-    (button		:class "date"
-                :orientation "v"
-                "${temperature}")
-    )
+  (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
+    (button :class "date" :orientation "v" "${temperature}")
   )
+)
+
 (defwidget time []
-  (eventbox 
-                :tooltip "${dateVar}"
-    (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
-    (button		:class "date"
-                :orientation "v"
-                "${timeVar}")
-    )
-    )
+  (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
+    (button	:class "date" :orientation "v" "${timeVar}")
   )
+)
 
 (defwidget workspaces []
-  (literal :content workspaces_listen))
+  (literal :content workspaces_listen)
+)
 
 (defwidget screenshotpreview []
-  (box :class "sspreview" :hexpand true :vexpand true :style "background-image: url('${screenshotpath}');")
-  )
+  (box :class "sspreview" :hexpand true 
+    :vexpand true :style "background-image: url('${screenshotpath}');")
+)
 (defwidget screenshotmenu []
   (box :orientation "v"
     (box :vexpand true :hexpand true :orientation "h"
       (label :text "Screenshot taken!" :class "ss-text")
-      )
+    )
     (box :orientation "h"
-      (button       :class "ss-upload ss"
-                    :tooltip "Upload screenshot"
-                    :onclick "./scripts/ss.sh upload &" "")
       (button       :class "ss-win ss"
                     :tooltip "Save screenshot"
                     :onclick "./scripts/ss.sh save &" "")
@@ -145,8 +148,9 @@
       (button       :class "ss-discard ss"
                     :tooltip "Discard screenshot"
                     :onclick "./scripts/ss.sh discard &" "")
-      ))
+    )
   )
+)
 
 (defwidget screenshottool []
   (box
@@ -162,108 +166,80 @@
     (button       :class "ss-cancel ss"
                   :tooltip "Cancel"
                   :onclick "eww close screenshottool &" "")
-    )
   )
+)
 
 (defwindow screenshot
   :geometry (geometry :x "-50px" :y "-50px"
-  :width "500px"
-  :height "400px"
-  :anchor "bottom right")
+    :width "500px"
+    :height "400px"
+    :anchor "bottom right"
+  )
   (box :space-evenly false :orientation "v"
     (screenshot)
     (screenshotpreview)
-    ))
+  )
+)
 
 (defwindow screenshottool
   :geometry (geometry :x "-50px" :y "-50px"
-  :width "500px"
-  :height "60"
-  :anchor "bottom right")
+    :width "500px"
+    :height "60"
+    :anchor "bottom right"
+  )
   (box :space-evenly false :orientation "v"
     (screenshottool)
-    ))
+  )
+)
 
 (defwindow bar
   :monitor 0
   :reserve (struts :distance "32px" :side "top")
-  :geometry (geometry 
-    ;; :y "40px"
-    :height "32px"
-    :width "100%"
+  :geometry (geometry :height "32px" :width "100%"
     :anchor "top left")
   :stacking "bg"
   :wm-ignore false
-  (bar))
+  (bar)
+)
 
 (defwindow powermenu
   :monitor 0
   :reserve (struts :distance "32px" :side "top")
-  :geometry (geometry 
-    :height "18%"
-    :width "32%"
-    :anchor "center")
+  :geometry (geometry :height "18%" :width "32%" :anchor "center")
   :stacking "fg"
   :wm-ignore true
-  (overlay
-      :valign "fill"
-      :halign "fill"
-      :class "powermenu"
-    (box
-      :orientation "h"
-      :valign "start"
-      :halign "fill"
-            :spacing 10
-            :class "powerLabel label"
-        (eventbox 
-          :cursor "hand"
-          :halign "end"
-                (button		
-                  :class "button-off text-sm highlight-hover"
-                  :onclick "eww close powermenu" " ")
-        )
+  (overlay :valign "fill" :halign "fill" :class "powermenu"
+    (box :orientation "h" :valign "start" :halign "fill" :spacing 10
+      :class "powerLabel label"
+      (eventbox :cursor "hand" :halign "end"
+        (button	:class "button-off text-sm highlight-hover"
+          :onclick "eww close powermenu" " ")
+      )
     )
-    (box		
-      :orientation "h"
-      :halign "center"
-      :vexpand true
-            :space-evenly "false"
-            :spacing 60
-            :class "powerLabel label"
-        (eventbox 
-                    :cursor "hand"
-          (button		
-            :class "button-lock text-lg highlight-hover"
-            :onclick "~/.local/bin/lockscreen && eww close powermenu" ""
-          )
+    (box :orientation "h" :halign "center" :vexpand true
+      :space-evenly "false" :spacing 60 :class "powerLabel label"
+      (eventbox :cursor "hand"
+        (button	:class "button-lock text-lg highlight-hover"
+          :onclick "~/.local/bin/lockscreen && eww close powermenu" ""
         )
-        (eventbox 
-                    :cursor "hand"
-          (button		
-            :class "button-lock text-lg highlight-hover"
-            :onclick "pidof openbox && openbox --exit; pidof bspc && bspc quit" ""
-          )
+      )
+      (eventbox :cursor "hand"
+        (button	:class "button-lock text-lg highlight-hover"
+          :onclick "pidof openbox && openbox --exit; pidof bspc && bspc quit" ""
         )
-        (eventbox 
-                    :cursor "hand"
-          (button		
-            :class "button-reb text-lg highlight-hover"
-            :onclick "systemctl suspend" "望")
-        )
-        (eventbox 
-                    :cursor "hand"
-                (button		
-                  :class "button-off text-lg highlight-hover"
-                  :onclick "systemctl poweroff" "")
-        )
-        (eventbox 
-                    :cursor "hand"
-                (button		
-                  :class "button-off text-lg highlight-hover"
-                  :onclick "systemctl restart" "ﰇ")
-        )
+      )
+      (eventbox :cursor "hand"
+        (button	:class "button-reb text-lg highlight-hover"
+          :onclick "systemctl suspend" "望")
+      )
+      (eventbox :cursor "hand"
+        (button	:class "button-off text-lg highlight-hover"
+          :onclick "systemctl poweroff" "")
+      )
+      (eventbox :cursor "hand"
+        (button	:class "button-off text-lg highlight-hover"
+          :onclick "systemctl restart" "ﰇ")
+      )
     )
   )
 )
-
-
