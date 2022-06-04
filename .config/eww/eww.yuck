@@ -27,7 +27,7 @@
 
 
 ;; Variables
-(defpoll temperature :interval "20m" "curl -s 'wttr.in/?format=%c%t'")
+(defpoll temperature :interval "20m" "curl -s 'wttr.in/Kagawa?format=%c%t' || echo 'Offline'")
 (defpoll volumePercent :interval "3s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll timeVar :interval "10s" "date +'%I:%M %p'")
 (defpoll dateVar :interval "600s" "date +'%a, %b %d, %Y'")
