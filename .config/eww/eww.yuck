@@ -234,7 +234,7 @@
                     :cursor "hand"
           (button		
             :class "button-lock text-lg highlight-hover"
-            :onclick "openbox --exit || bspc quit" ""
+            :onclick "pidof openbox && openbox --exit; pidof bspc && bspc quit" ""
           )
         )
         (eventbox 
