@@ -27,43 +27,40 @@ $cat_flamingo: #f2cdcd;
     font-size: 1.4rem;
     color: $cat_text;
 }
-scale trough, scale trough highlight {
-  border-radius: 3px;
-}
-scale trough highlight {
-  background-image: linear-gradient(to right, $cat_flamingo 30%, $cat_sky 50%, $cat_sky 100% *50);
-}
 scale trough {
   background-color: $cat_surface1;
   min-height: 0.8rem;
   min-width: 12rem;
+  &, highlight {
+    border-radius: 3px;
+  }
+  highlight {
+    background-image: linear-gradient(to right, $cat_flamingo 30%, $cat_sky 50%, $cat_sky 100% *50);
+  }
 }
-.bar, .screenshot, .screenshottool{
+
+.bar {
     background-color: $cat_mantle;
     padding: 0.6rem 0;
 }
 
-.screenshot, .screenshottool{
-    border: 2px solid $cat_blue;
-    border-radius: 10px;
-}
-
-.bell {
-    color: $cat_teal;
-    font-size: 1.5rem;
-}
-
-.noticontent {
-    color: $cat_surface0;
-}
-
-.sspreview {
-    border-radius: 10px;
-    border: 2px solid $cat_mantle;
+.screenshot {
+  background: $cat_crust;
+  .label {
+    color: $cat_sky;
+    font-family: Noto Sans, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .preview {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin: 1rem;
+  }
 }
 .clock {
   font-weight: bold;
@@ -74,38 +71,7 @@ scale trough {
   padding: 0 8px;
   margin: 0.3rem 0 0.3rem 0;
 }
-.ss {
-    background-color: $cat_mantle;
-    border-radius: 100px;
-    padding: 0.6rem;
-    margin: 1rem;
-    font-size: 2rem;
-}
-.ss-text {
-    font-size: 2rem;
-}
-.ss:hover {
-    color: $cat_blue;
-}
-.ss-close:hover {
-    color: $cat_green;
-}
-.cpubar {
-    color: $cat_blue;
-    background-color: $cat_surface0;
-    border-radius: 10px;
-}
 
-.diskbar {
-    color: $cat_teal;
-    background-color: $cat_surface0;
-    border-radius: 10px;
-}
-.membar {
-    color: $cat_text;
-    background-color: $cat_surface0;
-    border-radius: 10px;
-}
 .system-status {
   font-size: 1.0rem;
   background-color: $cat_surface0;
@@ -113,10 +79,6 @@ scale trough {
   border-radius: 5px;
   padding: 0 8px;
   margin: 0.3rem 0 0.3rem 0;
-}
-.iconmem {
-    color: $cat_base;
-    font-size: 2.5rem;
 }
 .workspace-focused {
     color: $cat_subtext0;
@@ -127,8 +89,8 @@ scale trough {
 .workspace-occupied {
     color: $cat_surface1;
 }
-.date {
-    font-size: 1.1rem;
+.text-xs {
+  font-size: 1.1rem;
 }
 .text-sm {
   font-size: 1.5rem;
@@ -139,8 +101,14 @@ scale trough {
 .text-xl {
   font-size: 10rem;
 }
-.powermenu {
+.power-menu {
   background: $cat_crust;
+  .label {
+    color: $cat_sky;
+    font-family: Noto Sans, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
 }
 .button-off {
   color: $cat_red;
@@ -157,31 +125,12 @@ scale trough {
 .highlight-hover:hover {
   color: $cat_sky;
 }
-.nixos { font-size: 1.5rem; padding: 0.3rem; color: $cat_subtext0; }
-
-.volumemicBar trough highlight {
-    background-color: $cat_blue;
-}
-.volumeBar trough highlight {
-    background-color: $cat_text;
-}
-.musicBar trough highlight {
-    background-color: $cat_flamingo;
+.os-logo { 
+  font-size: 1.5rem; 
+  padding: 0.3rem; 
+  color: $cat_subtext0; 
 }
 
 .music {
   font-family: sans-serif;
 }
-
-.muted {
-    color: $cat_green;
-}
-
-.nomuted {
-    color: $cat_text;
-}
-
-.loud {
-    color: $cat_teal;
-}
-

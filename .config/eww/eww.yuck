@@ -1,34 +1,3 @@
-;; 
-(defwidget bar []
-  (centerbox :orientation "h"
-    (box :space-evenly false :halign "start" :valign "center"
-      :hexpand true :orientation "h" :spacing 10
-      (power)
-      (box :class "system-status" :orientation "h" :spacing 20 :active false
-        (mem)
-        (cpu)
-      )
-      (volume)
-    )
-
-    (workspaces :halign "center" :hexpand true :orientation "h")
-
-    (box :halign "end" :hexpand true :orientation "h" 
-      :space-evenly false :spacing 10 :style "padding: 0 8px"
-      (music)
-      (time)
-      (weather)
-    )
-  )
-)
-
-(defwidget screenshot []
-  (box
-    (screenshotmenu)
-  )
-)
-
-
 ;; Variables
 (defpoll temperature :interval "20m" 
   "curl -s 'wttr.in/Kagawa?format=%c%t' || echo 'Offline'")
@@ -40,7 +9,7 @@
 (deflisten song :interval "2s" "./scripts/music.sh --song")
 (deflisten workspaces_listen "./scripts/workspaces.sh")
 
-(defvar screenshotpath "/tmp/screenshot.png")
+(defvar screenshotPath "/tmp/screenshot.png")
 (defvar volReveal false)
 (defvar screenshot false)
 (defvar power false)
@@ -66,16 +35,15 @@
   (eventbox :onhover "eww update power=true" 
     :onhoverlost "eww update power=false"
     :cursor "hand"
-    (box :orientation "h"
-      :space-evenly "false"
+    (box :space-evenly "false"
       :spacing 15
       :class "powerLabel label"
-      (button	:class "nixos"
+      (button	:class "os-logo"
         :onclick "~/.config/rofi/launcher"	"")
       (revealer	:transition "slideright"
         :reveal power
         :duration "250ms"
-        (box :space-evenly true :orientation "h" :spacing 10
+        (box :space-evenly true :spacing 10
           (button	:class "button-off text-sm"
             :onclick "eww open --toggle powermenu" " ")
         )
@@ -85,7 +53,7 @@
 )
 
 (defwidget music [] 
-  (box :orientation "h" :spacing 10 :valign "center" :halign "end" :space-evenly "false"
+  (box :spacing 10 :valign "center" :halign "end" :space-evenly "false"
     (label :halign "start" :wrap "false" :limit-width 40 :class "music" :text song)
     (button :onclick "./scripts/music.sh --prev" "")
     (button :onclick "./scripts/music.sh --toggle" "${musicStatus}")
@@ -96,13 +64,12 @@
 (defwidget volume []
   (eventbox :onhover "eww update volReveal=true"
     :onhoverlost "eww update volReveal=false"
-    (box :space-evenly "false" :orientation "h" :spacing 3 
+    (box :space-evenly "false" :spacing 3 
       (button :class "volume-icon" " ")
       (revealer :transition "slideright"
         :reveal volReveal
         :duration "350ms"
         (scale :class "volbar" :value volumePercent
-          :orientation "h"
           :tooltip "${volumePercent}%"
           :max 100
           :min 0
@@ -114,82 +81,19 @@
 
 
 (defwidget weather []
-  (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
-    (button :class "date" :orientation "v" "${temperature}")
+  (box :spacing 10 :space-evenly false :class "clock"
+    (button :class "text-xs" :orientation "v" "${temperature}")
   )
 )
 
 (defwidget time []
-  (box :orientation "h" :spacing 10 :space-evenly false :class "clock"
-    (button	:class "date" :orientation "v" "${timeVar}")
+  (box :spacing 10 :space-evenly false :class "clock"
+    (button	:class "text-xs" :orientation "v" "${timeVar}")
   )
 )
 
 (defwidget workspaces []
   (literal :content workspaces_listen)
-)
-
-(defwidget screenshotpreview []
-  (box :class "sspreview" :hexpand true 
-    :vexpand true :style "background-image: url('${screenshotpath}');")
-)
-(defwidget screenshotmenu []
-  (box :orientation "v"
-    (box :vexpand true :hexpand true :orientation "h"
-      (label :text "Screenshot taken!" :class "ss-text")
-    )
-    (box :orientation "h"
-      (button       :class "ss-win ss"
-                    :tooltip "Save screenshot"
-                    :onclick "./scripts/ss.sh save &" "")
-      (button       :class "ss-copy ss"
-                    :tooltip "Copy screenshot"
-                    :onclick "./scripts/ss.sh copy &" "")
-      (button       :class "ss-discard ss"
-                    :tooltip "Discard screenshot"
-                    :onclick "./scripts/ss.sh discard &" "")
-    )
-  )
-)
-
-(defwidget screenshottool []
-  (box
-    (button       :class "ss-area ss"
-                  :tooltip "Select area"
-                  :onclick "./scripts/ss.sh area &" "")
-    (button       :class "ss-screen ss"
-                  :tooltip "Whole screen"
-                  :onclick "./scripts/ss.sh screen &" "")
-    (button       :class "ss-win ss"
-                  :tooltip "Window"
-                  :onclick "./scripts/ss.sh window &" "")
-    (button       :class "ss-cancel ss"
-                  :tooltip "Cancel"
-                  :onclick "eww close screenshottool &" "")
-  )
-)
-
-(defwindow screenshot
-  :geometry (geometry :x "-50px" :y "-50px"
-    :width "500px"
-    :height "400px"
-    :anchor "bottom right"
-  )
-  (box :space-evenly false :orientation "v"
-    (screenshot)
-    (screenshotpreview)
-  )
-)
-
-(defwindow screenshottool
-  :geometry (geometry :x "-50px" :y "-50px"
-    :width "500px"
-    :height "60"
-    :anchor "bottom right"
-  )
-  (box :space-evenly false :orientation "v"
-    (screenshottool)
-  )
 )
 
 (defwindow bar
@@ -199,46 +103,171 @@
     :anchor "top left")
   :stacking "bg"
   :wm-ignore false
-  (bar)
+  (centerbox 
+    (box :space-evenly false :halign "start" :valign "center"
+      :hexpand true :spacing 10
+      (power)
+      (box :class "system-status" :spacing 20 :active false
+        (mem)
+        (cpu)
+      )
+      (volume)
+    )
+
+    (workspaces :halign "center" :hexpand true)
+
+    (box :halign "end" :hexpand true 
+      :space-evenly false :spacing 10 :style "padding: 0 8px"
+      (music)
+      (time)
+      (weather)
+    )
+  )
 )
+
+(defwindow takeshot
+  :monitor 0
+  :reserve (struts :distance "32px" :side "top")
+  :geometry (geometry :height "18%" :width "32%" :anchor "center")
+  :stacking "fg"
+  :windowtype "dialog"
+  :wm-ignore true
+  (overlay :valign "fill" :halign "fill" :class "screenshot"
+    (eventbox :cursor "hand" :valign "start" :halign "end"
+      (button	:class "button-off text-sm highlight-hover"
+        :onclick "eww close takeshot" " ")
+    )
+    (box :valign "center" :halign "center" :orientation "v" 
+      :space-evenly false
+      (label :text "Screenshot" :class "title")
+      (box :valign "center" :halign "center"
+        :spacing 40
+        (eventbox :cursor "hand"
+          (box :orientation "v" :space-evenly false
+            (button	:class "button-lock text-lg highlight-hover"
+              :onclick "eww close takeshot && sleep 5 && ~/.local/bin/screenshot screen &" ""
+            )
+            (label :class "label" :text "Screen (5s)")
+          )
+        )
+        (eventbox :cursor "hand"
+          (box :orientation "v" :space-evenly false
+            (button	:class "button-lock text-lg highlight-hover"
+              :onclick "eww close takeshot && sleep 0.5 && ~/.local/bin/screenshot screen &" ""
+            )
+            (label :class "label" :text "Screen")
+          )
+        )
+        (eventbox :cursor "hand"
+          (box :orientation "v" :space-evenly false
+            (button	:class "button-reb text-lg highlight-hover"
+              :onclick "eww close takeshot && ~/.local/bin/screenshot window &" "")
+            (label :class "label" :text "Window")
+          )
+        )
+        (eventbox :cursor "hand"
+          (box :orientation "v" :space-evenly false
+            (button	:class "button-lock text-lg highlight-hover"
+              :onclick "eww close takeshot && ~/.local/bin/screenshot area &" ""
+            )
+            (label :class "label" :text "Area")
+          )
+        )
+      )
+    )
+  )
+)
+
+(defwindow previewshot
+  :geometry (geometry :x "-50px" :y "-50px"
+    :width "500px"
+    :height "400px"
+    :anchor "bottom right"
+  )
+  (box :hexpand true :orientation "v" :class "screenshot"
+    :space-evenly false
+    (box :valign "center" :halign "center" :spacing 40
+      (eventbox :cursor "hand"
+        (box :orientation "v" :space-evenly false
+          (button	:class "button-lock text-lg highlight-hover"
+            :onclick "eww close previewshot && ~/.local/bin/screenshot save &" ""
+          )
+          (label :class "label" :text "Save")
+        )
+      )
+      (eventbox :cursor "hand"
+        (box :orientation "v" :space-evenly false
+          (button	:class "button-lock text-lg highlight-hover"
+            :onclick "eww close previewshot && ~/.local/bin/screenshot copy &" ""
+          )
+          (label :class "label" :text "Copy")
+        )
+      )
+      (eventbox :cursor "hand"
+        (box :orientation "v" :space-evenly false
+          (button	:class "button-lock text-lg highlight-hover"
+            :onclick "eww close previewshot" ""
+          )
+          (label :class "label" :text "Discard")
+        )
+      )
+    )
+    (box :class "preview" :vexpand true :hexpand true 
+      :style "background-image: url('${screenshotPath}');")
+  )
+)
+
 
 (defwindow powermenu
   :monitor 0
   :reserve (struts :distance "32px" :side "top")
   :geometry (geometry :height "18%" :width "32%" :anchor "center")
   :stacking "fg"
+  :windowtype "dialog"
   :wm-ignore true
-  (overlay :valign "fill" :halign "fill" :class "powermenu"
-    (box :orientation "h" :valign "start" :halign "fill" :spacing 10
-      :class "powerLabel label"
-      (eventbox :cursor "hand" :halign "end"
-        (button	:class "button-off text-sm highlight-hover"
-          :onclick "eww close powermenu" " ")
-      )
+  (overlay :valign "fill" :halign "fill" :class "power-menu"
+    (eventbox :cursor "hand" :valign "start" :halign "end"
+      (button	:class "button-off text-sm highlight-hover"
+        :onclick "eww close powermenu" " ")
     )
-    (box :orientation "h" :halign "center" :vexpand true
-      :space-evenly "false" :spacing 60 :class "powerLabel label"
+    (box :valign "center" :halign "center"
+      :spacing 40
       (eventbox :cursor "hand"
-        (button	:class "button-lock text-lg highlight-hover"
-          :onclick "~/.local/bin/lockscreen && eww close powermenu" ""
+        (box :orientation "v" :space-evenly false 
+          (button	:class "button-lock text-lg highlight-hover"
+            :onclick "~/.local/bin/lockscreen && eww close powermenu" ""
+          )
+          (label :class "label" :text "Lock")
         )
       )
       (eventbox :cursor "hand"
-        (button	:class "button-lock text-lg highlight-hover"
-          :onclick "pidof openbox && openbox --exit; pidof bspc && bspc quit" ""
+        (box :orientation "v" :space-evenly false
+          (button	:class "button-lock text-lg highlight-hover"
+            :onclick "pidof openbox && openbox --exit; pidof bspc && bspc quit" ""
+          )
+          (label :class "label" :text "Log out")
         )
       )
       (eventbox :cursor "hand"
-        (button	:class "button-reb text-lg highlight-hover"
-          :onclick "systemctl suspend" "望")
+        (box :orientation "v" :space-evenly false
+          (button	:class "button-reb text-lg highlight-hover"
+            :onclick "systemctl suspend && eww close powermenu" "鈴")
+          (label :class "label" :text "Sleep")
+        )
       )
       (eventbox :cursor "hand"
-        (button	:class "button-off text-lg highlight-hover"
-          :onclick "systemctl poweroff" "")
+        (box :orientation "v" :space-evenly false
+          (button	:class "button-off text-lg highlight-hover"
+            :onclick "systemctl poweroff" "襤")
+          (label :class "label" :text "Shut Down")
+        )
       )
       (eventbox :cursor "hand"
-        (button	:class "button-off text-lg highlight-hover"
-          :onclick "systemctl restart" "ﰇ")
+        (box :orientation "v" :space-evenly false :valign "center"
+          (button	:class "button-off text-lg highlight-hover"
+            :onclick "systemctl restart" "ﰇ")
+          (label :class "label" :text "Restart")
+        )
       )
     )
   )

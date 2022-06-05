@@ -447,27 +447,12 @@
     <!-- Screenshot Keys -->
     <keybind key="Print">
       <action name="Execute">
-        <command>~/.config/openbox/bin/ac-shots --now</command>
+        <command>~/.local/bin/screenshot screen-quiet</command>
       </action>
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>~/.config/openbox/bin/ac-shots --in5</command>
-      </action>
-    </keybind>
-    <keybind key="S-Print">
-      <action name="Execute">
-        <command>~/.config/openbox/bin/ac-shots --in10</command>
-      </action>
-    </keybind>
-    <keybind key="C-Print">
-      <action name="Execute">
-        <command>~/.config/openbox/bin/ac-shots --win</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-Print">
-      <action name="Execute">
-        <command>~/.config/openbox/bin/ac-shots --area</command>
+        <command>~/.local/bin/screenshot window-quiet</command>
       </action>
     </keybind>
     <!-- ################################ Launch Applications ################################ -->
@@ -500,7 +485,7 @@
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>~/.config/rofi/screenshot</command>
+        <command>eww open --toggle takeshot</command>
       </action>
     </keybind>
     <!-- Lockscreen -->

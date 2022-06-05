@@ -25,9 +25,6 @@
 			</action>
 		</item>
 		<separator/>
-		<separator/>
-		<menu icon="&icons;/shots.png" id="ac-shots" execute="&pipes;/ac-shots" label="Screenshot"/>
-		<separator/>
 		<menu icon="&icons;/record.png" id="ac-record" execute="&pipes;/ac-record" label="Screen Recorder"/>
 		<separator/>
 		<menu icon="&icons;/settings.png" id="preferences" label="Preferences">

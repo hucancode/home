@@ -16,7 +16,7 @@ alt + F1
 
 # Rofi Menus/Applets
 super + s
-	sh ~/.config/rofi/screenshot
+	eww open --toggle takeshot
 super + x
   eww open --toggle powermenu
 
@@ -34,11 +34,11 @@ ctrl + alt + l
 
 # Take a screenshot
 Print
-	sh ~/.local/bin/screenshot --now
+	sh ~/.local/bin/screenshot screen-quiet
 	
 # Take screenshot in 5 second
 alt + Print	
-	sh ~/.local/bin/screenshot --win
+	sh ~/.local/bin/screenshot window-quiet
 
 # Brighness control
 XF86MonBrightness{Up,Down}
