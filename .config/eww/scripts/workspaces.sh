@@ -1,30 +1,23 @@
 #!/bin/sh
 
-# Checks if a list ($1) contains an element ($2)
-contains() {
-    for e in $1; do
-        [ "$e" -eq "$2" ] && echo 1 && return 
-    done
-    echo 0
-}
-
 print_workspaces() {
     buf=""
-    desktop_count=$(xdotool get_num_desktops)
-    focused_desktop=$(xdotool get_desktop)
-    for (( i=0; i<$desktop_count; i++ )) do
-        if [ "$focused_desktop" == "$i" ]; then
-            ws=$d
-            icon=" "
-            class="workspace-focused"
-        else 
-            ws=$d
-            icon=" "
-            class="workspace-empty"
-        fi  
+    n=$(xdotool get_num_desktops)
+    focused=$(xdotool get_desktop)
+    for (( i=0; i<$n; i++ )) do
+        if [ "$focused" == "$i" ]; then
+            icon="●"
+            class="focused"
+        elif xdotool search --desktop $i --limit 1 "" >/dev/null; then
+            icon="◉"
+            class="occupied"
+        else
+            icon="○"
+            class="empty"
+        fi 
         buf="$buf (eventbox :cursor \"hand\" (button :class \"$class\" :onclick \"xdotool set_desktop $i\" \"$icon\"))"
     done
-    echo "(box :orientation \"h\" :class \"workspaces\" :spacing 10 :halign \"center\" :valign \"center\" :vexpand true :hexpand false $buf)"
+    echo "(box :class \"workspaces\" :spacing 10 :halign \"center\" :valign \"center\" :vexpand true $buf)"
 }
 
 # Listen to bspwm changes

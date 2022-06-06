@@ -1,93 +1,84 @@
-
-
-$cat_crust: #11111b;
-$cat_mantle: #181825;
-$cat_base: #1e1e2e;
-$cat_surface0: #313244;
-$cat_surface1: #45475a;
-$cat_surface2: #585b70;
-$cat_overlay0: #6c7086;
-$cat_overlay1: #7f849c;
-$cat_overlay2: #9399b2;
-$cat_subtext0: #a6adc8;
-$cat_blue: #89b4fa;
-$cat_green: #a6e3a1;
-$cat_red: #f38ba8;
-$cat_teal: #94e2d5;
-$cat_sky: #91d7e3;
-$cat_text: #cdd6f4;
-$cat_flamingo: #f2cdcd;
+$cat-crust: #11111b;
+$cat-mantle: #181825;
+$cat-base: #1e1e2e;
+$cat-surface0: #313244;
+$cat-surface1: #45475a;
+$cat-surface2: #585b70;
+$cat-overlay0: #6c7086;
+$cat-overlay1: #7f849c;
+$cat-overlay2: #9399b2;
+$cat-subtext0: #a6adc8;
+$cat-subtext1: #bac2de;
+$cat-blue: #89b4fa;
+$cat-green: #a6e3a1;
+$cat-red: #f38ba8;
+$cat-teal: #94e2d5;
+$cat-sky: #91d7e3;
+$cat-text: #cdd6f4;
+$cat-flamingo: #f2cdcd;
 
 * {
-    all: unset; //Unsets everything so you can style everything from scratch
-    font-family: Fira Code,Iosevka Nerd Font,FiraCode Nerd Font;
+  all: unset; //Unsets everything so you can style everything from scratch
+  font-family: Fira Code, Iosevka Nerd Font, FiraCode Nerd Font;
 }
 
-.volume-icon {
-    font-size: 1.4rem;
-    color: $cat_text;
-}
 scale trough {
-  background-color: $cat_surface1;
+  background-color: $cat-surface1;
   min-height: 0.8rem;
   min-width: 12rem;
-  &, highlight {
+  &,
+  highlight {
     border-radius: 3px;
   }
   highlight {
-    background-image: linear-gradient(to right, $cat_flamingo 30%, $cat_sky 50%, $cat_sky 100% *50);
+    background-image: linear-gradient(
+      to right,
+      $cat-flamingo 30%,
+      $cat-sky 50%,
+      $cat-sky 100% * 50
+    );
   }
 }
-
 .bar {
-    background-color: $cat_mantle;
-    padding: 0.6rem 0;
+  background-color: $cat-mantle;
+  padding: 0.6rem 0;
 }
-
-.screenshot {
-  background: $cat_crust;
-  .label {
-    color: $cat_sky;
-    font-family: Noto Sans, sans-serif;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .preview {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 1rem;
-  }
+.preview {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 1rem;
 }
-.clock {
+.container {
+  font-size: 1rem;
+  background-color: $cat-surface0;
+  border-radius: 5px;
+  padding: 0 8px;
+  margin: 0.3rem 0 0.3rem 0;
+}
+.bold {
   font-weight: bold;
-  font-size: 1.0rem;
-  background-color: $cat_surface0;
-  color: $cat_text;
-  border-radius: 5px;
-  padding: 0 8px;
-  margin: 0.3rem 0 0.3rem 0;
 }
-
-.system-status {
-  font-size: 1.0rem;
-  background-color: $cat_surface0;
-  color: $cat_text;
-  border-radius: 5px;
-  padding: 0 8px;
-  margin: 0.3rem 0 0.3rem 0;
+.workspaces {
+  font-size: 1.8rem;
+  .focused {
+    color: $cat-subtext0;
+  }
+  .empty {
+    color: $cat-surface0;
+  }
+  .occupied {
+    color: $cat-overlay1;
+  }
 }
 .workspace-focused {
-    color: $cat_subtext0;
+  color: $cat-subtext0;
 }
 .workspace-empty {
-    color: $cat_surface0;
+  color: $cat-surface0;
 }
 .workspace-occupied {
-    color: $cat_surface1;
+  color: $cat-surface1;
 }
 .text-xs {
   font-size: 1.1rem;
@@ -95,42 +86,34 @@ scale trough {
 .text-sm {
   font-size: 1.5rem;
 }
+.text-base {
+  font-size: 2rem;
+}
 .text-lg {
   font-size: 4rem;
 }
-.text-xl {
-  font-size: 10rem;
+.bg-crust {
+  background-color: $cat-crust;
 }
-.power-menu {
-  background: $cat_crust;
-  .label {
-    color: $cat_sky;
-    font-family: Noto Sans, sans-serif;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
+.red {
+  color: $cat-red;
 }
-.button-off {
-  color: $cat_red;
+.green {
+  color: $cat-green;
 }
-.button-reb {
-    color: $cat_green;
+.blue {
+  color: $cat-blue;
 }
-.button-lock {
-    color: $cat_blue;
+.sky {
+  color: $cat-sky;
 }
-.button-sleep {
-    color: $cat_green;
+.hover-sky:hover {
+  color: $cat-sky;
 }
-.highlight-hover:hover {
-  color: $cat_sky;
+.os-logo {
+  padding: 0.3rem;
+  color: $cat-subtext0;
 }
-.os-logo { 
-  font-size: 1.5rem; 
-  padding: 0.3rem; 
-  color: $cat_subtext0; 
-}
-
-.music {
+.sans {
   font-family: sans-serif;
 }
