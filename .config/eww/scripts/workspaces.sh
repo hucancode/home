@@ -20,7 +20,6 @@ print_workspaces() {
     echo "(box :class \"workspaces\" :spacing 10 :halign \"center\" :valign \"center\" :vexpand true $buf)"
 }
 
-# Listen to bspwm changes
 print_workspaces
 xprop -spy -root _NET_CURRENT_DESKTOP | while read -r _ ; do
     print_workspaces
