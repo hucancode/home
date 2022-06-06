@@ -62,13 +62,13 @@ scale trough {
 .workspaces {
   font-size: 1.8rem;
   .focused {
-    color: $cat-subtext0;
+    color: $cat-green;
   }
   .empty {
-    color: $cat-surface0;
+    color: $cat-surface2;
   }
   .occupied {
-    color: $cat-overlay1;
+    color: $cat-blue;
   }
 }
 .workspace-focused {
