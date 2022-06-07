@@ -5,7 +5,7 @@
     (box :orientation "v" :space-evenly false
       (button	:class "${class} text-lg hover-sky"
         :onclick cmd icon)
-      (label :class "text-xs sans bold sky" :text text)
+      (label :class "text-xs sans bold sky beyno" :text text)
     )
   )
 )
@@ -16,35 +16,37 @@
   :stacking "fg"
   :windowtype "dialog"
   :wm-ignore true
-  (overlay :valign "fill" :halign "fill" :class "bg-crust"
-    (eventbox :cursor "hand" :valign "start" :halign "end"
-      (button	:class "red text-sm hover-sky"
-        :onclick "eww close takeshot" " ")
-    )
-    (box :valign "center" :halign "center" :orientation "v" 
-      :space-evenly false
-      (label :class "text-base" :text "Screenshot")
-      (box :valign "center" :halign "center"
-        :spacing 40
-        (command :class "blue"
-          :cmd "eww close takeshot && sleep 5 && ~/.local/bin/screenshot screen &"
-          :icon ""
-          :text "Screen (5s)"
-        )
-        (command :class "blue"
-          :cmd "eww close takeshot && sleep 0.5 && ~/.local/bin/screenshot screen &" 
-          :icon ""
-          :text "Screen"
-        )
-        (command :class "green"
-          :cmd "eww close takeshot && ~/.local/bin/screenshot window &" 
-          :icon ""
-          :text "Window"
-        )
-        (command :class "green"
-          :cmd "eww close takeshot && ~/.local/bin/screenshot area &" 
-          :icon ""
-          :text "Area"
+  (box :valign "fill" :halign "fill" :class "bg-crust"
+    (overlay :valign "fill" :halign "fill" :class "bg-crust"
+      (eventbox :cursor "hand" :valign "start" :halign "end"
+        (button	:class "red text-sm hover-sky"
+          :onclick "eww close takeshot" " ")
+      )
+      (box :valign "center" :halign "center" :orientation "v" 
+        :space-evenly false
+        (label :class "text-base beyno" :text "Screenshot")
+        (box :valign "center" :halign "center"
+          :spacing 40
+          (command :class "blue"
+            :cmd "eww close takeshot && sleep 5 && ~/.local/bin/screenshot screen &"
+            :icon ""
+            :text "Delayed"
+          )
+          (command :class "blue"
+            :cmd "eww close takeshot && sleep 0.5 && ~/.local/bin/screenshot screen &" 
+            :icon ""
+            :text "Screen"
+          )
+          (command :class "green"
+            :cmd "eww close takeshot && ~/.local/bin/screenshot window &" 
+            :icon ""
+            :text "Window"
+          )
+          (command :class "green"
+            :cmd "eww close takeshot && ~/.local/bin/screenshot area &" 
+            :icon ""
+            :text "Area"
+          )
         )
       )
     )

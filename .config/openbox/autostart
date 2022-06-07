@@ -22,7 +22,7 @@ xfce4-power-manager &
 xscreensaver &
 
 ## Start Compositing Manager
-# exec picom &
+exec picom --experimental-backends &
 
 ## Launch Polybar
 # ~/.config/polybar/launch-bar.sh &

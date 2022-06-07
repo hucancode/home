@@ -12,11 +12,11 @@ get_status() {
 if [[ "$1" == "song" ]]; then
   get_song
   while true; do
-    mpc idle player && get_song
+    mpc idle player >/dev/null && get_song
   done
 elif [[ "$1" == "status" ]]; then
   get_status
   while true; do
-    mpc idle player && get_status
+    mpc idle player >/dev/null && get_status
   done
 fi

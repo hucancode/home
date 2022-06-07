@@ -71,15 +71,6 @@ scale trough {
     color: $cat-blue;
   }
 }
-.workspace-focused {
-  color: $cat-subtext0;
-}
-.workspace-empty {
-  color: $cat-surface0;
-}
-.workspace-occupied {
-  color: $cat-surface1;
-}
 .text-xs {
   font-size: 1.1rem;
 }
@@ -94,6 +85,9 @@ scale trough {
 }
 .bg-crust {
   background-color: $cat-crust;
+}
+.bg-mantle {
+  background-color: $cat-mantle;
 }
 .red {
   color: $cat-red;
@@ -116,4 +110,7 @@ scale trough {
 }
 .sans {
   font-family: sans-serif;
+}
+.beyno {
+  font-family: Beyno;
 }

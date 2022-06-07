@@ -83,7 +83,6 @@
 				<command>~/.local/bin/lockscreen</command>
 			</action>
 		</item>
-		</menu>
 	</menu>
 </openbox_menu>
 <!-- vim:sw=2
