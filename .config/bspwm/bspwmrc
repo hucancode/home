@@ -58,10 +58,10 @@ for i in ${game[@]}; do
 # 5 > unreal
 declare -a unreal=(UnrealEditor UE4Editor)
 for i in ${unreal[@]}; do
-   bspc rule -a $i desktop='^5' state=floating follow=on focus=on; done
+   bspc rule -a $i desktop='^5' state=floating follow=on focus=on manage=off; done
 
 # special rules
-declare -a floating=(Yad 'Firefox:Places' Viewnior)
+declare -a floating=(Yad 'Firefox:Places' Viewnior kooha)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
