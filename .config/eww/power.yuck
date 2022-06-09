@@ -41,7 +41,7 @@
             :icon "襤" 
             :text "Shut Down")
           (command :class "red"
-            :cmd "systemctl restart" 
+            :cmd "systemctl reboot" 
             :icon "ﰇ" 
             :text "Restart")
         )

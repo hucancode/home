@@ -12,6 +12,8 @@
 (deflisten workspaceCode "./scripts/workspaces.sh")
 
 (defvar showVolume false)
+(defvar showRecord false)
+(defvar isRecording false)
 (defvar showPower false)
 
 ;; Widgets
@@ -48,7 +50,9 @@
 
 (defwidget music [] 
   (box :spacing 10 :valign "center" :halign "end" :space-evenly false
-    (label :halign "start" :wrap false :limit-width 40 :class "sans" :text song)
+    (label :halign "start" :wrap false 
+      :tooltip song
+      :limit-width 40 :class "sans" :text song)
     (button :class "blue hover-sky" :onclick "mpc prev" "")
     (button :class "green hover-sky" :onclick "mpc toggle" musicStatus)
     (button :class "blue hover-sky" :onclick "mpc next" "")
@@ -59,7 +63,8 @@
   (eventbox :onhover "eww update showVolume=true"
     :onhoverlost "eww update showVolume=false"
     (box :space-evenly false :spacing 3 
-      (button :class "text-sm" " ")
+      (button :class "text-sm"
+        " ")
       (revealer :transition "slideright"
         :reveal showVolume
         :duration "350ms"
@@ -71,6 +76,47 @@
     )
   )
 )
+
+(defwidget record []
+    (box :space-evenly false :spacing 3 
+      (button :class "text-sm" 
+        :tooltip "Record screen"
+        :onclick "eww update showRecord=${!showRecord}"
+        " ")
+      (revealer :transition "slideright"
+        :reveal showRecord
+        :duration "350ms"
+        (box
+          (box :visible isRecording
+            (button :class "text-sm blue hover-sky" 
+              :tooltip "Stop recording"
+              :onclick "eww update isRecording=false && eww update showRecord=false && ~/.local/bin/record stop"
+              "栗 ")
+          )
+          (box :spacing 10
+            :visible "${!isRecording}"
+            (button :class "text-sm blue hover-sky" 
+              :tooltip "Full screen/Audio on"
+              :onclick "eww update isRecording=true && ~/.local/bin/record screen &"
+              "  ")
+            (button :class "text-sm blue hover-sky" 
+              :tooltip "Area/Audio on"
+              :onclick "eww update isRecording=true && ~/.local/bin/record area &"
+              "  ")
+            (button :class "text-sm green hover-sky"
+              :tooltip "Full screen/Audio off"
+              :onclick "eww update isRecording=true && ~/.local/bin/record screen-mute &"
+              "  ")
+            (button :class "text-sm green hover-sky" 
+              :tooltip "Area/Audio off"
+              :onclick "eww update isRecording=true && ~/.local/bin/record screen-mute &"
+              "  ")
+          )
+        )
+      )
+    )
+)
+
 
 (defwidget weather []
   (box :class "container bold" :active false
@@ -100,6 +146,7 @@
         (cpu)
       )
       (volume)
+      (record)
     )
 
     (literal :halign "center" :hexpand true :content workspaceCode)
