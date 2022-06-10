@@ -25,56 +25,25 @@
 			</action>
 		</item>
 		<separator/>
-		<menu icon="&icons;/settings.png" id="preferences" label="Preferences">
-			<menu id="obconfig" label="Openbox">
-				<item label="Settings">
-					<action name="Execute">
-						<command>obconf</command>
-					</action>
-				</item>
-				<separator/>
-				<item label="Edit menu.xml">
-					<action name="Execute">
-						<command>exo-open ~/.config/openbox/menu-icons.xml</command>
-					</action>
-				</item>
-				<item label="Edit rc.xml">
-					<action name="Execute">
-						<command>exo-open ~/.config/openbox/rc.xml</command>
-					</action>
-				</item>
-				<item label="Edit autostart">
-					<action name="Execute">
-						<command>exo-open ~/.config/openbox/autostart</command>
-					</action>
-				</item>
-				<separator/>
-				<item label="Reconfigure">
-					<action name="Reconfigure"/>
-				</item>
-				<item label="Restart">
-					<action name="Restart"/>
-				</item>
-			</menu>
+    <menu icon="&icons;/settings.png" id="preferences" label="Preferences">
+      <item label="Reconfigure Openbox">
+        <action name="Reconfigure"/>
+      </item>
+      <item label="Restart Openbox">
+        <action name="Restart"/>
+      </item>
 			<separator/>
 			<item label="Change Wallpaper">
 				<action name="Execute">
 					<command>nitrogen</command>
 				</action>
-			</item>
-			<item label="Appearance Settings (XFCE)">
+      </item>
+      <item label="Display Keybind">
 				<action name="Execute">
-					<command>xfce4-appearance-settings</command>
-				</action>
-			</item>
-			<item label="Appearance Settings (GTK)">
-				<action name="Execute">
-					<command>lxappearance</command>
+          <command>~/.config/openbox/bin/ac-kb --gui</command>
 				</action>
 			</item>
 		</menu>
-		<separator/>
-		<menu icon="&icons;/keyboard.png" id="KeybindsPipeMenu" execute="&pipes;/ac-kb-pipemenu" label="Keybinds"/>
 		<separator/>
 		<item icon="&icons;/sys-lock.png" label="Lock Screen">
 			<action name="Execute">

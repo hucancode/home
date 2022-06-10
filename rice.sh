@@ -14,12 +14,11 @@ set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-them
 set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim picom"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
-set FILE_MANAGER "ranger python-pillow"
-set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
+set FILE_MANAGER "ranger python-pillow meld"
 set TERMINAL "kitty neovim starship fzf fd ripgrep zoxide exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 yay -S $WM_AUR
 # rice settings
 git clone https://github.com/$GH_USERNAME/$GH_REPO

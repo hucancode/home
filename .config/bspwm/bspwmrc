@@ -90,7 +90,7 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 
 # Enable power management
 xfce4-power-manager &
-picom --experimental-backends &
+# picom --experimental-backends &
 # Fix cursor
 xsetroot -cursor_name left_ptr
 

@@ -13,11 +13,10 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - 📊 Status bar [eww](https://github.com/elkowar/eww)
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
-- 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger), and [thunar](https://wiki.archlinux.org/title/thunar)
+- 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger)
 - 📋 Text editor [neovim](https://neovim.io/)
 - 🐱 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [kitty](https://wiki.archlinux.org/title/Kitty)
-- 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon), and [ario](http://ario-player.sourceforge.net/)
-- 💡 Modern tools for modern problems. `cd/zoxide`, `ls/exa`, `sed/sd`, `find/fd`, `grep/ripgrep`
+- 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon)
 # 👀 Screenshots
 ![](Pictures/Screenshots/1.png)
 ![](Pictures/Screenshots/2.png)
@@ -61,12 +60,11 @@ set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-them
 set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim picom"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
-set FILE_MANAGER "ranger python-pillow"
-set QOL "ario thunar thunar-volman xarchiver thunar-archive-plugin ffmpegthumbnailer meld"
+set FILE_MANAGER "ranger python-pillow meld"
 set TERMINAL "kitty starship neovim fzf fd ripgrep zoxide exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $QOL $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
 yay -S $WM_AUR
 ```
 ## 🔑 Config `lightdm`
