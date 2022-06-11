@@ -57,7 +57,7 @@ begin cd yay-bin; and makepkg -si; end
 Install required packages
 ```fish
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool maim picom"
+set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim picom"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "ranger python-pillow meld"

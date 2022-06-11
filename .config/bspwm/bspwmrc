@@ -39,47 +39,41 @@ bspc config single_monocle false
 bspc rule -r *:*
 
 # 1 > terminal
-bspc rule -a Alacritty desktop='^1' follow=on focus=on
-bspc rule -a Kitty desktop='^1' follow=on focus=on
+declare -a term=(Alacritty kitty)
+for i in ${term[@]}; do
+  bspc rule -a $i desktop='^1' follow=on focus=on
+done
 
 # 2 > web
-bspc rule -a chromium desktop='^2' follow=on focus=on
-bspc rule -a Google-chrome desktop='^2' follow=on focus=on
+declare -a browser=(Chromium Google-chrome)
+for i in ${browser[@]}; do
+  bspc rule -a $i desktop='^2' follow=on focus=on
+done
 
 # 3 > code
 declare -a code=(code-oss code)
 for i in ${code[@]}; do
-   bspc rule -a $i desktop='^3' follow=on focus=on; done
+   bspc rule -a $i desktop='^3' follow=on focus=on;
+done
 
-# 4 > game
-declare -a game=(steam)
-for i in ${game[@]}; do
-   bspc rule -a $i desktop='^4' follow=on focus=on; done
 # 5 > unreal
 declare -a unreal=(UnrealEditor UE4Editor)
 for i in ${unreal[@]}; do
-   bspc rule -a $i desktop='^5' state=floating follow=on focus=on manage=off; done
+   bspc rule -a $i desktop='^5' state=floating follow=on focus=on manage=off;
+done
 
 # special rules
-declare -a floating=(Yad 'Firefox:Places' Viewnior kooha)
+declare -a floating=(Steam Yad 'Firefox:Places' Viewnior kooha)
 for i in ${floating[@]}; do
-   bspc rule -a $i state=floating follow=on focus=on; done
+   bspc rule -a $i state=floating follow=on focus=on;
+done
 
-bspc rule -a Conky state=floating manage=off
-bspc rule -a stalonetray state=floating manage=off
-
+bspfloat &
+bspfocus &
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 picom xsettingsd polybar eww sxhkd dunst ksuperkey xfce4-power-manager mpd
-
-# Lauch xsettingsd daemon
-xsettingsd &
-
-# polkit agent
-if [[ ! `pidof xfce-polkit` ]]; then
-	/usr/lib/xfce-polkit/xfce-polkit &
-fi
+killall -9 picom polybar eww sxhkd dunst ksuperkey mpd
 
 # Lauch keybindings daemon
 sxhkd &
@@ -88,8 +82,6 @@ sxhkd &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-# Enable power management
-xfce4-power-manager &
 # picom --experimental-backends &
 # Fix cursor
 xsetroot -cursor_name left_ptr
@@ -100,12 +92,8 @@ nitrogen --restore
 # Start mpd
 exec mpd &
 
-## Thunar Daemon
-exec thunar --daemon &
-
 eww daemon
 eww open bar
 # Start bspwm scripts
-bspdunst
-bspfloat &
-bspfocus &
+## Launch dunst daemon
+dunst &

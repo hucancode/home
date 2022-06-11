@@ -4,22 +4,10 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Kill if already running
-killall -9 xfsettingsd picom eww polybar mpd dunst ksuperkey xfce4-power-manager
+killall -9 picom eww polybar mpd dunst ksuperkey
 
 ## Restore Wallpaper
 nitrogen --restore
-
-## xfce4-settings daemon
-xfsettingsd &
-
-## polkit agent
-if [[ ! `pidof xfce-polkit` ]]; then
-	/usr/lib/xfce-polkit/xfce-polkit &
-fi
-
-## Enable power management
-xfce4-power-manager &
-xscreensaver &
 
 ## Start Compositing Manager
 # exec picom --experimental-backends &
@@ -30,15 +18,11 @@ eww daemon
 eww open bar
 
 ## Notification Daemon
-exec dunst &
+dunst &
 
 ## Start Music Player Daemon
-exec mpd &
-
-## Thunar Daemon
-exec thunar --daemon &
+mpd &
 
 ## Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
-
