@@ -78,7 +78,12 @@ function explorer(use)
         requires = {{'nvim-lua/plenary.nvim'}}
     }
     use 'nvim-telescope/telescope-file-browser.nvim'
-    require('telescope').setup()
+    require('telescope').setup({
+      defaults = {
+        borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+        prompt_prefix = " "
+      }
+    })
     require("telescope").load_extension("file_browser")
     local wk = require("which-key")
     wk.register({
