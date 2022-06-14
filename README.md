@@ -13,7 +13,7 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 - 📊 Status bar [eww](https://github.com/elkowar/eww)
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
-- 📂 File manager [ranger](https://wiki.archlinux.org/title/Ranger)
+- 📂 File manager [lf](https://github.com/gokcehan/lf)
 - 📋 Text editor [neovim](https://neovim.io/)
 - 🐱 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [kitty](https://wiki.archlinux.org/title/Kitty)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon)
@@ -56,16 +56,15 @@ begin cd yay-bin; and makepkg -si; end
 ```
 Install required packages
 ```fish
-set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim picom"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
-set FILE_MANAGER "ranger python-pillow meld"
-set TERMINAL "kitty starship neovim fzf fd ripgrep zoxide exa sd"
+set FILE_MANAGER "meld"
+set FILE_MANAGER_AUR "lf"
+set TERMINAL "kitty neovim starship fzf fd ripgrep zoxide exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
-yay -S $WM_AUR
+yay -S $WM_AUR $FILE_MANAGER_AUR
 ```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.

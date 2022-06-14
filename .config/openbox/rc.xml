@@ -204,191 +204,10 @@
     <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-        <width>60%</width>
-        <height>80%</height>
+        <width>50%</width>
+        <height>70%</height>
       </action>
       <action name="MoveToCenter"/>
-    </keybind>
-    <!-- Top right-->
-    <keybind key="W-k">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-5</x>
-        <y>5</y>
-      </action>
-    </keybind>
-    <!-- Top left-->
-    <keybind key="W-h">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>5</x>
-        <y>5</y>
-      </action>
-    </keybind>
-    <!-- Bottom left-->
-    <keybind key="W-j">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>5</x>
-        <y>-5</y>
-      </action>
-    </keybind>
-    <!-- Bottom right-->
-    <keybind key="W-l">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-5</x>
-        <y>-5</y>
-      </action>
-    </keybind>
-    <keybind key="A-z">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>15</x>
-        <y>15</y>
-        <height>97%</height>
-        <width>32%</width>
-      </action>
-    </keybind>
-    <keybind key="A-x">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>34%</x>
-        <y>15</y>
-        <height>97%</height>
-        <width>32%</width>
-      </action>
-    </keybind>
-    <keybind key="A-c">
-      <action name="Unmaximize"/>
-      <action name="MoveResizeTo">
-        <x>-17</x>
-        <y>15</y>
-        <height>97%</height>
-        <width>32%</width>
-      </action>
-    </keybind>
-    <!-- Windows Tiling -->
-    <keybind key="W-KP_1">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <width>50%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <keybind key="W-KP_2">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <keybind key="W-KP_3">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>-0</y>
-        <width>50%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <keybind key="W-KP_4">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>100%</height>
-      </action>
-    </keybind>
-    <keybind key="W-KP_5">
-      <action name="MaximizeFull"/>
-    </keybind>
-    <keybind key="W-KP_6">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>100%</height>
-      </action>
-    </keybind>
-    <keybind key="W-KP_7">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <keybind key="W-KP_8">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <width>100%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <keybind key="W-KP_9">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <width>50%</width>
-        <height>50%</height>
-      </action>
-    </keybind>
-    <!-- Move -->
-    <keybind key="W-A-Up">
-      <action name="MoveRelative">
-        <x>0</x>
-        <y>-20</y>
-      </action>
-    </keybind>
-    <keybind key="W-A-Down">
-      <action name="MoveRelative">
-        <x>0</x>
-        <y>20</y>
-      </action>
-    </keybind>
-    <keybind key="W-A-Left">
-      <action name="MoveRelative">
-        <x>-20</x>
-        <y>0</y>
-      </action>
-    </keybind>
-    <keybind key="W-A-Right">
-      <action name="MoveRelative">
-        <x>20</x>
-        <y>0</y>
-      </action>
-    </keybind>
-    <!-- Resize -->
-    <keybind key="C-A-Right">
-      <action name="ResizeRelative">
-        <right>20</right>
-      </action>
-    </keybind>
-    <keybind key="C-A-Left">
-      <action name="ResizeRelative">
-        <right>-20</right>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="ResizeRelative">
-        <bottom>20</bottom>
-      </action>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="ResizeRelative">
-        <bottom>-20</bottom>
-      </action>
     </keybind>
     <!-- Send Application to next/prev desktop -->
     <keybind key="W-S-Left">
@@ -464,7 +283,7 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>thunar</command>
+        <command>kitty lf</command>
       </action>
     </keybind>
     <keybind key="W-w">
@@ -503,13 +322,6 @@
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
-    </keybind>
-    <!-- Activate Move/Resize -->
-    <keybind key="A-r">
-      <action name="Resize"/>
-    </keybind>
-    <keybind key="A-m">
-      <action name="Move"/>
     </keybind>
     <!-- Launch Openbox Menu -->
     <keybind key="W-S-space">

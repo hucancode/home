@@ -15,7 +15,7 @@
 		<separator/>
 		<item icon="&icons;/filemanager.png" label="File Manager">
 			<action name="Execute">
-				<command>thunar</command>
+				<command>kitty lf</command>
 			</action>
 		</item>
 		<separator/>

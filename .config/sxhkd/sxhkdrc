@@ -24,7 +24,7 @@ super + x
 
 # Launch Apps
 super + {w,f}
-    {chromium,thunar}
+    {chromium,kitty lf}
 
 # Lockscreen
 ctrl + alt + l
