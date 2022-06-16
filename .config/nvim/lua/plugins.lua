@@ -78,21 +78,51 @@ function explorer(use)
         requires = {{'nvim-lua/plenary.nvim'}}
     }
     use 'nvim-telescope/telescope-file-browser.nvim'
-    require('telescope').setup({
+    local telescope = require('telescope')
+    telescope.setup({
       defaults = {
         borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
-        prompt_prefix = " "
+        prompt_prefix = " ",
+        selection_caret = " ",
+      },
+      pickers = {
+        find_files = {
+          results_title=" JUMP TO FILE",
+          prompt_title=false,
+          preview_title=false,
+        },
+        live_grep = {
+          results_title=" FUZZY FINDER",
+          prompt_title=false,
+          preview_title=false,
+        }
+      },
+      extensions = {
+        file_browser = {
+          results_title=" FILE BROWSER",
+          prompt_title=false,
+          preview_title=false,
+        }
       }
     })
-    require("telescope").load_extension("file_browser")
+    telescope.load_extension("file_browser")
     local wk = require("which-key")
     wk.register({
       ["<leader>"] = {
         f = {
           name = "File",
-          f = { "<cmd>Telescope find_files<cr>", "Find File" }, 
-          b = { "<cmd>Telescope file_browser<cr>", "File Browser" }, 
-          g = { "<cmd>Telescope live_grep<cr>", "Find in Files" }, 
+          f = { 
+            function() require("telescope.builtin").find_files() end, 
+            "Jump to File"
+          }, 
+          b = { 
+            function() telescope.extensions.file_browser.file_browser() end,
+            "File Browser"
+          }, 
+          g = { 
+            function() require('telescope.builtin').live_grep() end, 
+            "Fuzzy Finder" 
+          }, 
         },
         w = { "<cmd>bdelete<cr>", "Close Buffer" },
         W = { "<cmd>enew<cr>", "New Buffer" },
@@ -120,8 +150,7 @@ function explorer(use)
             vim.api.nvim_command("cd " .. vim.v.argv[2])
           end
           if no_argv or directory then
-            -- require("telescope.builtin").find_files()
-            require("telescope").extensions.file_browser.file_browser()
+            telescope.extensions.file_browser.file_browser()
           end
         end,
       }
@@ -181,7 +210,7 @@ function lsp(use)
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'tsserver'}
+    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'tsserver', 'dartls'}
     for _, server in pairs(servers) do
         lsp[server].setup { capabilities = capabilities }
     end
