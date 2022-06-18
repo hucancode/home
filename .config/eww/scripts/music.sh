@@ -2,7 +2,8 @@
 
 get_song() {
   song=`mpc -f "[[%artist% - ]%title%]|[%file%]" current`
-  echo ${song:-"Offline"}
+  filename=`basename "$song" || echo $song`
+  echo ${filename:-"Offline"}
 }
 
 get_status() {
