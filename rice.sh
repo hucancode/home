@@ -16,7 +16,7 @@ set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER "meld"
 set FILE_MANAGER_AUR "lf"
-set TERMINAL "kitty neovim starship fzf fd ripgrep zoxide exa sd"
+set TERMINAL "kitty neovim fisher fzf fd ripgrep exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
