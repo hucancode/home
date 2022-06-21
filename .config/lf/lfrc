@@ -38,18 +38,6 @@ map <enter> shell
 
 # general
 map <backspace2> push :delete<enter>
-map r 
-map <f-2> ${{
-	# get 'basename' of the selection
-	filename="${f##*/}"
-	# quote it so we won't deal with quotes in the lf -remote command
-	filename="$(printf '%q' "$filename")"
-	filename="${filename// /<space>}"
-	lf -remote "send $id push :rename<space>$filename<a-b><c-b>"
-}}
-map a set hidden!
-map o push <enter>touch<space>
-map O push <enter>mkdir<space>
 # }}}
 
 # custom intergrations

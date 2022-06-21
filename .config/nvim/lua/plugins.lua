@@ -124,8 +124,8 @@ function explorer(use)
             "Fuzzy Finder" 
           }, 
         },
-        w = { "<cmd>bdelete<cr>", "Close Buffer" },
-        W = { "<cmd>enew<cr>", "New Buffer" },
+        q = { "<cmd>bdelete<cr>", "Close Buffer" },
+        w = { "<cmd>write<cr>", "Save" },
       },
       ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
       g = {
@@ -210,7 +210,7 @@ function lsp(use)
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'tsserver', 'dartls'}
+    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'tsserver', 'dartls', 'gdscript'}
     for _, server in pairs(servers) do
         lsp[server].setup { capabilities = capabilities }
     end
