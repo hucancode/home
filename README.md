@@ -58,13 +58,17 @@ Install required packages
 ```fish
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
-set FILE_MANAGER "meld"
 set FILE_MANAGER_AUR "lf"
 set TERMINAL "kitty neovim fisher fzf fd ripgrep exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $WM $MEDIA $TERMINAL $FONTS $KEYRING
 yay -S $WM_AUR $FILE_MANAGER_AUR
+```
+Config git diff tool
+```fish
+git config --global merge.tool vimdiff
+git config --global diff.tool vimdiff
 ```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
