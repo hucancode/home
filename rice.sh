@@ -14,16 +14,18 @@ set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-them
 set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim picom"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
-set FILE_MANAGER "meld"
 set FILE_MANAGER_AUR "lf"
 set TERMINAL "kitty neovim fisher fzf fd ripgrep exa sd"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set KEYRING "gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $WM $MEDIA $FILE_MANAGER $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $WM $MEDIA $TERMINAL $FONTS $KEYRING
 yay -S $WM_AUR $FILE_MANAGER_AUR
 # rice settings
 git clone https://github.com/$GH_USERNAME/$GH_REPO
 mv $GH_REPO/* . ; and rm -rf $GH_REPO
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff
+git config --global pull.ff only
 curl -L -o avatar.png https://github.com/$GH_USERNAME.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
 sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
 sudo systemctl enable lightdm
