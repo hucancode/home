@@ -108,24 +108,20 @@ function explorer(use)
     telescope.load_extension("file_browser")
     local wk = require("which-key")
     wk.register({
-      ["<leader>"] = {
-        f = {
-          name = "File",
-          f = { 
-            function() require("telescope.builtin").find_files() end, 
-            "Jump to File"
-          }, 
-          b = { 
-            function() telescope.extensions.file_browser.file_browser() end,
-            "File Browser"
-          }, 
-          g = { 
-            function() require('telescope.builtin').live_grep() end, 
-            "Fuzzy Finder" 
-          }, 
-        },
-        q = { "<cmd>bdelete<cr>", "Close Buffer" },
-        w = { "<cmd>write<cr>", "Save" },
+      ["<F9>"] = {
+        name = "File",
+        f = { 
+          function() require("telescope.builtin").find_files() end, 
+          "Jump to File"
+        }, 
+        b = { 
+          function() telescope.extensions.file_browser.file_browser() end,
+          "File Browser"
+        }, 
+        g = { 
+          function() require('telescope.builtin').live_grep() end, 
+          "Fuzzy Finder" 
+        }, 
       },
       ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
       g = {
@@ -210,7 +206,7 @@ function lsp(use)
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'tailwindcss', 'svelte', 'html', 'cssls', 'tsserver', 'dartls', 'gdscript'}
+    local servers = {'clangd', 'jdtls'}
     for _, server in pairs(servers) do
         lsp[server].setup { capabilities = capabilities }
     end
