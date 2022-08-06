@@ -288,7 +288,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>chromium</command>
+        <command>google-chrome-stable</command>
       </action>
     </keybind>
     <!-- Rofi -->

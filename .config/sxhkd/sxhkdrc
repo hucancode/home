@@ -24,7 +24,7 @@ super + x
 
 # Launch Apps
 super + {w,f}
-    {chromium,kitty lf}
+    {google-chrome-stable,kitty lf}
 
 # Lockscreen
 ctrl + alt + l
