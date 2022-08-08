@@ -152,7 +152,7 @@
     (box :halign "end" :hexpand true :space-evenly false :spacing 10 
       (music)
       (time)
-      (weather)
+      ;; (weather)
     )
   )
 )
