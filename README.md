@@ -65,11 +65,6 @@ set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $WM $MEDIA $TERMINAL $FONTS $KEYRING
 yay -S $WM_AUR $FILE_MANAGER_AUR
 ```
-Config git diff tool
-```fish
-git config --global merge.tool vimdiff
-git config --global diff.tool vimdiff
-```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
 ```fish

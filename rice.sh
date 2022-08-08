@@ -23,9 +23,6 @@ yay -S $WM_AUR $FILE_MANAGER_AUR
 # rice settings
 git clone https://github.com/$GH_USERNAME/$GH_REPO
 mv $GH_REPO/* . ; and rm -rf $GH_REPO
-git config --global diff.tool vimdiff
-git config --global merge.tool vimdiff
-git config --global pull.ff only
 curl -L -o avatar.png https://github.com/$GH_USERNAME.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
 sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
 sudo systemctl enable lightdm

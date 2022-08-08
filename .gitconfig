@@ -1,0 +1,6 @@
+[diff]
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff
+[pull]
+	ff = only
