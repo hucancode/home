@@ -82,8 +82,8 @@ function explorer(use)
     telescope.setup({
       defaults = {
         borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
-        prompt_prefix = " ",
-        selection_caret = " ",
+        prompt_prefix = "❯ ",
+        selection_caret = "❯ ",
       },
       pickers = {
         find_files = {
