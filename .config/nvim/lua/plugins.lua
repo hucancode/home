@@ -1,21 +1,6 @@
 local manager = require('packer')
 
-function packer(use)
-    use 'wbthomason/packer.nvim'
-end
-
-function theme(use)
-    use {
-        "catppuccin/nvim",
-        as = "catppuccin"
-    }
-end
-
-function status(use)
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+function status()
     require('lualine').setup({
       options = {
         theme = 'catppuccin',
@@ -56,9 +41,6 @@ function status(use)
         lualine_z = {'location'}
       },
     })
-    use {
-      "folke/which-key.nvim",
-    }
     require("which-key").setup {
       key_labels = {
         ["<space>"] = "SPACE",
@@ -72,12 +54,7 @@ function status(use)
     }
 end
 
-function explorer(use)
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/plenary.nvim'}}
-    }
-    use 'nvim-telescope/telescope-file-browser.nvim'
+function explorer()
     local telescope = require('telescope')
     telescope.setup({
       defaults = {
@@ -153,22 +130,15 @@ function explorer(use)
     )
 end
 
-function lsp(use)
-    use 'nvim-treesitter/nvim-treesitter'
+function lsp()
     require('nvim-treesitter.configs').setup({
       highlight = { enable = true },
       indent = { enable = true },
     })
-    use 'terrortylor/nvim-comment'
     require('nvim_comment').setup()
     vim.api.nvim_set_keymap("", "<C-_>", ":CommentToggle<cr>", {
         noremap = true
     })
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
     vim.opt.completeopt = {"menu", "menuone", "noselect"}
     local cmp = require('cmp')
     cmp.setup({
@@ -233,11 +203,33 @@ function lsp(use)
 end
 
 function setup(use)
-    packer(use)
-    theme(use)
-    status(use)
-    explorer(use)
-    lsp(use)
+    use 'wbthomason/packer.nvim'
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin"
+    }
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use {
+      "folke/which-key.nvim",
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
+    use 'nvim-telescope/telescope-file-browser.nvim'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'terrortylor/nvim-comment'
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+    status()
+    explorer()
+    lsp()
 end
 
 return manager.startup(setup)

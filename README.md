@@ -28,8 +28,10 @@ This is my personal ricing setup. Powered by [Arch](https://archlinux.org/). Hea
 Use this script 
 ```bash
 sudo pacman -Syu fish git
-git clone https://github.com/hucancode/home
-mv home/* . && rm -rf home
+git init
+git remote add origin https://github.com/hucancode/home
+git fetch
+git checkout -t origin/main
 chmod +x rice.sh && fish ./rice.sh
 ```
 ## ⚙️ Install Arch
@@ -44,8 +46,11 @@ and then restart your terminal.
 My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenient, I recommend you doing the same.
 ```fish
 sudo pacman -S git
-git clone https://github.com/hucancode/home
-mv home/* . ; and rm -rf home
+git init
+git remote add origin https://github.com/hucancode/home
+git fetch
+git reset origin/main
+git checkout -t origin/main
 sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
 ```
 ## 📦 Install softwares
@@ -56,14 +61,19 @@ begin cd yay-bin; and makepkg -si; end
 ```
 Install required packages
 ```fish
+set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
+set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER_AUR "lf"
-set TERMINAL "kitty neovim fisher fzf fd ripgrep exa sd"
-set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
+set TERMINAL "kitty neovim fzf fd ripgrep exa"
 set KEYRING "gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $WM $MEDIA $TERMINAL $FONTS $KEYRING
+sudo pacman -S $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING
 yay -S $WM_AUR $FILE_MANAGER_AUR
+```
+Neovim first time setting
+```fish
+nvim -c "PackerInstall"
 ```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.
