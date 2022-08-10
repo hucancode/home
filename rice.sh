@@ -20,7 +20,7 @@ begin cd yay-bin; and makepkg -si; end
 # install packages
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
-set WM "bspwm sxhkd openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim picom"
+set WM "openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER_AUR "lf"

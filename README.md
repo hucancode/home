@@ -5,7 +5,7 @@
 ![Powered by Arch](https://shields.io/badge/powered_by-arch-skyblue?style=for-the-badge&logo=arch-linux&logoColor=F0F0F0)
 
 ## ✨ Features:
-- 🖼 Window manager, [bspwm](https://wiki.archlinux.org/title/bspwm), [sxhkd](https://wiki.archlinux.org/title/sxhkd). `bspwm` is pretty harsh, if something went wrong you are welcomed with a black screen and no mouse/keyboard input. In case `bspwm` didn't work or you just don't like a tiling window manager, login with [openbox](https://wiki.archlinux.org/title/openbox)
+- 📦 Window manager [openbox](https://wiki.archlinux.org/title/openbox)
 - 🔑 Display manager (the login thing) [lightdm](https://wiki.archlinux.org/title/lightdm)
 - 📊 Status bar [eww](https://github.com/elkowar/eww)
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
@@ -29,6 +29,7 @@ git init
 git remote add origin https://github.com/hucancode/home
 git fetch
 git checkout -t origin/main
+git submodule update --init --recursive
 chmod +x rice.sh && fish ./rice.sh
 ```
 ## 🐚 Change default shell to `fish`
@@ -46,6 +47,7 @@ git remote add origin https://github.com/hucancode/home
 git fetch
 git reset origin/main
 git checkout -t origin/main
+git submodule update --init --recursive
 sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
 ```
 ## 📦 Install softwares
@@ -58,6 +60,7 @@ Install required packages
 ```fish
 set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
+set WM "openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER_AUR "lf"
