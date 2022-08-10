@@ -21,8 +21,7 @@
 ![](Pictures/Screenshots/4.png)
 ![](Pictures/Screenshots/5.png)
 # 🚀 Installation
-## 🐌 TL;DR
-Use this script 
+## 🐌 Checkout source configuration
 ```bash
 sudo pacman -Syu fish git
 git init
@@ -30,24 +29,21 @@ git remote add origin https://github.com/hucancode/home
 git fetch
 git checkout -t origin/main
 git submodule update --init --recursive
+```
+After checking out, you either install the packages needed, or run my script to install those packages for you.
+## 🐌 For the lazy, use this script
+```bash
 chmod +x rice.sh && fish ./rice.sh
 ```
+Things supposed to go smoothly. You can skip next sections entirely.
 ## 🐚 Change default shell to `fish`
 ```bash
 sudo pacman -Syu fish
 chsh -s $(which fish)
 ```
 and then restart your terminal.
-## 🌾 Checkout rice configurations
-My `~` folder is a git repo with `.gitignore` set to `*`. That's super convenient, I recommend you doing the same.
+## 🌾 Copy `openbox` icons
 ```fish
-sudo pacman -S git
-git init
-git remote add origin https://github.com/hucancode/home
-git fetch
-git reset origin/main
-git checkout -t origin/main
-git submodule update --init --recursive
 sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
 ```
 ## 📦 Install softwares
