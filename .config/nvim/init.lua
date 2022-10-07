@@ -1,6 +1,5 @@
 if not vim.g.vscode then
   require('plugins')
-  vim.cmd("colorscheme catppuccin")
   vim.cmd("set mouse+=a")
   vim.opt.relativenumber = true
   vim.opt.number = true

@@ -1,5 +1,11 @@
 local manager = require('packer')
 
+function theme()
+    vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+    require("catppuccin").setup()
+    vim.cmd("colorscheme catppuccin")
+end
+
 function status()
     require('lualine').setup({
       options = {
@@ -227,6 +233,7 @@ function setup(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    theme()
     status()
     explorer()
     lsp()

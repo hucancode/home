@@ -1,0 +1,25 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+mouse = true
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-s = ":write"
+y = ":clipboard-yank"
+p = ":clipboard-paste-after"
+P = ":clipboard-paste-before"
+
+[keys.select]
+y = ":clipboard-yank"
+p = ":clipboard-paste-replace"
+P = ":clipboard-paste-replace"
