@@ -209,7 +209,7 @@ function lsp()
 end
 
 function cp()
-    vim.cmd 'autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++17 % -o %:r<CR>'
+    vim.cmd 'autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++17 % -o %:r && ./%:r <%:r.in >%:r.out <CR>'
 end
 function setup(use)
     use 'wbthomason/packer.nvim'
