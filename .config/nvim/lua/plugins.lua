@@ -210,6 +210,7 @@ end
 
 function cp()
     vim.cmd 'autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++17 % -o %:r && ./%:r <%:r.in >%:r.out <CR>'
+    vim.cmd 'command NewCP :read ~/.config/cp/template.%:e <bar> :e %:r.in <bar> :b#'
 end
 function setup(use)
     use 'wbthomason/packer.nvim'
