@@ -209,8 +209,9 @@ function lsp()
 end
 
 function cp()
-    vim.cmd 'autocmd filetype cpp nnoremap <F5> :w <bar> !g++ -std=c++17 % -o %:r && ./%:r <%:r.in >%:r.out <CR>'
     vim.cmd 'command NewCP :read ~/.config/cp/template.%:e <bar> :e %:r.in <bar> :b#'
+    vim.cmd 'command BuildCP !g++ -std=c++17 % -o %:r && ./%:r <%:r.in >%:r.out'
+    vim.cmd 'autocmd filetype cpp nnoremap <F5> :w <bar> :BuildCP <CR>'
 end
 function setup(use)
     use 'wbthomason/packer.nvim'
