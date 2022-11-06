@@ -91,7 +91,7 @@ function explorer()
     telescope.load_extension("file_browser")
     local wk = require("which-key")
     wk.register({
-      ["<F9>"] = {
+      ["<leader>"] = {
         name = "File",
         f = { 
           function() require("telescope.builtin").find_files() end, 

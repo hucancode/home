@@ -1,5 +1,4 @@
 vim.cmd("set mouse+=a")
-vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.g.netrw_banner = 0
