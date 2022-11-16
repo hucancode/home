@@ -14,9 +14,3 @@ if vim.fn.executable('win32yank') == 1 then
 end
 
 vim.opt.clipboard = "unnamedplus"
-vim.api.nvim_set_keymap("", "d", "\"_d", {noremap = true})
-vim.api.nvim_set_keymap("", "D", "\"_D", {noremap = true})
-vim.api.nvim_set_keymap("", "c", "\"_c", {noremap = true})
-vim.api.nvim_set_keymap("", "C", "\"_C", {noremap = true})
-vim.api.nvim_set_keymap("v", "p", "\"_p", {noremap = true})
-vim.api.nvim_set_keymap("v", "P", "\"_P", {noremap = true})
