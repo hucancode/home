@@ -33,6 +33,7 @@ function status()
         lualine_b = {'diagnostics'},
         lualine_c = {{
           'filename',
+          path = 1,
           symbols = {
             modified = '  ',
             readonly = ' ',
@@ -142,54 +143,15 @@ function lsp()
       indent = { enable = true },
     })
     require('nvim_comment').setup()
-    vim.api.nvim_set_keymap("", "<C-_>", ":CommentToggle<cr>", {
+    vim.api.nvim_set_keymap("", "<C-c>", ":CommentToggle<cr>", {
         noremap = true
     })
     vim.opt.completeopt = {"menu", "menuone", "noselect"}
-    local cmp = require('cmp')
-    cmp.setup({
-        snippet = {
-            -- REQUIRED - you must specify a snippet engine
-            expand = function(args)
-                vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            end
-        },
-        view = {
-            entries = "native"
-        },
-        mapping = cmp.mapping.preset.insert({
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<CR>'] = cmp.mapping.confirm({
-                select = true
-            }) -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        }),
-        sources = cmp.config.sources({{
-            name = 'nvim_lsp'
-        }}, {{
-            name = 'buffer'
-        }}),
-        window = {
-            documentation = {
-                max_width = 70
-            }
-        },
-        formatting = {
-          format = function(entry, vim_item)
-            vim_item.abbr = string.sub(vim_item.abbr, 1, 70)
-            return vim_item
-          end
-        }
-    })
     local lsp = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'jdtls'}
+    local servers = {'clangd', 'jdtls', 'tsserver' }
     for _, server in pairs(servers) do
-        lsp[server].setup { capabilities = capabilities }
+        lsp[server].setup { }
     end
-    -- lsp.clangd.setup {
-    --   capabilities = capabilities,
-    --   cmd = { "clangd", "--completion-style=detailed" }
-    -- }
     -- hide all errors and warning
     vim.diagnostic.config({
       virtual_text = false,
@@ -229,10 +191,6 @@ function setup(use)
     use 'nvim-treesitter/nvim-treesitter'
     use 'terrortylor/nvim-comment'
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
     theme()
     status()
     explorer()
