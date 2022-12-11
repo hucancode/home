@@ -30,7 +30,7 @@ function status()
       },
       sections = {
         lualine_a = {'mode'},
-        lualine_b = {'diagnostics'},
+        lualine_b = {},
         lualine_c = {{
           'filename',
           path = 1,
@@ -40,19 +40,18 @@ function status()
             unnamed =  '[No Name]',
           },
         }},
-        lualine_x = {{
-          'filetype', 
-          icon_only = true
-        }},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
       },
     })
     require("which-key").setup {
       key_labels = {
-        ["<space>"] = "SPACE",
-        ["<cr>"] = "ENTER",
-        ["<tab>"] = "TAB",
+        ["<space>"] = " ",
+        ["<CR>"] = " ",
+        ["<esc>"] = " ",
+        ["<bs>"] = " ",
+        ["<Tab>"] = " ",
       },
       layout = {
         height = { min = 1, max = 4 }, 
@@ -72,6 +71,11 @@ function explorer()
       pickers = {
         find_files = {
           results_title=" JUMP TO FILE",
+          prompt_title=false,
+          preview_title=false,
+        },
+        buffers = {
+          results_title=" OPENNED FILES",
           prompt_title=false,
           preview_title=false,
         },
@@ -106,14 +110,12 @@ function explorer()
           function() require('telescope.builtin').live_grep() end, 
           "Fuzzy Finder" 
         }, 
+        ["<tab>"] = { 
+          function() require('telescope.builtin').buffers() end, 
+          "Buffers" 
+        },
       },
       ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
-      g = {
-        name = "Go to",
-        ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
-        t = { "<cmd>bnext<cr>", "Next Buffer" },
-        T = { "<cmd>bprevious<cr>", "Previous Buffer" }
-      },
     })
     
     vim.g.loaded_netrwPlugin = true
@@ -138,10 +140,6 @@ function explorer()
 end
 
 function lsp()
-    require('nvim-treesitter.configs').setup({
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
     require('nvim_comment').setup()
     vim.api.nvim_set_keymap("", "<C-c>", ":CommentToggle<cr>", {
         noremap = true
@@ -188,7 +186,6 @@ function setup(use)
         requires = {{'nvim-lua/plenary.nvim'}}
     }
     use 'nvim-telescope/telescope-file-browser.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
     use 'terrortylor/nvim-comment'
     use 'neovim/nvim-lspconfig'
     theme()
