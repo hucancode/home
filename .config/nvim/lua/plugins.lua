@@ -47,7 +47,7 @@ function status()
     })
     require("which-key").setup {
       key_labels = {
-        ["<space>"] = " ",
+        ["<space>"] = "␣",
         ["<CR>"] = " ",
         ["<esc>"] = " ",
         ["<bs>"] = " ",
