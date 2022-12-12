@@ -26,7 +26,7 @@ function status()
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
       },
       sections = {
         lualine_a = {'mode'},
@@ -42,7 +42,7 @@ function status()
         }},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {'encoding'},
       },
     })
     require("which-key").setup {
