@@ -1,5 +1,6 @@
 vim.cmd("set mouse+=a")
 vim.opt.number = true
+vim.opt.cmdheight = 0
 vim.opt.cursorline = true
 vim.g.netrw_banner = 0
 vim.opt.timeoutlen = 200

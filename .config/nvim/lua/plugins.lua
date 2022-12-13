@@ -146,7 +146,7 @@ function lsp()
     })
     vim.opt.completeopt = {"menu", "menuone", "noselect"}
     local lsp = require('lspconfig')
-    local servers = {'clangd', 'jdtls', 'tsserver' }
+    local servers = {'clangd', 'tsserver' }
     for _, server in pairs(servers) do
         lsp[server].setup { }
     end
