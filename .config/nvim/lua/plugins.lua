@@ -12,21 +12,21 @@ function status()
         theme = 'catppuccin',
       },
       tabline = {
-        lualine_a = {{
-          'buffers', 
-          hide_filename_extension = true,
-          max_length = vim.o.columns,
-          symbols = {
-            modified = '  ',      -- Text to show when the buffer is modified
-            alternate_file = '  ', -- Text to show to indify the alternate file
-            directory =  '',     -- Text to show when the buffer is a directory
-          },
-        }},
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
+        -- lualine_a = {{
+        --   'buffers', 
+        --   hide_filename_extension = true,
+        --   max_length = vim.o.columns,
+        --   symbols = {
+        --     modified = '  ',      -- Text to show when the buffer is modified
+        --     alternate_file = '  ', -- Text to show to indify the alternate file
+        --     directory =  '',     -- Text to show when the buffer is a directory
+        --   },
+        -- }},
+        -- lualine_b = {},
+        -- lualine_c = {},
+        -- lualine_x = {},
+        -- lualine_y = {},
+        -- lualine_z = {},
       },
       sections = {
         lualine_a = {'mode'},
@@ -85,15 +85,7 @@ function explorer()
           preview_title=false,
         }
       },
-      extensions = {
-        file_browser = {
-          results_title=" FILE BROWSER",
-          prompt_title=false,
-          preview_title=false,
-        }
-      }
     })
-    telescope.load_extension("file_browser")
     local wk = require("which-key")
     wk.register({
       ["<leader>"] = {
@@ -101,10 +93,6 @@ function explorer()
         f = { 
           function() require("telescope.builtin").find_files() end, 
           "Jump to File"
-        }, 
-        b = { 
-          function() telescope.extensions.file_browser.file_browser() end,
-          "File Browser"
         }, 
         g = { 
           function() require('telescope.builtin').live_grep() end, 
@@ -117,29 +105,13 @@ function explorer()
       },
       ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
     })
-    
-    vim.g.loaded_netrwPlugin = true
-    vim.api.nvim_create_autocmd(
-      {
-        "VimEnter"
-      },
-      { 
-        pattern = "*", 
-        callback = function()
-          local no_argv = #vim.v.argv <= 1
-          local directory = #vim.v.argv <= 2 and vim.fn.isdirectory(vim.v.argv[2]) ~= 0
-          if directory then
-            vim.api.nvim_command("cd " .. vim.v.argv[2])
-          end
-          if no_argv or directory then
-            telescope.extensions.file_browser.file_browser()
-          end
-        end,
-      }
-    )
 end
 
 function lsp()
+    require('nvim-treesitter.configs').setup({
+      highlight = { enable = true },
+      indent = { enable = true },
+    })
     require('nvim_comment').setup()
     vim.api.nvim_set_keymap("", "<C-c>", ":CommentToggle<cr>", {
         noremap = true
@@ -185,9 +157,9 @@ function setup(use)
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/plenary.nvim'}}
     }
-    use 'nvim-telescope/telescope-file-browser.nvim'
     use 'terrortylor/nvim-comment'
     use 'neovim/nvim-lspconfig'
+    use 'nvim-treesitter/nvim-treesitter'
     theme()
     status()
     explorer()
