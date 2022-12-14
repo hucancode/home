@@ -1,5 +1,6 @@
 vim.cmd("set mouse+=a")
 vim.opt.number = true
+vim.opt.statusline = " %f %h%m%r %=%{strlen(&fenc)?&enc:&fenc} "
 vim.opt.cmdheight = 0
 vim.opt.cursorline = true
 vim.g.netrw_banner = 0

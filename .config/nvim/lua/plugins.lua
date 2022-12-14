@@ -7,44 +7,6 @@ function theme()
 end
 
 function status()
-    require('lualine').setup({
-      options = {
-        theme = 'catppuccin',
-      },
-      tabline = {
-        -- lualine_a = {{
-        --   'buffers', 
-        --   hide_filename_extension = true,
-        --   max_length = vim.o.columns,
-        --   symbols = {
-        --     modified = '  ',      -- Text to show when the buffer is modified
-        --     alternate_file = '  ', -- Text to show to indify the alternate file
-        --     directory =  '',     -- Text to show when the buffer is a directory
-        --   },
-        -- }},
-        -- lualine_b = {},
-        -- lualine_c = {},
-        -- lualine_x = {},
-        -- lualine_y = {},
-        -- lualine_z = {},
-      },
-      sections = {
-        lualine_a = {'mode'},
-        lualine_b = {},
-        lualine_c = {{
-          'filename',
-          path = 1,
-          symbols = {
-            modified = '  ',
-            readonly = ' ',
-            unnamed =  '[No Name]',
-          },
-        }},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {'encoding'},
-      },
-    })
     require("which-key").setup {
       key_labels = {
         ["<space>"] = "␣",
@@ -145,10 +107,6 @@ function setup(use)
     use {
         "catppuccin/nvim",
         as = "catppuccin"
-    }
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use {
       "folke/which-key.nvim",
