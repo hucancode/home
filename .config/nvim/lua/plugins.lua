@@ -60,7 +60,7 @@ function explorer()
           function() require('telescope.builtin').live_grep() end, 
           "Fuzzy Finder" 
         }, 
-        ["<tab>"] = { 
+        b = { 
           function() require('telescope.builtin').buffers() end, 
           "Buffers" 
         },

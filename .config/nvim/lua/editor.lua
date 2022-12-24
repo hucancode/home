@@ -1,4 +1,5 @@
 vim.cmd("set mouse+=a")
+vim.cmd("set ai")
 vim.opt.number = true
 vim.opt.statusline = " %f %h%m%r %=%{strlen(&fenc)?&enc:&fenc} "
 vim.opt.laststatus = 3
