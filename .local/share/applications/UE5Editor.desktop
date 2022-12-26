@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=UE5 Editor
-Exec=env DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 && /unreal/5/UnrealEngine/Engine/Binaries/Linux/UnrealEditor %U
+Exec=/unreal/5/UnrealEngine/Engine/Binaries/Linux/UnrealEditor %U
 Terminal=false
 Type=Application
 Categories=Development

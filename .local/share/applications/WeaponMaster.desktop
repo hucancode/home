@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Weapon Master
-Exec=env DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 && /unreal/5/UnrealEngine/Engine/Binaries/Linux/UnrealEditor /unreal/WeaponMaster/WeaponMaster.uproject
+Exec=/unreal/5/UnrealEngine/Engine/Binaries/Linux/UnrealEditor /unreal/WeaponMaster/WeaponMaster.uproject
 Terminal=false
 Type=Application
 Categories=Development
