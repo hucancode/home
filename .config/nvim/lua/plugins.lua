@@ -84,22 +84,15 @@ function lsp()
         view = {
             entries = "native"
         },
-        sources = cmp.config.sources({{
-            name = 'nvim_lsp'
-        }}, {{
-            name = 'buffer'
-        }}),
-        window = {
-            documentation = {
-                max_width = 70
-            }
-        },
-        formatting = {
-          format = function(entry, vim_item)
-            vim_item.abbr = string.sub(vim_item.abbr, 1, 70)
-            return vim_item
-          end
-        }
+        mapping = cmp.mapping.preset.insert({
+            ['<C-Space>'] = cmp.mapping.complete(),
+            ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        }),
+        sources = cmp.config.sources(
+            {{ name = 'nvim_lsp' }}, 
+            {{ name = 'buffer' }},
+            {{ name = 'omni' }}
+        ),
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -142,6 +135,8 @@ function setup(use)
     use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
     use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-omni'
     use 'hrsh7th/nvim-cmp'
     theme()
     status()
