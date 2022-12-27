@@ -79,10 +79,33 @@ function lsp()
         noremap = true
     })
     vim.opt.completeopt = {"menu", "menuone", "noselect"}
+    local cmp = require('cmp')
+    cmp.setup({
+        view = {
+            entries = "native"
+        },
+        sources = cmp.config.sources({{
+            name = 'nvim_lsp'
+        }}, {{
+            name = 'buffer'
+        }}),
+        window = {
+            documentation = {
+                max_width = 70
+            }
+        },
+        formatting = {
+          format = function(entry, vim_item)
+            vim_item.abbr = string.sub(vim_item.abbr, 1, 70)
+            return vim_item
+          end
+        }
+    })
     local lsp = require('lspconfig')
-    local servers = {'clangd', 'tsserver' }
+    local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+    local servers = {'clangd', 'tsserver'}
     for _, server in pairs(servers) do
-        lsp[server].setup { }
+        lsp[server].setup { capabilities = capabilities }
     end
     -- hide all errors and warning
     vim.diagnostic.config({
@@ -118,6 +141,8 @@ function setup(use)
     use 'terrortylor/nvim-comment'
     use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/nvim-cmp'
     theme()
     status()
     explorer()
