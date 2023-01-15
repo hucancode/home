@@ -50,7 +50,7 @@ function explorer()
     })
     local wk = require("which-key")
     wk.register({
-      ["<leader>"] = {
+      ["<space>"] = {
         name = "File",
         f = { 
           function() require("telescope.builtin").find_files() end, 
