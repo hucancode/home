@@ -96,19 +96,19 @@
           (button :class "text-sm green hover-sky" 
             :tooltip "Full screen/Audio on"
             :onclick "eww update isRecording=true && ~/.local/bin/record screen &"
-            "  ")
+            "F+")
           (button :class "text-sm green hover-sky" 
             :tooltip "Area/Audio on"
             :onclick "eww update isRecording=true && ~/.local/bin/record area &"
-            "  ")
+            "A+")
           (button :class "text-sm green hover-sky"
             :tooltip "Full screen/Audio off"
             :onclick "eww update isRecording=true && ~/.local/bin/record screen-mute &"
-            "  ")
+            "F")
           (button :class "text-sm green hover-sky" 
             :tooltip "Area/Audio off"
             :onclick "eww update isRecording=true && ~/.local/bin/record screen-mute &"
-            "  ")
+            "A")
         )
       )
     )
