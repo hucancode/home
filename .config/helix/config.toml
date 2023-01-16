@@ -2,6 +2,15 @@ theme = "catppuccin_mocha"
 
 [editor]
 true-color = true
+auto-info = false
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+right = ["diagnostics", "position", "file-encoding"]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -9,7 +18,6 @@ normal = "block"
 select = "underline"
 
 [keys.normal]
-C-s = ":write"
 y = ":clipboard-yank"
 p = ":clipboard-paste-after"
 P = ":clipboard-paste-before"
