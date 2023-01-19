@@ -6,7 +6,57 @@ function theme()
     vim.cmd("colorscheme catppuccin")
 end
 
+local function show_macro_recording()
+    local recording_register = vim.fn.reg_recording()
+    if recording_register == "" then
+        return ""
+    else
+        return "Recording @" .. recording_register
+    end
+end
+
 function status()
+    require('lualine').setup({
+      options = {
+        theme = 'catppuccin',
+      },
+      tabline = {
+        lualine_a = {{
+          'buffers', 
+          hide_filename_extension = true,
+          max_length = vim.o.columns,
+          symbols = {
+            modified = '  ',      -- Text to show when the buffer is modified
+            alternate_file = '  ', -- Text to show to indify the alternate file
+            directory =  '',     -- Text to show when the buffer is a directory
+          },
+        }},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
+      sections = {
+        lualine_a = {'mode'},
+        lualine_c = {{
+          'filename',
+          path = 1,
+          symbols = {
+            modified = '  ',
+            readonly = ' ',
+            unnamed =  '[No Name]',
+          },
+        }},
+        lualine_b = {'encoding'},
+        lualine_x = {},
+        lualine_y = {{
+            "macro-recording",
+            fmt = show_macro_recording,
+        }},
+        lualine_z = {'searchcount'},
+      },
+    })
     require("which-key").setup {
       key_labels = {
         ["<space>"] = "␣",
@@ -124,6 +174,11 @@ function setup(use)
         "catppuccin/nvim",
         as = "catppuccin"
     }
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
     use {
       "folke/which-key.nvim",
     }
