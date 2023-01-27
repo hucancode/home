@@ -106,7 +106,7 @@ function explorer()
           function() require("telescope.builtin").find_files() end, 
           "Jump to File"
         }, 
-        g = { 
+        ["<space>"] = { 
           function() require('telescope.builtin').live_grep() end, 
           "Fuzzy Finder" 
         }, 
