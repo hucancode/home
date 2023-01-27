@@ -24,6 +24,8 @@ esc = ["collapse_selection", "keep_primary_selection"]
 V = ["select_mode", "extend_to_line_bounds"]
 C = ["extend_to_line_end", "delete_selection", "insert_mode"]
 D = ["extend_to_line_end", "delete_selection"]
+[keys.normal.space]
+space = "global_search"
 [keys.normal.d]
 d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
 w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
