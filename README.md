@@ -60,14 +60,10 @@ set WM "openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroo
 set WM_AUR "i3lock-color eww-git ksuperkey"
 set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 set FILE_MANAGER_AUR "lf"
-set TERMINAL "kitty neovim fzf fd ripgrep exa"
+set TERMINAL "kitty neovim fzf fd ripgrep exa helix git-delta"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING
 yay -S $WM_AUR $FILE_MANAGER_AUR
-```
-Neovim first time setting
-```fish
-nvim -c "PackerInstall"
 ```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.

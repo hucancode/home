@@ -1,3 +1,3 @@
-function vi --wraps=nvim --description 'alias vi=nvim'
-  nvim $argv; 
+function vi --wraps=hx --description 'alias vi=hx'
+  hx $argv; 
 end
