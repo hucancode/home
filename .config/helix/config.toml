@@ -11,21 +11,29 @@ auto-pairs = false
 display-signature-help-docs = false
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name"]
+left = ["mode", "spinner", "file-name", "file-encoding"]
 center = []
-right = ["diagnostics", "position", "file-encoding"]
+right = ["diagnostics", "position"]
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
+[keys.normal.d]
+d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
+w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+
+[keys.normal.y]
+y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection"]
+w = ["move_next_word_start", "yank_main_selection_to_clipboard", "collapse_selection"]
+
 [keys.normal]
-y = ["yank_main_selection_to_clipboard", "collapse_selection"]
-d = ["yank_main_selection_to_clipboard", "delete_selection", "collapse_selection"]
-p = ["replace_selections_with_clipboard", "collapse_selection"]
+p = ["paste_clipboard_after", "collapse_selection"]
 P = ["paste_clipboard_before", "collapse_selection"]
 V = ["select_mode", "extend_to_line_bounds"]
+v = ["select_mode", "collapse_selection"]
+esc = "collapse_selection"
 C = ["extend_to_line_end", "delete_selection", "insert_mode"]
 D = ["extend_to_line_end", "delete_selection"]
 space = { space = "global_search" }
@@ -38,3 +46,4 @@ P = ["paste_clipboard_before", "collapse_selection", "normal_mode"]
 k = ["extend_line_up", "extend_to_line_bounds"]
 j = ["extend_line_down", "extend_to_line_bounds"]
 S = "surround_add"
+esc = ["normal_mode","collapse_selection"]
