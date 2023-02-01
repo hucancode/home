@@ -33,7 +33,7 @@ p = ["paste_clipboard_after", "collapse_selection"]
 P = ["paste_clipboard_before", "collapse_selection"]
 V = ["select_mode", "extend_to_line_bounds"]
 v = ["select_mode", "collapse_selection"]
-esc = "collapse_selection"
+esc = ["collapse_selection", "keep_primary_selection"]
 C = ["extend_to_line_end", "delete_selection", "insert_mode"]
 D = ["extend_to_line_end", "delete_selection"]
 space = { space = "global_search" }
@@ -46,4 +46,4 @@ P = ["paste_clipboard_before", "collapse_selection", "normal_mode"]
 k = ["extend_line_up", "extend_to_line_bounds"]
 j = ["extend_line_down", "extend_to_line_bounds"]
 S = "surround_add"
-esc = ["normal_mode","collapse_selection"]
+esc = ["normal_mode","collapse_selection", "keep_primary_selection"]
