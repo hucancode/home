@@ -22,13 +22,16 @@ select = "underline"
 
 [keys.normal.d]
 d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
+s = ["yank_main_selection_to_clipboard", "delete_selection"]
 w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
 
 [keys.normal.y]
 y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection"]
+s = ["yank_main_selection_to_clipboard", "collapse_selection"]
 w = ["move_next_word_start", "yank_main_selection_to_clipboard", "collapse_selection"]
 
 [keys.normal]
+s = ["yank_main_selection_to_clipboard", "delete_selection"]
 p = ["paste_clipboard_after", "collapse_selection"]
 P = ["paste_clipboard_before", "collapse_selection"]
 V = ["select_mode", "extend_to_line_bounds"]
@@ -36,7 +39,7 @@ v = ["select_mode", "collapse_selection"]
 esc = ["collapse_selection", "keep_primary_selection"]
 C = ["extend_to_line_end", "delete_selection", "insert_mode"]
 D = ["extend_to_line_end", "delete_selection"]
-space = { space = "global_search" }
+C-a = ["select_mode", "select_all"]
 
 [keys.select]
 y = ["yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
@@ -47,3 +50,4 @@ k = ["extend_line_up", "extend_to_line_bounds"]
 j = ["extend_line_down", "extend_to_line_bounds"]
 S = "surround_add"
 esc = ["normal_mode","collapse_selection", "keep_primary_selection"]
+C-a = "select_all"
