@@ -6,6 +6,7 @@ cursorline = true
 bufferline = "multiple"
 color-modes = true
 auto-pairs = false
+auto-format = false
 
 [editor.lsp]
 display-signature-help-docs = false
