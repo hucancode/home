@@ -9,19 +9,19 @@
   <menu id="root-menu" title="Menu" label="Openbox 3">
 		<item icon="&icons;/terminal.png" label="Terminal Emulator">
 			<action name="Execute">
-				<command>kitty</command>
+				<command>exo-open --launch TerminalEmulator</command>
 			</action>
 		</item>
 		<separator/>
 		<item icon="&icons;/filemanager.png" label="File Manager">
 			<action name="Execute">
-				<command>kitty lf</command>
+				<command>exo-open --launch FileManager</command>
 			</action>
 		</item>
 		<separator/>
 		<item icon="&icons;/browser.png" label="Web Browser">
 			<action name="Execute">
-				<command>google-chrome-stable</command>
+				<command>exo-open --launch WebBrowser</command>
 			</action>
 		</item>
 		<separator/>
