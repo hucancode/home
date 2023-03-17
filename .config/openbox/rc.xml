@@ -616,6 +616,10 @@
       <decor>no</decor>
       <maximized>true</maximized>
     </application>
+    <application class="firefox">
+      <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
     <application class="Blender">
       <decor>no</decor>
       <maximized>true</maximized>
