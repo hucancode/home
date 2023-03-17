@@ -58,12 +58,13 @@ set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-them
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set WM "openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
 set WM_AUR "i3lock-color eww-git ksuperkey"
-set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
+set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior"
+set MEDIA_AUR "vieb-bin"
 set FILE_MANAGER_AUR "lf"
-set TERMINAL "kitty neovim fzf fd ripgrep exa helix git-delta"
+set TERMINAL "kitty neovim fzf fd ripgrep exa git-delta"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING
-yay -S $WM_AUR $FILE_MANAGER_AUR
+yay -S $WM_AUR MEDIA_AUR $FILE_MANAGER_AUR
 ```
 ## 🔑 Config `lightdm`
 Copy avatar and wallpaper to somewhere `lightdm` have access to.

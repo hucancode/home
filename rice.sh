@@ -22,12 +22,13 @@ set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-them
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set WM "openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
 set WM_AUR "i3lock-color eww-git ksuperkey"
-set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
+set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior"
+set MEDIA_AUR "vieb-bin"
 set FILE_MANAGER_AUR "lf"
-set TERMINAL "kitty neovim fzf fd ripgrep exa helix git-delta"
+set TERMINAL "kitty neovim fzf fd ripgrep exa git-delta"
 set KEYRING "gnome-keyring libgnome-keyring"
 sudo pacman -S $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING
-yay -S $WM_AUR $FILE_MANAGER_AUR
+yay -S $WM_AUR $MEDIA_AUR $FILE_MANAGER_AUR
 # neovim first time setting
 # nvim -c "PackerInstall"
 # wallpaper/icon settings
@@ -45,7 +46,7 @@ end
 # install bloats
 set PERSONAL_BLOAT "ibus-anthy"
 set PERSONAL_BLOAT_AUR "ibus-bamboo megacmd teamviewer"
-set DEV_BLOAT "docker docker-compose mono gimp clang llvm"
+set DEV_BLOAT "docker docker-compose mono krita clang llvm"
 sudo pacman -S $PERSONAL_BLOAT $DEV_BLOAT
 yay -S $PERSONAL_BLOAT_AUR
 # post-install setup
