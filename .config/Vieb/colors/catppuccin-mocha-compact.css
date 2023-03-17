@@ -16,115 +16,117 @@
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 :root {
-    --bg: #11111b;
-    --fg: #cdd6f4;
+  --bg: #11111b;
+  --fg: #cdd6f4;
 
-    --tab-background: #1e1e2e;
-    --tab-suspended: #181825;
-	--visible-tab: #313244;
+  --tab-background: #1e1e2e;
+  --tab-suspended: #181825;
+  --visible-tab: #313244;
 
-    --url-default: #1e1e2e;
-    --url-search: #a6e3a1;
-    --url-searchwords: #cba6f7;
-    --url-url: #f2cdcd;
-    --url-suggest: #fab387;
-    --url-file: #94e2d5;
-    --url-invalid: #94e2d5;
+  --url-default: #1e1e2e;
+  --url-search: #a6e3a1;
+  --url-searchwords: #cba6f7;
+  --url-url: #f2cdcd;
+  --url-suggest: #fab387;
+  --url-file: #94e2d5;
+  --url-invalid: #94e2d5;
 
-    --mode-normal-fg: #cdd6f4;
-    --mode-normal-bg: none;
-    --mode-command-fg: #f38ba8;
-    --mode-command-bg: none;
-    --mode-insert-fg: #f9e2af;
-    --mode-insert-bg: none;
-    --mode-follow-fg: #89b4fa;
-    --mode-follow-bg: none;
-    --mode-explore-fg: #89b4fa;
-    --mode-explore-bg: none;
-    --mode-search-fg: #a6e3a1;
-    --mode-search-bg: none;
-    --mode-pointer-fg: #74c7ec;
-    --mode-pointer-bg: none;
-    --mode-visual-fg: #a6adc8;
-    --mode-visual-bg: none;
+  --mode-normal-fg: #cdd6f4;
+  --mode-normal-bg: none;
+  --mode-command-fg: #f38ba8;
+  --mode-command-bg: none;
+  --mode-insert-fg: #f9e2af;
+  --mode-insert-bg: none;
+  --mode-follow-fg: #89b4fa;
+  --mode-follow-bg: none;
+  --mode-explore-fg: #89b4fa;
+  --mode-explore-bg: none;
+  --mode-search-fg: #a6e3a1;
+  --mode-search-bg: none;
+  --mode-pointer-fg: #74c7ec;
+  --mode-pointer-bg: none;
+  --mode-visual-fg: #a6adc8;
+  --mode-visual-bg: none;
 
-    --suggestions-border: #313244;
-    --suggestions-bg: #1e1e2e;
-    --suggestions-selected: #313244;
+  --suggestions-border: #313244;
+  --suggestions-bg: #1e1e2e;
+  --suggestions-selected: #313244;
 
-	--follow-text: #11111b;
-    --follow-url-bg: linear-gradient(rgba(226,232,240,1) 0%, rgba(209,213,219,1) 100%);
-    --follow-url-border: rgba(255,255,255,0.2);
-    --follow-url-hover: rgba(33, 222, 212, 30%);
-    --follow-click-bg: linear-gradient(rgba(254,240,138,1) 0%, rgba(253,224,71,1) 100%);
-    --follow-click-border: rgba(255,255,255,0.2);
-    --follow-click-hover: rgba(233, 42, 12, 30%);
-    --follow-insert-bg: linear-gradient(rgba(153,246,228,1) 0%, rgba(103,232,249,1) 100%);
-    --follow-insert-border: rgba(255,255,255,0.2);
-    --follow-insert-hover: rgba(74, 235, 20, 30%);
-    --follow-onclick-bg: linear-gradient(rgba(165,243,252,1) 0%, rgba(125,211,252,1) 100%);
-    --follow-onclick-border: rgba(255,255,255,0.2);
-    --follow-onclick-hover: rgba(255, 191, 0, 30%);
-    --follow-media-bg: linear-gradient(rgba(186,230,253,1) 0%, rgba(147,197,253,1) 100%);
-    --follow-media-border: rgba(255,255,255,0.2);
-    --follow-media-hover: rgba(0, 109, 235), 30%;
-    --follow-image-bg: linear-gradient(rgba(186,230,253,1) 0%, rgba(147,197,253,1) 100%);
-    --follow-image-border: rgba(255,255,255,0.2);
-    --follow-image-hover: rgba(119, 42, 213, 30%);
-    --follow-other-bg: linear-gradient(rgba(228,228,231,1) 0%, rgba(212,212,216,1) 100%);;
-    --follow-other-border: rgba(255,255,255,0.2);
-    --follow-other-hover: #aaa7;
+  --follow-text: #11111b;
+  --follow-url-bg: linear-gradient(rgba(226,232,240,1) 0%, rgba(209,213,219,1) 100%);
+  --follow-url-border: rgba(255,255,255,0.2);
+  --follow-url-hover: rgba(33, 222, 212, 30%);
+  --follow-click-bg: linear-gradient(rgba(254,240,138,1) 0%, rgba(253,224,71,1) 100%);
+  --follow-click-border: rgba(255,255,255,0.2);
+  --follow-click-hover: rgba(233, 42, 12, 30%);
+  --follow-insert-bg: linear-gradient(rgba(153,246,228,1) 0%, rgba(103,232,249,1) 100%);
+  --follow-insert-border: rgba(255,255,255,0.2);
+  --follow-insert-hover: rgba(74, 235, 20, 30%);
+  --follow-onclick-bg: linear-gradient(rgba(165,243,252,1) 0%, rgba(125,211,252,1) 100%);
+  --follow-onclick-border: rgba(255,255,255,0.2);
+  --follow-onclick-hover: rgba(255, 191, 0, 30%);
+  --follow-media-bg: linear-gradient(rgba(186,230,253,1) 0%, rgba(147,197,253,1) 100%);
+  --follow-media-border: rgba(255,255,255,0.2);
+  --follow-media-hover: rgba(0, 109, 235), 30%;
+  --follow-image-bg: linear-gradient(rgba(186,230,253,1) 0%, rgba(147,197,253,1) 100%);
+  --follow-image-border: rgba(255,255,255,0.2);
+  --follow-image-hover: rgba(119, 42, 213, 30%);
+  --follow-other-bg: linear-gradient(rgba(228,228,231,1) 0%, rgba(212,212,216,1) 100%);;
+  --follow-other-border: rgba(255,255,255,0.2);
+  --follow-other-hover: #aaa7;
 }
 #app {
 	display: grid;
 	grid-template: "navbar tabbar" 2em "main main" auto;
 }
 #logo {
-    width: unset;
-    height: unset;
-    min-width: unset;
-    min-height: unset;
-    padding: 0.1rem 0.2rem;
+  width: unset;
+  height: unset;
+  min-width: unset;
+  min-height: unset;
+  padding: 0.1rem 0.2rem;
 }
 #mode, #mode-suggestions {
-    font-size: unset;
-    text-transform: uppercase;
+  font-size: unset;
+  text-transform: uppercase;
 }
 #mode-suggestions > div {
-    font-size: unset;
-    padding: 0 0.5rem;
+  font-size: unset;
+  padding: 0 0.5rem;
 }
 #url {
-    margin: 0.1rem 0.2rem;
-    padding: 0.2rem;
+  margin: 0.1rem 0.2rem;
+  padding: 0.2rem;
 }
 #navbar, #tabs {
 	width: 50vw
 }
 #tabs [suspended] {
-    filter: brightness(0.5);
+  filter: brightness(0.5);
 }
 #tabs > span.pinned {
-    padding: 0 0.15rem;
+  padding: 0 0.15rem;
 }
 #tabs > span {
-	padding: 0 0.15rem;
 	height: unset;
 }
-#tabs .favicon {
-	margin: auto .25rem;
-	height: 80%;
+#tabs > span > img.favicon {
+  width: unset;
+  min-width: unset;
+  min-height: unset;
+	padding: 0 .25rem;
+	height: 60%;
 }
 #page-container {
 	grid-area: main;
 }
 #app #follow > span {
 	font-weight: bold;
-    border-radius: 0.2rem;
+  border-radius: 0.2rem;
 }
 body {
 	font-family: sans-serif;
 }
 #context-menu menu-group {
-    padding: .2em 0 0 .2em;
+  padding: .2em 0 0 .2em;
 }
