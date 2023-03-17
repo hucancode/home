@@ -48,6 +48,10 @@
     --mode-visual-fg: #a6adc8;
     --mode-visual-bg: none;
 
+    --suggestions-border: #313244;
+    --suggestions-bg: #1e1e2e;
+    --suggestions-selected: #313244;
+
 	--follow-text: #11111b;
     --follow-url-bg: linear-gradient(rgba(226,232,240,1) 0%, rgba(209,213,219,1) 100%);
     --follow-url-border: rgba(255,255,255,0.2);
@@ -97,6 +101,9 @@
 #navbar, #tabs {
 	width: 50vw
 }
+#tabs [suspended] {
+    filter: brightness(0.5);
+}
 #tabs > span {
 	padding: 0.1rem;
 	height: unset;
@@ -114,4 +121,7 @@
 }
 body {
 	font-family: "Poppins", sans-serif;
+}
+#context-menu menu-group {
+    padding: .2em 0 0 .2em;
 }
