@@ -23,7 +23,7 @@
   --tab-suspended: #181825;
   --visible-tab: #313244;
 
-  --url-default: #1e1e2e;
+  --url-default: #45475a;
   --url-search: #a6e3a1;
   --url-searchwords: #cba6f7;
   --url-url: #f2cdcd;
@@ -109,6 +109,7 @@
 }
 #tabs > span {
 	height: unset;
+  max-width: 12rem;
 }
 #tabs > span > img {
   width: unset;
