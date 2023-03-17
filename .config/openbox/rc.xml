@@ -278,17 +278,17 @@
     <!-- Apps -->
     <keybind key="W-Return">
       <action name="Execute">
-        <command>kitty</command>
+        <command>exo-open --launch TerminalEmulator</command>
       </action>
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>kitty lf</command>
+        <command>exo-open --launch FileManager</command>
       </action>
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>google-chrome-stable</command>
+        <command>exo-open --launch WebBrowser</command>
       </action>
     </keybind>
     <!-- Rofi -->
