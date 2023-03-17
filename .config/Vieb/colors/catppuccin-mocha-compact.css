@@ -110,7 +110,7 @@
 #tabs > span {
 	height: unset;
 }
-#tabs > span > img.favicon {
+#tabs > span > img {
   width: unset;
   min-width: unset;
   min-height: unset;
