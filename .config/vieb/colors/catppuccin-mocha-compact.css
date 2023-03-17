@@ -104,8 +104,11 @@
 #tabs [suspended] {
     filter: brightness(0.5);
 }
+#tabs > span.pinned {
+    padding: 0 0.15rem;
+}
 #tabs > span {
-	padding: 0.1rem;
+	padding: 0 0.15rem;
 	height: unset;
 }
 #tabs .favicon {
@@ -120,7 +123,7 @@
     border-radius: 0.2rem;
 }
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: sans-serif;
 }
 #context-menu menu-group {
     padding: .2em 0 0 .2em;
