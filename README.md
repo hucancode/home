@@ -12,9 +12,9 @@
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [lf](https://github.com/gokcehan/lf) and [Thunar](https://docs.xfce.org/xfce/thunar/start)
 - 🌏 Browser [Vieb](https://vieb.dev/)
-- 📋 Text editor [neovim](https://neovim.io/)
+- 📋 Text editor [neovim](https://neovim.io/) and [mousepad](https://docs.xfce.org/apps/mousepad/start)
 - 🐱 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [kitty](https://wiki.archlinux.org/title/Kitty)
-- 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon)
+- 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) and [Ario](https://ario-player.sourceforge.net/)
 # 👀 Screenshots
 ![](Pictures/Screenshots/1.png)
 ![](Pictures/Screenshots/2.png)
@@ -59,7 +59,7 @@ set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-them
 set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 set WM "openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
 set WM_AUR "i3lock-color eww-git ksuperkey"
-set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior"
+set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior mousepad"
 set MEDIA_AUR "vieb-bin"
 set FILE_MANAGER_AUR "lf"
 set TERMINAL "kitty neovim fzf fd ripgrep exa git-delta"
