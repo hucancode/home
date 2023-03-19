@@ -1,5 +1,19 @@
 " Options
+set nativetheme=dark
+set permissioncamera=ask
+set permissionclipboardread=allow
+set permissionclipboardwrite=ask
+set permissiondisplaycapture=ask
+set permissiongeolocation=ask
+set permissionmediadevices=ask
+set permissionmicrophone=ask
+set permissionpersistentstorage=ask
 set quitonlasttabclose
+
+" Mappings
+map <C-T> <reopenTab>
+map <A-Left> <backInHistory>
+map <A-Right> <forwardInHistory>
 
 " Commands
 colorscheme catppuccin-mocha-compact
