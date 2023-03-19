@@ -1,3 +1,6 @@
+" Options
+set quitonlasttabclose
+
 " Commands
 colorscheme catppuccin-mocha-compact
 

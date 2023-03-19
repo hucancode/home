@@ -104,12 +104,20 @@
 #tabs [suspended] {
   filter: brightness(0.5);
 }
+#tabs [media-playing]::before {
+  content: "🕪";
+  padding-left: 0.2rem;
+  margin: auto 0;
+}
 #tabs > span.pinned {
   padding: 0 0.15rem;
 }
+#app.mouse-switchtab #tabs > span:hover {
+  font-weight: unset;
+}
 #tabs > span {
 	height: unset;
-  max-width: 12rem;
+  max-width: 16rem;
 }
 #tabs > span > img {
   width: unset;
