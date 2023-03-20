@@ -86,11 +86,11 @@
   min-height: unset;
   padding: 0.1rem 0.2rem;
 }
-#app.navigationhidden #navbar {
+#app.navigationhidden :is(#navbar, #tabbar) {
   display: none;
 }
-#app.navigationhidden {
-  grid-template: "main main" auto;
+#app.navigationhidden.tabshidden {
+  grid-template: "navbar tabbar" 0 "main main" auto;
 }
 #mode, #mode-suggestions {
   font-size: unset;
@@ -106,6 +106,12 @@
 }
 #navbar, #tabs {
   width: 50vw
+}
+#app.tabshidden #navbar {
+  width: 100vw;
+}
+#app.navigationhidden #tabs {
+  width: 100vw;
 }
 #tabs [suspended] {
   filter: brightness(0.5);
