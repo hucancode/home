@@ -76,8 +76,8 @@
   --follow-other-hover: #aaa7;
 }
 #app {
-  display: grid;
-  grid-template: "navbar tabbar" 2em "main main" auto;
+	display: grid;
+	grid-template: "navbar tabbar" 2em "main main" auto;
 }
 #logo {
   width: unset;
@@ -145,15 +145,15 @@
   margin: auto 0.25rem;
 }
 #page-container {
-  grid-area: main;
+	grid-area: main;
 }
 #app #follow > span {
-  font-weight: bold;
+	font-weight: bold;
   border-radius: 0.2rem;
 }
 body {
-  font-family: sans-serif;
+	font-family: sans-serif;
 }
-#context-menu menu-group {
+#context-menu > .menu-group {
   padding: .2em 0 0 .2em;
 }
