@@ -76,8 +76,8 @@
   --follow-other-hover: #aaa7;
 }
 #app {
-	display: grid;
-	grid-template: "navbar tabbar" 2em "main main" auto;
+  display: grid;
+  grid-template: "navbar tabbar" 2em "main main" auto;
 }
 #logo {
   width: unset;
@@ -99,13 +99,22 @@
   padding: 0.2rem;
 }
 #navbar, #tabs {
-	width: 50vw
+  width: 50vw
 }
 #tabs [suspended] {
   filter: brightness(0.5);
 }
+#tabs .pinned[media-playing] {
+  width: unset;
+  max-width: min-content;
+}
+#tabs [media-playing][muted]::before {
+  content: "🕨";
+}
 #tabs [media-playing]::before {
   content: "🕪";
+}
+#tabs [media-playing]::before {
   padding-left: 0.2rem;
   margin: auto 0;
 }
@@ -116,25 +125,34 @@
   font-weight: unset;
 }
 #tabs > span {
-	height: unset;
+  height: unset;
   max-width: 16rem;
 }
-#tabs > span > img {
+#tabs > span.pinned > span {
+  display: none;
+}
+#tabs > span.pinned {
+  max-width: min-content;
+  min-width: unset;
+  width: unset;
+}
+#tabs > :is(span.pinned, span) > img {
   width: unset;
   min-width: unset;
   min-height: unset;
-	padding: 0 .25rem;
-	height: 60%;
+  padding: 0 .25rem;
+  height: 70%;
+  margin: auto 0.25rem;
 }
 #page-container {
-	grid-area: main;
+  grid-area: main;
 }
 #app #follow > span {
-	font-weight: bold;
+  font-weight: bold;
   border-radius: 0.2rem;
 }
 body {
-	font-family: sans-serif;
+  font-family: sans-serif;
 }
 #context-menu menu-group {
   padding: .2em 0 0 .2em;
