@@ -86,6 +86,12 @@
   min-height: unset;
   padding: 0.1rem 0.2rem;
 }
+#app.navigationhidden #navbar {
+  display: none;
+}
+#app.navigationhidden {
+  grid-template: "main main" auto;
+}
 #mode, #mode-suggestions {
   font-size: unset;
   text-transform: uppercase;
@@ -145,14 +151,14 @@
   margin: auto 0.25rem;
 }
 #page-container {
-	grid-area: main;
+  grid-area: main;
 }
 #app #follow > span {
-	font-weight: bold;
+  font-weight: bold;
   border-radius: 0.2rem;
 }
 body {
-	font-family: sans-serif;
+  font-family: sans-serif;
 }
 #context-menu > .menu-group {
   padding: .2em 0 0 .2em;
