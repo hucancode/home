@@ -1,13 +1,20 @@
 " Options
+set favoritepages=
+set favoritepages+=notion.so
+set favoritepages+=youtube.com
+set favoritepages+=reddit.com
+set favoritepages+=leetcode.com
 set nativetheme=dark
-set permissioncamera=ask
+set permissioncamera=allow
 set permissionclipboardread=allow
 set permissionclipboardwrite=ask
 set permissiondisplaycapture=ask
 set permissiongeolocation=ask
-set permissionmediadevices=ask
-set permissionmicrophone=ask
+set permissionhid=allow
+set permissionmediadevices=allowfull
+set permissionmicrophone=allow
 set permissionpersistentstorage=ask
+set permissionscreenwakelock=allow
 set quitonlasttabclose
 
 " Mappings
