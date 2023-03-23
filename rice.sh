@@ -24,9 +24,9 @@ MEDIA_AUR="vieb-bin"
 FILE_MANAGER_AUR="lf"
 TERMINAL="kitty neovim fzf fd ripgrep exa git-delta"
 KEYRING="gnome-keyring libgnome-keyring"
-yay -S $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $MEDIA_AUR $FILE_MANAGER_AUR
+yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $MEDIA_AUR $FILE_MANAGER_AUR
 # neovim first time setting
-# nvim -c "PackerInstall"
+nvim -c "PackerInstall" -c "qa"
 # wallpaper/icon settings
 curl -L -o avatar.png https://github.com/$GH_USERNAME.png && sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings && rm avatar.png
 sudo mkdir /usr/share/openbox && sudo mv .config/openbox/icons /usr/share/openbox

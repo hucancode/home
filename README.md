@@ -22,6 +22,13 @@
 ![](Pictures/Screenshots/4.png)
 ![](Pictures/Screenshots/5.png)
 # 🚀 Installation
+## 🐌 One liner
+```bash
+curl https://raw.githubusercontent.com/hucancode/home/main/rice.sh | sh
+# or install only cli tool with this
+curl https://raw.githubusercontent.com/hucancode/home/main/rice-cli.sh | sh
+```
+## Step by step installation
 ## 🐌 Checkout source configuration
 ```bash
 sudo pacman -Syu fish git
@@ -32,10 +39,6 @@ git checkout -t origin/main
 git submodule update --init --recursive
 ```
 After checking out, you either install the packages needed, or run my script to install those packages for you.
-## 🐌 For the lazy, use this script
-```bash
-chmod +x rice.sh && fish ./rice.sh
-```
 Things supposed to go smoothly. You can skip next sections entirely.
 ## 🐚 Change default shell to `fish`
 ```bash

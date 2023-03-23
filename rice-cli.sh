@@ -17,6 +17,6 @@ cd yay-bin && makepkg -si && cd -
 # install packages
 FILE_MANAGER_AUR="lf"
 TERMINAL="neovim fzf fd ripgrep exa git-delta"
-yay -S $TERMINAL $FILE_MANAGER_AUR
+yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $TERMINAL $FILE_MANAGER_AUR
 # neovim first time setting
-# nvim -c "PackerInstall"
+nvim -c "PackerInstall" -c "qa"
