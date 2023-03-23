@@ -28,58 +28,10 @@ curl https://raw.githubusercontent.com/hucancode/home/main/rice.sh | sh
 # or install only cli tool with this
 curl https://raw.githubusercontent.com/hucancode/home/main/rice-cli.sh | sh
 ```
-## Step by step installation
-## 🐌 Checkout source configuration
+## 🐚 After install
+You may want to change your default shell to `fish`
 ```bash
-sudo pacman -Syu fish git
-git init
-git remote add origin https://github.com/hucancode/home
-git fetch
-git checkout -t origin/main
-git submodule update --init --recursive
-```
-After checking out, you either install the packages needed, or run my script to install those packages for you.
-Things supposed to go smoothly. You can skip next sections entirely.
-## 🐚 Change default shell to `fish`
-```bash
-sudo pacman -Syu fish
 chsh -s $(which fish)
-```
-and then restart your terminal.
-## 🌾 Copy `openbox` icons
-```fish
-sudo mkdir /usr/share/openbox; sudo mv ~/.config/openbox/icons /usr/share/openbox
-```
-## 📦 Install softwares
-Install `yay`
-```fish
-git clone https://aur.archlinux.org/yay-bin.git
-begin cd yay-bin; and makepkg -si; end
-```
-Install required packages
-```fish
-set THEME "lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
-set FONTS "ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
-set WM "openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
-set WM_AUR "i3lock-color eww-git ksuperkey"
-set MEDIA "alsa-utils ffmpeg mpd mpc mpv viewnior mousepad"
-set MEDIA_AUR "vieb-bin"
-set FILE_MANAGER_AUR "lf"
-set TERMINAL "kitty neovim fzf fd ripgrep exa git-delta"
-set KEYRING "gnome-keyring libgnome-keyring"
-sudo pacman -S $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING
-yay -S $WM_AUR MEDIA_AUR $FILE_MANAGER_AUR
-```
-## 🔑 Config `lightdm`
-Copy avatar and wallpaper to somewhere `lightdm` have access to.
-```fish
-curl -L -o avatar.png https://github.com/hucancode.png; and sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings; and rm avatar.png
-sudo mkdir -p /etc/lightdm
-sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
-```
-Set `lightdm` as your default display manager.
-```fish
-systemctl enable lightdm
 ```
 Enable `lightdm-gtk-greeter` (`lightdm` default to gtk greeter, but just in case something went wrong, please check `lightdm.conf`)
 ```fish

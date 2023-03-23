@@ -19,12 +19,13 @@ THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 FONTS="ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji"
 WM="openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
 WM_AUR="i3lock-color eww-git ksuperkey"
-MEDIA="alsa-utils ffmpeg mpd mpc mpv viewnior mousepad"
+MEDIA="ario alsa-utils ffmpeg mpd mpc mpv viewnior mousepad"
 MEDIA_AUR="vieb-bin"
+FILE_MANAGER="thunar"
 FILE_MANAGER_AUR="lf"
 TERMINAL="kitty neovim fzf fd ripgrep exa git-delta"
 KEYRING="gnome-keyring libgnome-keyring"
-yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $MEDIA_AUR $FILE_MANAGER_AUR
+yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $MEDIA_AUR $FILE_MANAGER $FILE_MANAGER_AUR
 # neovim first time setting
 nvim -c "PackerInstall" -c "qa"
 # wallpaper/icon settings
@@ -32,3 +33,4 @@ curl -L -o avatar.png https://github.com/$GH_USERNAME.png && sudo cp {avatar.png
 sudo mkdir /usr/share/openbox && sudo mv .config/openbox/icons /usr/share/openbox
 sudo systemctl enable lightdm
 sudo mkdir -p /etc/lightdm && sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
+systemctl enable lightdm
