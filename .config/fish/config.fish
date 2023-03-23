@@ -4,7 +4,7 @@ if status is-interactive
   set fish_color_valid_path
   set fish_greeting
   set -gx SHELL fish
-  set -gx EDITOR hx
+  set -gx EDITOR nvim
   if type -fq fzf
     if type -fq fd
       set -gx FZF_DEFAULT_COMMAND "fd --exclude={.git,.idea,.vscode,node_modules,build} --type f"
