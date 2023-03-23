@@ -1,5 +1,5 @@
 #! /usr/bin/sh
-sudo pacman -Syu base-devel git
+sudo pacman --noconfirm -Syu base-devel git
 # change the following line to your username
 GH_USERNAME=hucancode
 # change the following line to your github repository
