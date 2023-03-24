@@ -129,8 +129,14 @@ function lsp()
         noremap = true
     })
     vim.opt.completeopt = {"menu", "menuone", "noselect"}
+    local luasnip = require('luasnip')
     local cmp = require('cmp')
     cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
         view = {
             entries = "native"
         },
@@ -146,7 +152,7 @@ function lsp()
     })
     local lsp = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'tsserver'}
+    local servers = {'clangd', 'tsserver', 'rust_analyzer'}
     for _, server in pairs(servers) do
         lsp[server].setup { capabilities = capabilities }
     end
@@ -193,6 +199,7 @@ function setup(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-omni'
     use 'hrsh7th/nvim-cmp'
+    use 'L3MON4D3/LuaSnip'
     theme()
     status()
     explorer()
