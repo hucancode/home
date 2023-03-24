@@ -23,9 +23,12 @@
 ![](Pictures/Screenshots/5.png)
 # 🚀 Installation
 ## 🐌 One liner
+Check out my home directory and install all software
 ```bash
 curl https://raw.githubusercontent.com/hucancode/home/main/rice.sh | sh
-# or install only cli tool with this
+```
+Or install only cli tool with this (useful if you are on WSL)
+```bash
 curl https://raw.githubusercontent.com/hucancode/home/main/rice-cli.sh | sh
 ```
 ## 🐚 After install
