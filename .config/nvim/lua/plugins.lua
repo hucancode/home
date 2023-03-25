@@ -121,6 +121,23 @@ end
 
 function lsp()
     require('nvim-treesitter.configs').setup({
+      ensure_installed = {
+        "lua",
+        "bash", 
+        "fish",
+        "typescript",
+        "javascript",
+        "css",
+        "html",
+        "json",
+        "svelte",
+        "dart",
+        "kotlin",
+        "swift",
+        "c", 
+        "cpp", 
+        "rust",
+      },
       highlight = { enable = true },
       indent = { enable = true },
     })
@@ -128,38 +145,26 @@ function lsp()
     vim.api.nvim_set_keymap("", "<C-c>", ":CommentToggle<cr>", {
         noremap = true
     })
-    vim.opt.completeopt = {"menu", "menuone", "noselect"}
-    local luasnip = require('luasnip')
-    local cmp = require('cmp')
-    cmp.setup({
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        view = {
-            entries = "native"
-        },
-        mapping = cmp.mapping.preset.insert({
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        }),
-        sources = cmp.config.sources(
-            {{ name = 'nvim_lsp' }}, 
-            {{ name = 'buffer' }},
-            {{ name = 'omni' }}
-        ),
+    local lsp = require('lsp-zero').preset({
+      name = 'minimal',
+      set_lsp_keymaps = false,
+      manage_nvim_cmp = true,
+      suggest_lsp_servers = false,
     })
-    local lsp = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-    local servers = {'clangd', 'tsserver', 'rust_analyzer'}
-    for _, server in pairs(servers) do
-        lsp[server].setup { capabilities = capabilities }
-    end
+    lsp.ensure_installed({
+      'clangd',
+      'html',
+      'cssls',
+      'tsserver',
+      'svelte',
+      'tailwindcss',
+      'rust_analyzer',
+    })
+    lsp.setup()
     -- hide all errors and warning
     vim.diagnostic.config({
       virtual_text = false,
-      signs = false,
+      -- signs = false,
       underline = false,
       update_in_insert = false,
       severity_sort = false,
@@ -193,13 +198,22 @@ function setup(use)
         requires = {{'nvim-lua/plenary.nvim'}}
     }
     use 'terrortylor/nvim-comment'
-    use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-omni'
-    use 'hrsh7th/nvim-cmp'
-    use 'L3MON4D3/LuaSnip'
+    use {
+      'VonHeikemen/lsp-zero.nvim',
+      requires = {
+        {'neovim/nvim-lspconfig'},             -- Required
+        {'williamboman/mason.nvim'},           -- Optional
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},         -- Required
+        {'hrsh7th/cmp-nvim-lsp'},     -- Required
+
+        -- Snippets
+        {'L3MON4D3/LuaSnip'},             -- Required
+      }
+    }
     theme()
     status()
     explorer()
