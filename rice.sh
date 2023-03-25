@@ -22,7 +22,7 @@ WM_AUR="i3lock-color eww-git ksuperkey"
 MEDIA="ario alsa-utils ffmpeg mpd mpc mpv viewnior mousepad"
 MEDIA_AUR="vieb-bin"
 FILE_MANAGER="thunar"
-FILE_MANAGER_AUR="lf"
+FILE_MANAGER_AUR="joshuto"
 TERMINAL="kitty neovim fzf fd ripgrep exa git-delta"
 KEYRING="gnome-keyring libgnome-keyring"
 yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $MEDIA_AUR $FILE_MANAGER $FILE_MANAGER_AUR
