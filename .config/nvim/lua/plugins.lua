@@ -164,7 +164,7 @@ function lsp()
     -- hide all errors and warning
     vim.diagnostic.config({
       virtual_text = false,
-      -- signs = false,
+      signs = false,
       underline = false,
       update_in_insert = false,
       severity_sort = false,
