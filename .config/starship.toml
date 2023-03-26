@@ -2,10 +2,10 @@ add_newline = false
 
 [character]
 # success_symbol="[≻⊲⋗](bold cyan)"
-success_symbol="[⮞⊲󰣧](bold cyan)"
+success_symbol="[⮞⊲⫸](bold cyan)"
 # success_symbol="[ ◉◡◉ ](bold cyan)"
 # error_symbol="[⊙ ﹏⊙ ](bold red)"
-error_symbol="[⮞⊲󰣧](bold red)"
+error_symbol="[⮞⊲⫸](bold red)"
 
 [git_branch]
 symbol = ""
