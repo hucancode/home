@@ -1,0 +1,23 @@
+add_newline = false
+
+[character]
+# success_symbol="[≻⊲⋗](bold cyan)"
+success_symbol="[⮞⊲󰣧](bold cyan)"
+# success_symbol="[ ◉◡◉ ](bold cyan)"
+# error_symbol="[⊙ ﹏⊙ ](bold red)"
+error_symbol="[⮞⊲󰣧](bold red)"
+
+[git_branch]
+symbol = ""
+format = "[$symbol $branch]($style)"
+style = "bright-black"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+deleted = "×"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
