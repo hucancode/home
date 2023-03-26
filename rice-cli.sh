@@ -16,7 +16,7 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin && makepkg -si && cd -
 # install packages
 FILE_MANAGER_AUR="joshuto"
-TERMINAL="neovim fzf fd ripgrep exa git-delta"
+TERMINAL="neovim fzf fd ripgrep exa git-delta starship"
 yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $TERMINAL $FILE_MANAGER_AUR
 # neovim first time setting
 nvim -c "PackerInstall" -c "qa"

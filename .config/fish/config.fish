@@ -14,10 +14,7 @@ if status is-interactive
     set fzf_catppuccin "--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28FAD --color=fg:#D9E0EE,header:#F28FAD,info:#DDB6F2,pointer:#F8BD96 --color=marker:#F8BD96,fg+:#F2CDCD,prompt:#DDB6F2,hl+:#F28FAD"
     set -gx FZF_DEFAULT_OPTS "$fzf_catppuccin --height 40% --layout=reverse 2> /dev/null | head -500'"
   end
-  if type -q fisher
-  else
-    curl -sL https://git.io/fisher | source; and fisher update
-  end
+  starship init fish | source
 end
 if test -e $script_dir/local.fish
     source $script_dir/local.fish
