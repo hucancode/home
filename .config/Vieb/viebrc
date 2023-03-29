@@ -1,12 +1,13 @@
 " Options
+set dialogalert=show
+set dialogconfirm=show
+set dialogprompt=show
 set favoritepages=
 set favoritepages+=notion.so
 set favoritepages+=youtube.com
 set favoritepages+=reddit.com
 set favoritepages+=leetcode.com
-set dialogalert=show
-set dialogconfirm=show
-set dialogprompt=show
+set favoritepages+=http://example.com/
 set nativetheme=dark
 set permissioncamera=allow
 set permissionclipboardread=allow
