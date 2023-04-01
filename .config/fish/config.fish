@@ -1,5 +1,6 @@
 set script_dir (dirname (status --current-filename))
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.cargo/bin
 if status is-interactive
   # Commands to run in interactive sessions can go here
   set fish_color_valid_path

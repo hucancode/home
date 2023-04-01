@@ -7,9 +7,14 @@ bufferline = "multiple"
 color-modes = true
 auto-pairs = false
 auto-format = false
+auto-info = false
 
 [editor.lsp]
 display-signature-help-docs = false
+auto-signature-help = false
+
+[editor.soft-wrap]
+enable = true
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "file-encoding"]
