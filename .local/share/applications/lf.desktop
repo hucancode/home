@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=LF File Manager
-Comment=Launches the lf file manager
-Icon=folder
-Terminal=true
-Exec=lf
-Categories=ConsoleOnly;System;FileTools;FileManager
-MimeType=inode/directory;

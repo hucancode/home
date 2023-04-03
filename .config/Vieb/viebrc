@@ -16,7 +16,6 @@ set followelementpointer=
 set followelementpointer+=onclick
 set followelementpointer+=media
 set followelementpointer+=image
-set followelementpointer+=other
 set nativetheme=dark
 set permissioncamera=allow
 set permissionclipboardread=allow
