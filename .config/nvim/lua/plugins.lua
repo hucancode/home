@@ -49,7 +49,7 @@ function status()
           },
         }},
         lualine_b = {'encoding'},
-        lualine_x = {},
+        lualine_x = {'location'},
         lualine_y = {{
             "macro-recording",
             fmt = show_macro_recording,
