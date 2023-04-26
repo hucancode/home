@@ -1,11 +1,5 @@
 import:
   - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
-shell:
-  program: /usr/bin/fish
-  args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
 font:
   normal:
     family: FiraCode Nerd Font

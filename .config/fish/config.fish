@@ -18,6 +18,10 @@ if status is-interactive
     set -gx FZF_DEFAULT_OPTS "$fzf_catppuccin --height 40% --layout=reverse 2> /dev/null | head -500'"
   end
   starship init fish | source
+  if set -q TMUX
+  else
+    tmux attach || tmux
+  end
 end
 if test -e $script_dir/local.fish
     source $script_dir/local.fish
