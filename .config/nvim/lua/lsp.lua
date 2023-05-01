@@ -13,6 +13,7 @@ ts.setup({
 cmt.setup()
 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
 cmp.setup({
     snippet = {
       expand = function(args)
@@ -55,14 +56,8 @@ local servers = {
 for _, server in pairs(servers) do
     lsp[server].setup { capabilities = capabilities }
 end
--- hide all errors and warning
-vim.diagnostic.config({
-  virtual_text = false,
-  signs = false,
-  underline = false,
-  update_in_insert = false,
-  severity_sort = false,
-})
+-- I personally think the diagnostic info are distracting
+vim.diagnostic.disable()
 
 wk.register({
     g = {
