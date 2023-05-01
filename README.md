@@ -13,9 +13,8 @@
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [joshuto](https://github.com/kamiyaa/joshuto) and [thunar](https://docs.xfce.org/xfce/thunar/start)
-- 🌏 Browser [vieb](https://vieb.dev/)
 - 📋 Text editor [neovim](https://neovim.io/) and [mousepad](https://docs.xfce.org/apps/mousepad/start)
-- 🐱 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [kitty](https://wiki.archlinux.org/title/Kitty)
+- 🐱 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [tmux](https://wiki.archlinux.org/title/tmux), [kitty](https://wiki.archlinux.org/title/Kitty)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) and [ario](https://ario-player.sourceforge.net/)
 
 # 👀 Screenshots
