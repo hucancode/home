@@ -119,66 +119,6 @@ function explorer()
     })
 end
 
-function lsp()
-    require('nvim-treesitter.configs').setup({
-      ensure_installed = {
-        "lua",
-        "bash", 
-        "fish",
-        "typescript",
-        "javascript",
-        "css",
-        "html",
-        "json",
-        "svelte",
-        "dart",
-        "kotlin",
-        "swift",
-        "c", 
-        "cpp", 
-        "rust",
-      },
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-    require('nvim_comment').setup()
-    vim.api.nvim_set_keymap("", "<C-c>", ":CommentToggle<cr>", {
-        noremap = true
-    })
-    local lsp = require('lsp-zero').preset({
-      name = 'minimal',
-      set_lsp_keymaps = false,
-      manage_nvim_cmp = true,
-      suggest_lsp_servers = false,
-    })
-    lsp.ensure_installed({
-      'clangd',
-      'html',
-      'cssls',
-      'tsserver',
-      'svelte',
-      'tailwindcss',
-      'rust_analyzer',
-    })
-    lsp.setup()
-    -- hide all errors and warning
-    vim.diagnostic.config({
-      virtual_text = false,
-      signs = false,
-      underline = false,
-      update_in_insert = false,
-      severity_sort = false,
-    })
-    local wk = require("which-key")
-    wk.register({
-        g = {
-          D = { function() vim.lsp.buf.declaration() end, "Go to declaration", noremap=true },
-          d = { function() vim.lsp.buf.definition() end, "Go to defination", noremap=true },
-          i = { function() vim.lsp.buf.implementation() end, "Go to implementation", noremap=true },
-        }
-    })
-end
-
 function setup(use)
     use 'wbthomason/packer.nvim'
     use {
@@ -187,7 +127,7 @@ function setup(use)
     }
     use {
       'nvim-lualine/lualine.nvim',
-      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+      requires = { 'nvim-tree/nvim-web-devicons' }
     }
 
     use {
@@ -197,27 +137,9 @@ function setup(use)
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/plenary.nvim'}}
     }
-    use 'terrortylor/nvim-comment'
-    use 'nvim-treesitter/nvim-treesitter'
-    use {
-      'VonHeikemen/lsp-zero.nvim',
-      requires = {
-        {'neovim/nvim-lspconfig'},             -- Required
-        {'williamboman/mason.nvim'},           -- Optional
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},         -- Required
-        {'hrsh7th/cmp-nvim-lsp'},     -- Required
-
-        -- Snippets
-        {'L3MON4D3/LuaSnip'},             -- Required
-      }
-    }
     theme()
     status()
     explorer()
-    lsp()
 end
 
 return manager.startup(setup)
