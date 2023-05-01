@@ -35,6 +35,13 @@ end
 ll.setup({
   options = {
     theme = 'catppuccin',
+    -- component_separators = { left = '', right = ''},
+    -- section_separators = { left = '', right = ''},
+    -- section_separators = { left = '', right = '' },
+    -- component_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+    globalstatus = true,
   },
   tabline = {
     lualine_a = {{
@@ -46,6 +53,13 @@ ll.setup({
         alternate_file = '  ', -- Text to show to indify the alternate file
         directory =  '',     -- Text to show when the buffer is a directory
       },
+      filetype_names = {
+        TelescopePrompt = '',
+        dashboard = '',
+        packer = '',
+        fzf = '',
+        alpha = ''
+      }
     }},
     lualine_b = {},
     lualine_c = {},
@@ -54,23 +68,48 @@ ll.setup({
     lualine_z = {},
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_c = {{
-      'filename',
-      path = 1,
-      symbols = {
-        modified = '  ',
-        readonly = ' ',
-        unnamed =  '[No Name]',
-      },
+    lualine_a = {{
+      'mode',
+      icon = '',
     }},
-    lualine_b = {'encoding'},
-    lualine_x = {'location'},
+    lualine_b = {
+      {
+        'encoding',
+        icon = '',
+      }, 
+      'diagnostics'
+    },
+    lualine_c = {
+      {
+        'filetype',
+        icon_only = true,
+        separator = '',
+      },
+      {
+        'filename',
+        path = 1,
+        symbols = {
+          modified = '  ',
+          readonly = ' ',
+          unnamed =  '[No Name]',
+        },
+      }
+    },
+    lualine_x = {{
+      'location',
+      icon = '',
+    }},
     lualine_y = {{
         'macro-recording',
+        icon = '󰚩',
         fmt = show_macro_recording,
     }},
-    lualine_z = {'searchcount'},
+    lualine_z = {
+      {
+        'searchcount',
+        icon = ''
+      }
+    },
   },
 })
 
@@ -115,7 +154,6 @@ telescope.setup({
 
 wk.register({
   ['<space>'] = {
-    name = 'File',
     f = { 
       tdialog.find_files, 
       'Jump to File'
