@@ -1,17 +1,17 @@
 local manager = require('packer')
 
 function theme()
-    vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-    require("catppuccin").setup()
-    vim.cmd("colorscheme catppuccin")
+    vim.g.catppuccin_flavour = 'mocha' -- latte, frappe, macchiato, mocha
+    require('catppuccin').setup()
+    vim.cmd('colorscheme catppuccin')
 end
 
 local function show_macro_recording()
     local recording_register = vim.fn.reg_recording()
-    if recording_register == "" then
-        return ""
+    if recording_register == '' then
+        return ''
     else
-        return "Recording @" .. recording_register
+        return 'Recording @' .. recording_register
     end
 end
 
@@ -51,19 +51,20 @@ function status()
         lualine_b = {'encoding'},
         lualine_x = {'location'},
         lualine_y = {{
-            "macro-recording",
+            'macro-recording',
             fmt = show_macro_recording,
         }},
         lualine_z = {'searchcount'},
       },
     })
-    require("which-key").setup {
+    local wk = require('which-key')
+    wk.setup {
       key_labels = {
-        ["<space>"] = "␣",
-        ["<CR>"] = " ",
-        ["<esc>"] = " ",
-        ["<bs>"] = " ",
-        ["<Tab>"] = " ",
+        ['<space>'] = '␣',
+        ['<CR>'] = ' ',
+        ['<esc>'] = ' ',
+        ['<bs>'] = ' ',
+        ['<Tab>'] = ' ',
       },
       layout = {
         height = { min = 1, max = 4 }, 
@@ -76,63 +77,61 @@ function explorer()
     local telescope = require('telescope')
     telescope.setup({
       defaults = {
-        borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
-        prompt_prefix = "❯ ",
-        selection_caret = "❯ ",
+        borderchars = {'─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt_prefix = '❯ ',
+        selection_caret = '❯ ',
       },
       pickers = {
         find_files = {
-          results_title=" JUMP TO FILE",
+          results_title=' JUMP TO FILE',
           prompt_title=false,
           preview_title=false,
         },
         buffers = {
-          results_title=" OPENNED FILES",
+          results_title=' OPENNED FILES',
           prompt_title=false,
           preview_title=false,
         },
         live_grep = {
-          results_title=" FUZZY FINDER",
+          results_title=' FUZZY FINDER',
           prompt_title=false,
           preview_title=false,
         }
       },
     })
-    local wk = require("which-key")
+    local wk = require('which-key')
     wk.register({
-      ["<space>"] = {
-        name = "File",
+      ['<space>'] = {
+        name = 'File',
         f = { 
-          function() require("telescope.builtin").find_files() end, 
-          "Jump to File"
+          function() require('telescope.builtin').find_files() end, 
+          'Jump to File'
         }, 
-        ["<space>"] = { 
+        ['<space>'] = { 
           function() require('telescope.builtin').live_grep() end, 
-          "Fuzzy Finder" 
+          'Fuzzy Finder' 
         }, 
-        ["<tab>"] = { 
+        ['<tab>'] = { 
           function() require('telescope.builtin').buffers() end, 
-          "Buffers" 
+          'Buffers' 
         },
       },
-      ["<tab>"] = { "<cmd>b#<cr>", "Last Buffer" },
+      ['<tab>'] = { '<cmd>b#<cr>', 'Last Buffer' },
     })
 end
 
 function setup(use)
     use 'wbthomason/packer.nvim'
     use {
-        "catppuccin/nvim",
-        as = "catppuccin"
+        'catppuccin/nvim',
+        as = 'catppuccin'
     }
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons' }
     }
 
-    use {
-      "folke/which-key.nvim",
-    }
+    use 'folke/which-key.nvim'
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/plenary.nvim'}}

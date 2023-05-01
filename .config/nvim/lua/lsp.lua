@@ -1,9 +1,7 @@
 local manager = require('packer')
 
 function setup(use)
-    use {
-      "folke/which-key.nvim",
-    }
+    use 'folke/which-key.nvim'
     use 'terrortylor/nvim-comment'
     use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
@@ -19,7 +17,7 @@ function setup(use)
       indent = { enable = true },
     })
     require('nvim_comment').setup()
-    vim.opt.completeopt = {"menu", "menuone", "noselect"}
+    vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
     local cmp = require('cmp')
     cmp.setup({
         snippet = {
@@ -72,11 +70,11 @@ function setup(use)
       update_in_insert = false,
       severity_sort = false,
     })
-    local wk = require("which-key")
+    local wk = require('which-key')
     wk.register({
         g = {
-          d = { function() vim.lsp.buf.definition() end, "Go to defination", noremap=true },
-          i = { function() vim.lsp.buf.implementation() end, "Go to implementation", noremap=true },
+          d = { function() vim.lsp.buf.definition() end, 'Go to defination', noremap=true },
+          i = { function() vim.lsp.buf.implementation() end, 'Go to implementation', noremap=true },
         }
     })
 end
