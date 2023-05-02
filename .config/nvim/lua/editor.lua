@@ -12,7 +12,6 @@ vim.cmd("set ai")
 vim.opt.number = true
 vim.opt.statusline = " %f %h%m%r %=%{strlen(&fenc)?&enc:&fenc} "
 vim.opt.laststatus = 3
-vim.opt.cmdheight = 0
 vim.opt.cursorline = true
 vim.g.netrw_banner = 0
 vim.opt.timeoutlen = 200
@@ -24,14 +23,6 @@ vim.api.nvim_set_hl(0, "Normal", { guibg = none })
 vim.api.nvim_set_hl(0, "NormalNC", { guibg = none })
 vim.api.nvim_set_hl(0, "NormalFloat", { guibg = none })
 
-local function show_macro_recording()
-    local slot = vim.fn.reg_recording()
-    if slot == '' then
-        return ''
-    else
-        return 'Recording @' .. slot
-    end
-end
 ll.setup({
   options = {
     theme = 'catppuccin',
@@ -99,11 +90,7 @@ ll.setup({
       'location',
       icon = '',
     }},
-    lualine_y = {{
-        'macro-recording',
-        icon = '󰚩',
-        fmt = show_macro_recording,
-    }},
+    lualine_y = {},
     lualine_z = {
       {
         'searchcount',
