@@ -30,6 +30,8 @@ ll.setup({
     -- section_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = '' },
     -- component_separators = { left = '', right = '' },
+    -- component_separators = { left = '', right = '' },
+    -- section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     globalstatus = true,
@@ -41,7 +43,7 @@ ll.setup({
       max_length = vim.o.columns,
       symbols = {
         modified = '  ',      -- Text to show when the buffer is modified
-        alternate_file = '  ', -- Text to show to indify the alternate file
+        alternate_file = '  ', -- Text to show to indify the alternate file
         directory =  '',     -- Text to show when the buffer is a directory
       },
       filetype_names = {
@@ -88,30 +90,27 @@ ll.setup({
     },
     lualine_x = {{
       'location',
-      icon = '',
+      icon = '',
     }},
     lualine_y = {},
-    lualine_z = {
-      {
-        'searchcount',
-        icon = ''
-      }
-    },
+    lualine_z = {},
   },
 })
 
 wk.setup {
   key_labels = {
-    ['<space>'] = '␣',
-    ['<CR>'] = ' ',
+    ['<space>'] = '󱁐',
+    ['<CR>'] = ' ',
     ['<esc>'] = ' ',
-    ['<bs>'] = ' ',
-    ['<Tab>'] = ' ',
+    ['<bs>'] = '󰁮 ',
+    ['<Tab>'] = '󰌒 ',
   },
   layout = {
     height = { min = 1, max = 4 }, 
     width = { min = 20, max = 50 },
-  }
+  },
+  show_help = false,
+  show_keys = false,
 }
 
 telescope.setup({
@@ -122,17 +121,17 @@ telescope.setup({
   },
   pickers = {
     find_files = {
-      results_title=' JUMP TO FILE',
+      results_title='󱙷 JUMP TO FILE',
       prompt_title=false,
       preview_title=false,
     },
     buffers = {
-      results_title=' OPENNED FILES',
+      results_title='󰏒 OPENNED FILES',
       prompt_title=false,
       preview_title=false,
     },
     live_grep = {
-      results_title=' FUZZY FINDER',
+      results_title='󱇪 FUZZY FINDER',
       prompt_title=false,
       preview_title=false,
     }
