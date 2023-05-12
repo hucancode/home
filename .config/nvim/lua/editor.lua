@@ -91,6 +91,8 @@ ll.setup({
     lualine_x = {{
       'location',
       icon = '',
+    },{
+      'progress',
     }},
     lualine_y = {},
     lualine_z = {},
