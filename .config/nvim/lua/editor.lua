@@ -42,7 +42,7 @@ ll.setup({
       hide_filename_extension = true,
       max_length = vim.o.columns,
       symbols = {
-        modified = '  ',      -- Text to show when the buffer is modified
+        modified = ' ',      -- Text to show when the buffer is modified
         alternate_file = '  ', -- Text to show to indify the alternate file
         directory =  '',     -- Text to show when the buffer is a directory
       },
@@ -82,9 +82,9 @@ ll.setup({
         'filename',
         path = 1,
         symbols = {
-          modified = '  ',
+          modified = ' ',
           readonly = ' ',
-          unnamed =  '[No Name]',
+          unnamed =  ' 󰡯',
         },
       }
     },
