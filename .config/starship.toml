@@ -1,10 +1,4 @@
 # add_newline = false
-right_format = "$time"
-
-[time]
-disabled = false
-style = "bold bright-black"
-format = "[$time]($style)"
 
 [character]
 success_symbol = "[❯](bold blue)"
