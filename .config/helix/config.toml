@@ -17,9 +17,10 @@ auto-signature-help = false
 enable = true
 
 [editor.statusline]
+separator = "⋮"
 left = ["mode", "spinner", "file-name", "file-encoding"]
 center = []
-right = ["diagnostics", "selections", "position", "position-percentage"]
+right = ["diagnostics", "selections", "separator", "position", "separator", "position-percentage", "spacer"]
 mode.normal = "ᚺ NORMAL"
 mode.insert = "ᛯ INSERT"
 mode.select = "ᛋ SELECT"
