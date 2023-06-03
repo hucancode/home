@@ -10,7 +10,7 @@ if status is-interactive
   set fish_color_valid_path
   set fish_greeting
   set -gx SHELL fish
-  set -gx EDITOR nvim
+  set -gx EDITOR hx
   if type -fq fzf
     if type -fq fd
       set -gx FZF_DEFAULT_COMMAND "fd --exclude={.git,.idea,.vscode,node_modules,build} --type f"
@@ -21,13 +21,8 @@ if status is-interactive
     set -gx FZF_DEFAULT_OPTS "$fzf_catppuccin --height 40% --layout=reverse 2> /dev/null | head -500'"
   end
   starship init fish | source
-  if set -q TMUX
+  if set -q ZELLIJ
   else
-    set session (tmux ls | grep -v attached | head -1 | cut -d: -f1)
-    if test -n "$session"
-      tmux attach -t $session
-    else
-      tmux
-    end
+    zellij
   end
 end
