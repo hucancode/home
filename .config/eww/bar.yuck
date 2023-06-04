@@ -89,26 +89,18 @@
           (button :class "text-sm blue hover-sky" 
             :tooltip "Stop recording"
             :onclick "eww update isRecording=false && eww update showRecord=false && ~/.local/bin/record stop"
-            "栗 ")
+            " ")
         )
         (box :spacing 10
           :visible "${!isRecording}"
-          (button :class "text-sm green hover-sky" 
-            :tooltip "Full screen/Audio on"
-            :onclick "eww update isRecording=true && ~/.local/bin/record screen &"
-            "F+")
-          (button :class "text-sm green hover-sky" 
-            :tooltip "Area/Audio on"
-            :onclick "eww update isRecording=true && ~/.local/bin/record area &"
-            "A+")
           (button :class "text-sm green hover-sky"
-            :tooltip "Full screen/Audio off"
+            :tooltip "Record entire screen"
             :onclick "eww update isRecording=true && ~/.local/bin/record screen-mute &"
-            "F")
+            " ")
           (button :class "text-sm green hover-sky" 
-            :tooltip "Area/Audio off"
+            :tooltip "Record area"
             :onclick "eww update isRecording=true && ~/.local/bin/record screen-mute &"
-            "A")
+            "󰗆 ")
         )
       )
     )
