@@ -39,7 +39,7 @@ y = ["yank_main_selection_to_clipboard", "collapse_selection"]
 p = ["paste_clipboard_after", "collapse_selection"]
 P = ["paste_clipboard_before", "collapse_selection"]
 V = ["select_mode", "extend_to_line_bounds"]
-v = ["select_mode", "collapse_selection"]
+v = ["select_mode"]
 esc = ["collapse_selection", "keep_primary_selection"]
 C = ["extend_to_line_end", "delete_selection", "insert_mode"]
 D = ["extend_to_line_end", "delete_selection"]
@@ -60,3 +60,41 @@ C-a = "select_all"
 tab = ["indent"]
 S-tab = ["unindent"]
 
+[keys.normal.space]
+F = "no_op"
+y = "no_op"
+Y = "no_op"
+p = "no_op"
+P = "no_op"
+R = "no_op"
+h = "no_op"
+k = "no_op"
+
+[keys.normal.z]
+c = "no_op"
+up = "no_op"
+down = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+backspace = "no_op"
+space = "no_op"
+'/' = "no_op"
+'?' = "no_op"
+k = "no_op"
+j = "no_op"
+C-b = "no_op"
+C-f = "no_op"
+C-u = "no_op"
+C-d = "no_op"
+n = "no_op"
+N = "no_op"
+
+[keys.normal.g]
+t = "no_op"
+c = "no_op"
+b = "no_op"
+m = "no_op"
+y = "no_op"
+k = "no_op"
+j = "no_op"
+'.' = "no_op"
