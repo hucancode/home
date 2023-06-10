@@ -13,8 +13,8 @@
 - 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [joshuto](https://github.com/kamiyaa/joshuto) and [thunar](https://docs.xfce.org/xfce/thunar/start)
-- 📋 Text editor [neovim](https://neovim.io/) and [mousepad](https://docs.xfce.org/apps/mousepad/start)
-- 🐱 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [tmux](https://wiki.archlinux.org/title/tmux), [kitty](https://wiki.archlinux.org/title/Kitty)
+- 📋 Text editor [helix](https://helix-editor.com/) and [mousepad](https://docs.xfce.org/apps/mousepad/start)
+- 💻 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [zellij](https://zellij.dev), [alacritty](https://alacritty.org/)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) and [ario](https://ario-player.sourceforge.net/)
 
 # 👀 Screenshots
@@ -45,8 +45,8 @@ Please find equivalent of these packages on your system
 lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme
 ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji
 openbox rofi yad dunst nitrogen xclip xdotool maim
-i3lock-color eww ksuperkey vieb thunar joshuto
-kitty neovim fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter
+i3lock-color eww ksuperkey firefox thunar joshuto
+alacritty helix zellij fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter
 ```
 
 ## 🐚 After install
@@ -54,12 +54,4 @@ kitty neovim fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter
 You may want to change your default shell to `fish`
 ```bash
 chsh -s /usr/bin/fish
-```
-Enable `lightdm-gtk-greeter` (`lightdm` default to gtk greeter, but just in case something went wrong, please check `lightdm.conf`)
-```fish
-vi /etc/lightdm/lightdm.conf
-# enable [Seat:*]
-# ...
-# greeter-session=lightdm-gtk-greeter
-# ...
 ```

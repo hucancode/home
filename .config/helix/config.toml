@@ -3,7 +3,7 @@ theme = "catppuccin_mocha_custom"
 [editor]
 true-color = true
 cursorline = true
-bufferline = "multiple"
+bufferline = "always"
 color-modes = true
 auto-pairs = false
 auto-format = false
@@ -69,8 +69,42 @@ P = "no_op"
 R = "no_op"
 h = "no_op"
 k = "no_op"
+tab = "buffer_picker"
+space = "global_search"
+
+[keys.select.space]
+F = "no_op"
+y = "no_op"
+Y = "no_op"
+p = "no_op"
+P = "no_op"
+R = "no_op"
+h = "no_op"
+k = "no_op"
+tab = "buffer_picker"
+space = "global_search"
 
 [keys.normal.z]
+c = "no_op"
+up = "no_op"
+down = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+backspace = "no_op"
+space = "no_op"
+'/' = "no_op"
+'?' = "no_op"
+k = "no_op"
+j = "no_op"
+C-b = "no_op"
+C-f = "no_op"
+C-u = "no_op"
+C-d = "no_op"
+n = "no_op"
+N = "no_op"
+
+
+[keys.select.z]
 c = "no_op"
 up = "no_op"
 down = "no_op"
@@ -98,3 +132,45 @@ y = "no_op"
 k = "no_op"
 j = "no_op"
 '.' = "no_op"
+
+[keys.select.g]
+t = "no_op"
+c = "no_op"
+b = "no_op"
+m = "no_op"
+y = "no_op"
+k = "no_op"
+j = "no_op"
+'.' = "no_op"
+
+[keys.normal."["]
+g = "no_op"
+G = "no_op"
+c = "no_op"
+a = "no_op"
+space = "no_op"
+"[" = "goto_prev_paragraph"
+
+[keys.normal."]"]
+g = "no_op"
+G = "no_op"
+c = "no_op"
+a = "no_op"
+space = "no_op"
+"]" = "goto_next_paragraph"
+
+[keys.select."["]
+g = "no_op"
+G = "no_op"
+c = "no_op"
+a = "no_op"
+space = "no_op"
+"[" = "goto_prev_paragraph"
+
+[keys.select."]"]
+g = "no_op"
+G = "no_op"
+c = "no_op"
+a = "no_op"
+space = "no_op"
+"]" = "goto_next_paragraph"
