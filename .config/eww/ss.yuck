@@ -1,13 +1,13 @@
 (defvar screenshotPath "/tmp/screenshot.png")
 
 (defwidget command [cmd ?class icon text]
-  (eventbox :cursor "hand"
+  ; (eventbox :cursor "hand"
     (box :orientation "v" :space-evenly false
       (button	:class "${class} text-lg hover-sky"
         :onclick cmd icon)
       (label :class "text-xs sans bold sky beyno" :text text)
     )
-  )
+  ; )
 )
 
 (defwindow takeshot
@@ -59,6 +59,9 @@
     :height "400px"
     :anchor "bottom right"
   )
+  :stacking "fg"
+  :windowtype "dialog"
+  :wm-ignore true
   (box :hexpand true :orientation "v" :class "bg-crust"
     :space-evenly false
     (box :valign "center" :halign "center" :spacing 40
