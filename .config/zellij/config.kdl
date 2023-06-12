@@ -15,10 +15,11 @@ keybinds {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "F11" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "Ctrl l" { GoToPreviousTab; }
+        bind "Ctrl h" { GoToNextTab; }
         bind "Ctrl p" { SwitchToMode "Pane"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "Ctrl t" { SwitchToMode "Tab"; }
-        bind "Ctrl h" { SwitchToMode "Move"; }
     }
     pane clear-defaults=true {
         bind "Esc" { SwitchToMode "Normal"; }
