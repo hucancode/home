@@ -14,7 +14,7 @@
 - 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
 - 📂 File manager [joshuto](https://github.com/kamiyaa/joshuto) and [thunar](https://docs.xfce.org/xfce/thunar/start)
 - 📋 Text editor [helix](https://helix-editor.com/) and [mousepad](https://docs.xfce.org/apps/mousepad/start)
-- 💻 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [zellij](https://zellij.dev), [alacritty](https://alacritty.org/)
+- 💻 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [tmux](https://github.com/tmux/tmux), [alacritty](https://alacritty.org/)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) and [ario](https://ario-player.sourceforge.net/)
 
 # 👀 Screenshots
@@ -46,7 +46,7 @@ lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme
 ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji
 openbox rofi yad dunst nitrogen xclip xdotool maim
 i3lock-color eww ksuperkey firefox thunar joshuto
-alacritty helix zellij fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter
+alacritty helix tmux fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter
 ```
 
 ## 🐚 After install
