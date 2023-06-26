@@ -20,3 +20,11 @@
 
 [diff]
     colorMoved = default
+
+[alias]
+s = status
+a = add
+aa = add .
+c = commit -m 
+r = restore -S 
+rr = restore -S .
