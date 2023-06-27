@@ -22,7 +22,7 @@ WM_AUR="i3lock-color eww ksuperkey"
 MEDIA="ario alsa-utils ffmpeg mpd mpc mpv viewnior mousepad firefox"
 FILE_MANAGER="thunar"
 FILE_MANAGER_AUR="joshuto"
-TERMINAL="alacritty tmux helix fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter"
+TERMINAL="alacritty tmux neovim nvim-packer-git fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter"
 KEYRING="gnome-keyring libgnome-keyring"
 yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $FILE_MANAGER $FILE_MANAGER_AUR
 # wallpaper/icon settings
