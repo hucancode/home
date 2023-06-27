@@ -1,0 +1,5 @@
+require('plugins')
+require('lsp')
+require('editor')
+require('cp')
+require('clipboard')
