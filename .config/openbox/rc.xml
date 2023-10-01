@@ -612,6 +612,14 @@
         <width>50%</width>
       </size>
     </application>
+    <application class="">
+      <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
+    <application class="rio">
+      <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
     <application class="Alacritty">
       <decor>no</decor>
       <maximized>true</maximized>
