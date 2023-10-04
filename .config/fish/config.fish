@@ -1,4 +1,7 @@
 set script_dir (dirname (status --current-filename))
+set -gx BUN_INSTALL $HOME/.bun
+fish_add_path $BUN_INSTALL/bin
+fish_add_path $HOME/go/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 set -x LD_LIBRARY_PATH "$LD_LIBRARY_PATH:/usr/local/lib/"
@@ -21,17 +24,17 @@ if status is-interactive
     set -gx FZF_DEFAULT_OPTS "$fzf_catppuccin --height 40% --layout=reverse 2> /dev/null | head -500'"
   end
   starship init fish | source
-  # if set -q TMUX
-  # else
-  #   set session (tmux ls | grep -v attached | head -1 | cut -d: -f1)
-  #   if test -n "$session"
-  #     tmux attach -t $session
-  #   else
-  #     tmux
-  #   end
-  # end
+  if set -q TMUX
+  else
+    if test -n "$(tmux ls)"
+      set session (tmux ls -F \#S | gum filter --placeholder "Pick session...")
+      if test -n "$session"
+        tmux switch-client -t $session || tmux attach -t $session
+      else
+        tmux
+      end
+    else
+      tmux
+    end
+  end
 end
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
