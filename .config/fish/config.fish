@@ -26,10 +26,11 @@ if status is-interactive
   starship init fish | source
   if set -q TMUX
   else
-    if test -n "$(tmux ls)"
-      set session (tmux ls -F \#S | gum filter --placeholder "Pick session...")
+    set list (tmux ls -f "#{?session_attached,0,1}")
+    if test -n "$list"
+      set session (tmux ls -f "#{?session_attached,0,1}" -F "#S #W (#{session_path})" | gum choose | cut -d' ' -f1)
       if test -n "$session"
-        tmux switch-client -t $session || tmux attach -t $session
+        tmux attach -t $session
       else
         tmux
       end
