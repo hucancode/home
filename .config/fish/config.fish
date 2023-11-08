@@ -24,18 +24,4 @@ if status is-interactive
     set -gx FZF_DEFAULT_OPTS "$fzf_catppuccin --height 40% --layout=reverse 2> /dev/null | head -500'"
   end
   starship init fish | source
-  if set -q TMUX
-  else
-    set list (tmux ls -f "#{?session_attached,0,1}")
-    if test -n "$list"
-      set session (tmux ls -f "#{?session_attached,0,1}" -F "#S #W (#{session_path})" | gum choose | cut -d' ' -f1)
-      if test -n "$session"
-        tmux attach -t $session
-      else
-        tmux
-      end
-    else
-      tmux
-    end
-  end
 end
