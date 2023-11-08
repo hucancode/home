@@ -82,5 +82,7 @@
     "editor.overviewRulerBorder": false,
     "editor.hideCursorInOverviewRuler": true,
     "editor.glyphMargin": false,
-    "workbench.colorTheme": "Catppuccin Mocha"
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.customGlyphs": false
 }
