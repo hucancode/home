@@ -55,7 +55,6 @@
     "window.enableMenuBarMnemonics": false,
     "window.menuBarVisibility": "hidden",
     "editor.occurrencesHighlight": false,
-    "editor.guides.highlightActiveBracketPair": false,
     "editor.foldingHighlight": false,
     "editor.selectionHighlight": false,
     "editor.codeLens": false,
@@ -65,16 +64,36 @@
     "material-icon-theme.hidesExplorerArrows": false,
     "workbench.editor.enablePreview": false,
     "screencastMode.mouseIndicatorSize": 40,
-    "screencastMode.keyboardOptions": {
-        "showKeybindings": false
-    },
     "screencastMode.fontSize": 42,
     "screencastMode.verticalOffset": 10,
-    "zenMode.hideLineNumbers": false,
     "zenMode.showTabs": "single",
-    "zenMode.fullScreen": false,
     "workbench.editor.autoLockGroups": {
         "terminalEditor": false
     },
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "screencastMode.keyboardOverlayTimeout": 2500,
+    "screencastMode.keyboardOptions": {
+        "showCommands": false
+    },
+    "zenMode.hideStatusBar": false,
+    "editor.wordWrap": "on",
+    "rust-analyzer.signatureInfo.documentation.enable": false,
+    "css.hover.documentation": false,
+    "css.hover.references": false,
+    "less.hover.documentation": false,
+    "less.hover.references": false,
+    "scss.hover.documentation": false,
+    "scss.hover.references": false,
+    "html.hover.documentation": false,
+    "html.hover.references": false,
+    "npm.fetchOnlinePackageInfo": false,
+    "npm.scriptHover": false,
+    "workbench.tree.renderIndentGuides": "none",
+    "editor.dragAndDrop": false,
+    "editor.folding": false,
+    "editor.guides.indentation": false,
+    "editor.hover.enabled": false,
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.glyphMargin": false
 }
