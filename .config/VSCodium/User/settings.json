@@ -1,5 +1,4 @@
 {
-    "workbench.editor.showTabs": "single",
     "editor.minimap.renderCharacters": false,
     "editor.minimap.enabled": false,
     "editor.fontFamily": "'Fira Code', 'FiraCode Nerd Font', 'monospace', monospace",
@@ -27,9 +26,6 @@
     "editor.tabSize": 2,
     "remote.autoForwardPorts": false,
     "explorer.excludeGitIgnore": true,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "One Dark Pro Darker",
-    "vsicons.dontShowNewVersionMessage": true,
     "editor.fontSize": 16,
     "vim.handleKeys": {
         "<C-p>": false,
@@ -46,12 +42,15 @@
     "problems.decorations.enabled": false,
     "explorer.autoReveal": false,
     "editor.fontLigatures": true,
-    "editor.parameterHints.enabled": false,,
+    "editor.parameterHints.enabled": false,
     "rust-analyzer.semanticHighlighting.operator.enable": false,
     "rust-analyzer.semanticHighlighting.strings.enable": false,
     "rust-analyzer.semanticHighlighting.nonStandardTokens": false,
     "rust-analyzer.hover.actions.enable": false,
     "rust-analyzer.lens.enable": false,
+    "rust-analyzer.hover.documentation.enable": false,
+    "rust-analyzer.hover.links.enable": false,
+    "rust-analyzer.hover.memoryLayout.enable": false,
     "window.customMenuBarAltFocus": false,
     "window.enableMenuBarMnemonics": false,
     "window.menuBarVisibility": "hidden",
@@ -59,5 +58,23 @@
     "editor.guides.highlightActiveBracketPair": false,
     "editor.foldingHighlight": false,
     "editor.selectionHighlight": false,
-    "editor.matchBrackets": "never"
+    "editor.codeLens": false,
+    "editor.matchBrackets": "never",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.activeIconPack": "",
+    "material-icon-theme.hidesExplorerArrows": false,
+    "workbench.editor.enablePreview": false,
+    "screencastMode.mouseIndicatorSize": 40,
+    "screencastMode.keyboardOptions": {
+        "showKeybindings": false
+    },
+    "screencastMode.fontSize": 42,
+    "screencastMode.verticalOffset": 10,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.showTabs": "single",
+    "zenMode.fullScreen": false,
+    "workbench.editor.autoLockGroups": {
+        "terminalEditor": false
+    },
+    "breadcrumbs.enabled": false
 }
