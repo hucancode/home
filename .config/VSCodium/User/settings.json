@@ -21,6 +21,7 @@
 	"editor.wordWrap": "on",
 	"explorer.excludeGitIgnore": true,
 	"extensions.ignoreRecommendations": true,
+	"git.confirmSync": false,
 	"git.openRepositoryInParentFolders": "never",
 	"remote.autoForwardPorts": false,
 	"rust-analyzer.lens.enable": false,
@@ -47,9 +48,12 @@
 	"window.enableMenuBarMnemonics": false,
 	"window.menuBarVisibility": "hidden",
 	"window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+	"workbench.activityBar.location": "top",
 	"workbench.colorTheme": "Catppuccin Mocha",
+	"workbench.editor.pinnedTabSizing": "shrink",
 	"workbench.layoutControl.enabled": false,
 	"workbench.tree.renderIndentGuides": "none",
+	"zenMode.centerLayout": false,
 	"zenMode.hideStatusBar": false,
 	"zenMode.showTabs": "single"
 }
