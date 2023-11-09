@@ -38,6 +38,10 @@
 	"terminal.integrated.enableFileLinks": "off",
 	"terminal.integrated.enablePersistentSessions": false,
 	"terminal.integrated.fontFamily": "'Fira Code', 'FiraCode Nerd Font', monospace",
+	"vim.handleKeys": {
+		"<C-f>": false
+	},
+	"vim.useSystemClipboard": true,
 	"window.commandCenter": false,
 	"window.customMenuBarAltFocus": false,
 	"window.enableMenuBarMnemonics": false,
