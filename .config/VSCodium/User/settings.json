@@ -64,5 +64,6 @@
 	"zenMode.hideStatusBar": false,
 	"zenMode.showTabs": "single",
 	"svelte.ask-to-enable-ts-plugin": false,
-	"window.zoomLevel": 1
+	"window.zoomLevel": 1,
+	"workbench.iconTheme": "catppuccin-mocha"
 }

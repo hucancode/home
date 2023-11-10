@@ -8,18 +8,14 @@ error_symbol = "[❯](bold red)"
 disabled = true
 
 [git_branch]
-symbol = ""
-format = "[$symbol $branch]($style)"
-style = "bright-black"
+format = "[$branch](bright-black)"
 
 [git_status]
-format = "[[( $conflicted$untracked$modified$staged$renamed$deleted )](218)( $ahead_behind$stashed )]($style)"
-style = "cyan"
+format = "[[( $conflicted$untracked$modified$staged$renamed$deleted )](218)( $ahead_behind$stashed )](cyan)"
 modified="∼"
 untracked="∻"
 deleted = "×"
 stashed = "≡"
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+format = '\([$state( $progress_current/$progress_total)](bright-black)\) '
