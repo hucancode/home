@@ -59,7 +59,6 @@
 	"workbench.activityBar.location": "top",
 	"workbench.colorTheme": "Catppuccin Mocha",
 	"workbench.editor.pinnedTabSizing": "shrink",
-	"workbench.iconTheme": "catppuccin-mocha",
 	"workbench.layoutControl.enabled": false,
 	"workbench.panel.defaultLocation": "right",
 	"workbench.panel.opensMaximized": "always",
