@@ -61,7 +61,6 @@
 	"workbench.startupEditor": "none",
 	"workbench.tree.renderIndentGuides": "none",
 	"zenMode.centerLayout": false,
-	"zenMode.hideLineNumbers": false,
 	"zenMode.hideStatusBar": false,
 	"zenMode.showTabs": "single",
 	"svelte.ask-to-enable-ts-plugin": false,
