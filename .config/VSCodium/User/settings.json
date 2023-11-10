@@ -36,10 +36,13 @@
 	"screencastMode.keyboardOverlayTimeout": 2500,
 	"screencastMode.mouseIndicatorSize": 40,
 	"screencastMode.verticalOffset": 10,
+	"svelte.ask-to-enable-ts-plugin": false,
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"terminal.integrated.enableFileLinks": "off",
 	"terminal.integrated.enablePersistentSessions": false,
 	"terminal.integrated.fontFamily": "'Fira Code', 'FiraCode Nerd Font', monospace",
+	"terminal.integrated.hideOnStartup": "always",
+	"terminal.integrated.shellIntegration.enabled": false,
 	"vim.handleKeys": {
 		"<C-p>": false,
 		"<C-f>": false,
@@ -52,9 +55,11 @@
 	"window.enableMenuBarMnemonics": false,
 	"window.menuBarVisibility": "hidden",
 	"window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+	"window.zoomLevel": 1,
 	"workbench.activityBar.location": "top",
 	"workbench.colorTheme": "Catppuccin Mocha",
 	"workbench.editor.pinnedTabSizing": "shrink",
+	"workbench.iconTheme": "catppuccin-mocha",
 	"workbench.layoutControl.enabled": false,
 	"workbench.panel.defaultLocation": "right",
 	"workbench.panel.opensMaximized": "always",
@@ -62,8 +67,5 @@
 	"workbench.tree.renderIndentGuides": "none",
 	"zenMode.centerLayout": false,
 	"zenMode.hideStatusBar": false,
-	"zenMode.showTabs": "single",
-	"svelte.ask-to-enable-ts-plugin": false,
-	"window.zoomLevel": 1,
-	"workbench.iconTheme": "catppuccin-mocha"
+	"zenMode.showTabs": "single"
 }

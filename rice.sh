@@ -19,12 +19,13 @@ THEME="lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme"
 FONTS="ttf-fira-code ttf-firacode-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji"
 WM="openbox rofi yad dunst xdg-user-dirs nitrogen xclip xdotool xorg-xsetroot maim"
 WM_AUR="i3lock-color eww ksuperkey"
-MEDIA="ario alsa-utils ffmpeg mpd mpc mpv viewnior mousepad firefox"
+MEDIA="ario alsa-utils ffmpeg mpd mpc mpv viewnior chromium"
 FILE_MANAGER="thunar"
 FILE_MANAGER_AUR="joshuto"
-TERMINAL="alacritty tmux neovim nvim-packer-git fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter"
+TERMINAL="alacritty helix exa git-delta rustup nodejs npm"
+EDITOR_AUR="vscodium-bin"
 KEYRING="gnome-keyring libgnome-keyring"
-yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $FILE_MANAGER $FILE_MANAGER_AUR
+yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $FILE_MANAGER $FILE_MANAGER_AUR $EDITOR_AUR
 # wallpaper/icon settings
 curl -L -o avatar.png https://github.com/$GH_USERNAME.png && sudo cp {avatar.png,.config/lightdm/wallpaper.jpg} /usr/share/lightdm-gtk-greeter-settings && rm avatar.png
 sudo mkdir /usr/share/openbox && sudo mv .config/openbox/icons /usr/share/openbox

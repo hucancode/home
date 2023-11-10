@@ -16,5 +16,5 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin && makepkg -si && cd -
 # install packages
 FILE_MANAGER_AUR="joshuto"
-TERMINAL="tmux neovim nvim-packer-git fzf fd ripgrep exa git-delta starship rustup nodejs npm tree-sitter"
+TERMINAL="helix exa git-delta rustup nodejs npm"
 yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $TERMINAL $FILE_MANAGER_AUR
