@@ -640,6 +640,10 @@
       <decor>no</decor>
       <maximized>true</maximized>
     </application>
+    <application class="VSCodium">
+      <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
     <application title="Nitrogen">
       <position force="yes">
         <x>center</x>

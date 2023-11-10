@@ -19,6 +19,7 @@
 	"editor.selectionHighlight": false,
 	"editor.tabSize": 2,
 	"editor.wordWrap": "on",
+	"explorer.confirmDelete": false,
 	"explorer.excludeGitIgnore": true,
 	"extensions.ignoreRecommendations": true,
 	"git.confirmSync": false,
@@ -40,7 +41,10 @@
 	"terminal.integrated.enablePersistentSessions": false,
 	"terminal.integrated.fontFamily": "'Fira Code', 'FiraCode Nerd Font', monospace",
 	"vim.handleKeys": {
-		"<C-f>": false
+		"<C-p>": false,
+		"<C-f>": false,
+		"<C-k>": false,
+		"<C-b>": false
 	},
 	"vim.useSystemClipboard": true,
 	"window.commandCenter": false,
@@ -52,8 +56,14 @@
 	"workbench.colorTheme": "Catppuccin Mocha",
 	"workbench.editor.pinnedTabSizing": "shrink",
 	"workbench.layoutControl.enabled": false,
+	"workbench.panel.defaultLocation": "right",
+	"workbench.panel.opensMaximized": "always",
+	"workbench.startupEditor": "none",
 	"workbench.tree.renderIndentGuides": "none",
 	"zenMode.centerLayout": false,
+	"zenMode.hideLineNumbers": false,
 	"zenMode.hideStatusBar": false,
-	"zenMode.showTabs": "single"
+	"zenMode.showTabs": "single",
+	"svelte.ask-to-enable-ts-plugin": false,
+	"window.zoomLevel": 1
 }
