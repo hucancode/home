@@ -51,7 +51,6 @@
 	},
 	"vim.useSystemClipboard": true,
 	"window.commandCenter": false,
-	"window.customMenuBarAltFocus": false,
 	"window.enableMenuBarMnemonics": false,
 	"window.menuBarVisibility": "hidden",
 	"window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
@@ -66,5 +65,7 @@
 	"workbench.tree.renderIndentGuides": "none",
 	"zenMode.centerLayout": false,
 	"zenMode.hideStatusBar": false,
-	"zenMode.showTabs": "single"
+	"zenMode.showTabs": "single",
+	"window.customMenuBarAltFocus": false,
+	"window.titleBarStyle": "custom"
 }
