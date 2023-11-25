@@ -1,7 +1,6 @@
 (defpoll volumePercent :interval "3s" 
   "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
-(defpoll timeStr :interval "10s" "date +'%I:%M %p'")
-(defpoll dateStr :interval "600s" "date +'%a, %b %d, %Y'")
+(defpoll timeStr :interval "10s" "date +'%I:%M %p - %b %d, %Y'")
 
 (deflisten musicStatus :initial "" "./scripts/music.sh status")
 (deflisten song :initial "Looking for a song..." "./scripts/music.sh song")
@@ -28,14 +27,8 @@
       :spacing 15
       (button :class "os-logo text-sm hover-sky"
         :onclick "~/.config/rofi/launcher" "")
-      (revealer	:transition "slideright"
-        :reveal showPower
-        :duration "250ms"
-        (box :space-evenly true :spacing 10
-          (button :class "red hover-sky text-sm"
-            :onclick "eww open --toggle powermenu" " ")
-        )
-      )
+      (button :class "red hover-sky text-sm"
+        :onclick "eww open --toggle powermenu" " ")
     )
   )
 )
@@ -55,7 +48,6 @@
   (box :space-evenly false :spacing 3 
     (label :class "text-sm" :text " ")
     (scale :value volumePercent
-      :tooltip "${volumePercent}%"
       :max 100 :min 0
       :onchange "amixer -D pulse sset Master {}%")
   )
@@ -63,7 +55,7 @@
 
 (defwidget time []
   (box :class "container bold"
-    (button :class "text-xs" :orientation "v" :tooltip dateStr timeStr)
+    (button :class "text-xs" :orientation "v" timeStr)
   )
 )
 
@@ -72,7 +64,7 @@
   :reserve (struts :distance "32px" :side "top")
   :geometry (geometry :height "32px" :width "100%"
     :anchor "top center")
-  :stacking "bg"
+  :stacking "fg"
   :wm-ignore false
   :exclusive true
   (centerbox 
