@@ -71,9 +71,10 @@
   :monitor 0
   :reserve (struts :distance "32px" :side "top")
   :geometry (geometry :height "32px" :width "100%"
-    :anchor "top left")
+    :anchor "top center")
   :stacking "bg"
   :wm-ignore false
+  :exclusive true
   (centerbox 
     (box :space-evenly false :halign "start" :valign "center"
       :hexpand true :spacing 10

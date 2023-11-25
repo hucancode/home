@@ -45,7 +45,7 @@ Please find equivalent of these packages on your system
 lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme
 ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji
 openbox rofi yad dunst nitrogen xclip xdotool maim
-i3lock-color eww ksuperkey chromium thunar joshuto
+i3lock-color eww ksuperkey firefox thunar joshuto
 alacritty helix exa git-delta rustup nodejs npm
 ```
 

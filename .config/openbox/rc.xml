@@ -616,10 +616,6 @@
       <decor>no</decor>
       <maximized>true</maximized>
     </application>
-    <application class="rio">
-      <decor>no</decor>
-      <maximized>true</maximized>
-    </application>
     <application class="Alacritty">
       <decor>no</decor>
       <maximized>true</maximized>

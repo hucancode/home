@@ -12,5 +12,5 @@ function fish_prompt
     set -g __fish_git_prompt_char_dirtystate '*'
     set -g __fish_git_prompt_char_untrackedfiles '≈'
     set -g __fish_git_prompt_char_invalidstate '×'
-    echo -n -s (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (fish_vcs_prompt) (set_color $character_color) ' ᐉ '
+    echo -n -s (set_color $fish_color_cwd) (prompt_pwd) (set_color -b brblack)(set_color normal) (fish_vcs_prompt) (set_color $character_color) ' ᐉ '
 end

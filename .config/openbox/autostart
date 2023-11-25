@@ -1,28 +1,3 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
-
-## Kill if already running
-killall -9 picom eww polybar mpd dunst ksuperkey
-
-## Restore Wallpaper
-nitrogen --restore
-
-## Start Compositing Manager
-# exec picom --experimental-backends &
-
-## Launch Polybar
-# ~/.config/polybar/launch-bar.sh &
-eww daemon
-eww open bar
-
-## Notification Daemon
-dunst &
-
-## Start Music Player Daemon
-mpd &
-
-## Enable Super Keys For Menu
-ksuperkey -e 'Super_L=Alt_L|F1' &
-ksuperkey -e 'Super_R=Alt_L|F1' &
+~/.local/bin/autostart

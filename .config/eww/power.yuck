@@ -29,7 +29,7 @@
             :icon "" 
             :text "Lock")
           (command :class "blue" 
-            :cmd "pidof openbox && openbox --exit; pidof bspc && bspc quit"
+            :cmd "pidof openbox && openbox --exit; pidof bspc && bspc quit; pidof Hyprland && hyprctl dispatch exit"
             :icon ""
             :text "Log out")
           (command :class "green"
