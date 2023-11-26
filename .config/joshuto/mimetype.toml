@@ -1,27 +1,12 @@
 [class]
-audio_default	= [
-	{ command = "exo-open", args = [ "--" ], fork = true, silent = true },
-]
-
 image_default	= [
-	{ command = "exo-open", args = [ "--" ], fork = true, silent = true },
-]
-
-video_default	= [
-	{ command = "exo-open", args = [ "--" ], fork = true, silent = true },
+	{ command = "gthumb", fork = true, silent = true },
 ]
 
 text_default	= [
 	{ command = "hx" },
 ]
 
-reader_default	= [
-	{ command = "exo-open", args = [ "--" ], fork = true, silent = true },
-]
-
-libreoffice_default	= [
-	{ command = "exo-open", args = [ "--" ], fork = true, silent = true },
-]
 
 [extension]
 
