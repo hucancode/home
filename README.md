@@ -11,7 +11,6 @@
 - 🔑 Display manager (the login thing) [sddm](https://wiki.archlinux.org/title/SDDM)
 - 📊 Status bar [eww](https://github.com/elkowar/eww)
 - 🚀 Program launcher [tofi](https://github.com/philj56/tofi)
-- 🔔 Notification panel [mako](https://github.com/emersion/mako)
 - 📂 File manager [joshuto](https://github.com/kamiyaa/joshuto)
 - 📋 Text editor [helix](https://helix-editor.com/)
 - 💻 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [alacritty](https://alacritty.org/)
@@ -55,4 +54,31 @@ alacritty helix exa git-delta
 You may want to change your default shell to `fish`
 ```bash
 chsh -s /usr/bin/fish
+```
+
+## Shortcuts
+### Application launcher
+```
+Super + Enter - Open terminal emulator
+Super + W - Open browser
+Super + X - Power menu
+Super + R - Run
+Print Screen - Screenshot (Screen)
+Alt + Print Screen - Screenshot (Window)
+Super + S - Screenshot (Region)
+```
+### Window management
+```
+Super + Q - Close window
+Super + Up/Down/Left/Right - Move window
+Super + Left mouse - Move window
+Super + Right mouse - Resize window
+Super + 1/2/3/4/5/6 - Switch workspace 1~6
+Super + Tab - Toggle scratch workspace
+Super + Shift + 1/2/3/4/5/6 - Move window to workspace 1~6
+Super + Shift + Tab - Move window to scratch workspace
+Super + Space - Toggle window floating
+Alt + Space - Center window
+Alt + Tab - Cycle window focus
+Alt + Shift + Tab - Cycle window focus backward
 ```
