@@ -63,6 +63,9 @@ Super + Enter - Open terminal emulator
 Super + W - Open browser
 Super + X - Power menu
 Super + R - Run
+```
+### Screenshot
+```
 Print Screen - Screenshot (Screen)
 Alt + Print Screen - Screenshot (Window)
 Super + S - Screenshot (Region)
