@@ -5,11 +5,11 @@ print_workspaces() {
     n=6
     focused=$(hyprctl activeworkspace -j | jq '.id')
     for (( i=1; i<=$n; i++ )) do
-        occupied=$(hyprctl workspaces -j | jq ".[] | select(.id == $i) | .windows > 0")
+        occupied=$(hyprctl workspaces -j | jq ".[] | select(.id == $i and .windows > 0)")
         if [ "$focused" == "$i" ]; then
             icon="●"
             class="focused"
-        elif [ "$occupied" == "true" ]; then
+        elif [[ $occupied ]]; then
             icon="◉"
             class="occupied"
         else
