@@ -78,7 +78,6 @@ Super + Tab - Toggle scratch workspace
 Super + Shift + 1/2/3/4/5/6 - Move window to workspace 1~6
 Super + Shift + Tab - Move window to scratch workspace
 Super + Space - Toggle window floating
-Alt + Space - Center window
 Alt + Tab - Cycle window focus
 Alt + Shift + Tab - Cycle window focus backward
 ```
