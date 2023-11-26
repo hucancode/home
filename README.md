@@ -7,14 +7,14 @@
 
 ## ✨ Features:
 
-- 📦 Window manager [openbox](https://wiki.archlinux.org/title/openbox)
-- 🔑 Display manager (the login thing) [lightdm](https://wiki.archlinux.org/title/lightdm)
+- 📦 Window manager [hyprland](https://github.com/hyprwm/Hyprland)
+- 🔑 Display manager (the login thing) [sddm](https://wiki.archlinux.org/title/SDDM)
 - 📊 Status bar [eww](https://github.com/elkowar/eww)
-- 🚀 Program launcher [rofi](https://wiki.archlinux.org/title/rofi)
-- 🔔 Notification panel [dunst](https://wiki.archlinux.org/title/dunst)
-- 📂 File manager [joshuto](https://github.com/kamiyaa/joshuto) and [thunar](https://docs.xfce.org/xfce/thunar/start)
-- 📋 Text editor [helix](https://helix-editor.com/) and [mousepad](https://docs.xfce.org/apps/mousepad/start)
-- 💻 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [tmux](https://github.com/tmux/tmux), [alacritty](https://alacritty.org/)
+- 🚀 Program launcher [tofi](https://github.com/philj56/tofi)
+- 🔔 Notification panel [mako](https://github.com/emersion/mako)
+- 📂 File manager [joshuto](https://github.com/kamiyaa/joshuto)
+- 📋 Text editor [helix](https://helix-editor.com/)
+- 💻 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [alacritty](https://alacritty.org/)
 - 🎧 Music player [mpd](https://wiki.archlinux.org/title/Music_Player_Daemon) and [ario](https://ario-player.sourceforge.net/)
 
 # 👀 Screenshots
@@ -24,6 +24,7 @@
 ![](Pictures/Screenshots/3.png)
 ![](Pictures/Screenshots/4.png)
 ![](Pictures/Screenshots/5.png)
+![](Pictures/Screenshots/6.png)
 
 # 🚀 Installation
 
@@ -42,11 +43,11 @@ curl https://raw.githubusercontent.com/hucancode/home/main/rice-cli.sh | sh
 
 Please find equivalent of these packages on your system
 ```
-lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings arc-gtk-theme
+sddm arc-gtk-theme
 ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji
-openbox rofi yad dunst nitrogen xclip xdotool maim
-i3lock-color eww ksuperkey firefox thunar joshuto
-alacritty helix exa git-delta rustup nodejs npm
+hyprland hyprpaper tofi mako grim slurp wl-clipboard
+eww-wayland firefox joshuto
+alacritty helix exa git-delta
 ```
 
 ## 🐚 After install

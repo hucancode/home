@@ -17,10 +17,10 @@ cd yay-bin && makepkg -si && cd -
 # install packages
 THEME="sddm arc-gtk-theme"
 FONTS="ttf-fira-code ttf-firacode-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji"
-WM="hyprland hyprpaper tofi yad mako grim slurp copyq"
+WM="hyprland hyprpaper tofi mako grim slurp wl-clipboard"
 WM_AUR="eww-wayland"
 MEDIA="ario alsa-utils ffmpeg mpd mpc mpv gthumb firefox"
 FILE_MANAGER_AUR="joshuto"
-TERMINAL="alacritty helix exa git-delta rustup nodejs npm"
+TERMINAL="alacritty helix exa git-delta"
 KEYRING="gnome-keyring"
 yay -S --nocleanmenu --noeditmenu --nodiffmenu --noupgrademenu $THEME $FONTS $WM $MEDIA $TERMINAL $KEYRING $WM_AUR $FILE_MANAGER_AUR
