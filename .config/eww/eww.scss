@@ -71,6 +71,18 @@ scale trough {
     color: $cat-blue;
   }
 }
+.px-2 {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.px-4 {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.px-8 {
+  padding-left: 2em;
+  padding-right: 2em;
+}
 .text-xs {
   font-size: 1.1rem;
 }

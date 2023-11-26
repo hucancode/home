@@ -7,29 +7,18 @@
 
 (deflisten workspaceCode "./scripts/workspaces.sh")
 
-(defvar showPower false)
-
 (defwidget mem []
-  (label :halign "start" 
-    :text " ${round(EWW_RAM.used_mem_perc,1)}%")
+  (label :halign "start" :text " ${round(EWW_RAM.used_mem_perc,1)}%")
 )
 
 (defwidget cpu []
-  (label :halign "start"
-    :text " ${round(EWW_CPU.avg,1)}%")
+  (label :halign "start" :text " ${round(EWW_CPU.avg,1)}%")
 )
 
 (defwidget power []
-  (eventbox :onhover "eww update showPower=true" 
-    :onhoverlost "eww update showPower=false"
-    :cursor "hand"
-    (box :space-evenly false
-      :spacing 15
-      (button :class "os-logo text-sm hover-sky"
-        :onclick "~/.config/rofi/launcher" "")
-      (button :class "red hover-sky text-sm"
-        :onclick "eww open --toggle powermenu" " ")
-    )
+  (box :space-evenly false :spacing 15
+    (button :class "red hover-sky text-sm"
+      :onclick "eww open --toggle powermenu" " ")
   )
 )
 
@@ -47,8 +36,7 @@
 (defwidget volume []
   (box :space-evenly false :spacing 3 
     (label :class "text-sm" :text " ")
-    (scale :value volumePercent
-      :max 100 :min 0
+    (scale :value volumePercent :max 100 :min 0
       :onchange "amixer -D pulse sset Master {}%")
   )
 )
@@ -65,10 +53,10 @@
   :geometry (geometry :height "32px" :width "100%"
     :anchor "top center")
   :stacking "fg"
-  :wm-ignore false
   :exclusive true
   (centerbox 
     (box :space-evenly false :halign "start" :valign "center"
+      :class "px-2"
       :hexpand true :spacing 10
       (power)
       (box :class "container" :spacing 20 :active false
@@ -81,6 +69,7 @@
     (literal :halign "center" :hexpand true :content workspaceCode)
 
     (box :halign "end" :hexpand true :space-evenly false :spacing 10 
+      :class "px-2"
       (music)
       (time)
     )
