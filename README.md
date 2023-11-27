@@ -10,7 +10,7 @@
 - 📦 Window manager [hyprland](https://github.com/hyprwm/Hyprland)
 - 🔑 Display manager (the login thing) [sddm](https://wiki.archlinux.org/title/SDDM)
 - 📊 Status bar [eww](https://github.com/elkowar/eww)
-- 🚀 Program launcher [tofi](https://github.com/philj56/tofi)
+- 🚀 Program launcher [ulauncher](https://ulauncher.io)
 - 📂 File manager [joshuto](https://github.com/kamiyaa/joshuto)
 - 📋 Text editor [helix](https://helix-editor.com/)
 - 💻 Shell and terminal emulator [fish](https://wiki.archlinux.org/title/fish), [alacritty](https://alacritty.org/)
@@ -44,7 +44,7 @@ Please find equivalent of these packages on your system
 ```
 sddm arc-gtk-theme
 ttf-fira-code noto-fonts noto-fonts-cjk noto-fonts-emoji
-hyprland hyprpaper tofi mako grim slurp wl-clipboard
+hyprland hyprpaper ulauncher mako grim slurp wl-clipboard
 eww-wayland firefox joshuto
 alacritty helix exa git-delta
 ```

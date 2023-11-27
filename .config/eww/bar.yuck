@@ -18,6 +18,8 @@
 (defwidget power []
   (box :space-evenly false :spacing 15
     (button :class "red hover-sky text-sm"
+      :onclick "ulauncher-toggle" "")
+    (button :class "red hover-sky text-sm"
       :onclick "eww open --toggle powermenu" " ")
   )
 )
