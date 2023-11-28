@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+killall -9 eww mpd fcitx5 ulauncher
+eww daemon
+eww open bar
+mpd &
+fcitx5 &
+ulauncher
