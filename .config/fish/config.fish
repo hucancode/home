@@ -11,7 +11,6 @@ end
 if status is-interactive
   # Commands to run in interactive sessions can go here
   set fish_color_valid_path
-  set fish_greeting
   set -U fish_key_bindings fish_default_key_bindings
   set -gx SHELL fish
   set -gx EDITOR hx
