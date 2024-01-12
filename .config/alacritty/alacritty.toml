@@ -1,0 +1,14 @@
+import = ["/home/hucancode/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+[font]
+size = 12
+
+[font.normal]
+family = "FiraCode Nerd Font"
+
+[window]
+dynamic_padding = true
+
+[window.padding]
+x = 8
+y = 8
