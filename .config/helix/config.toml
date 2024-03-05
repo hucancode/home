@@ -19,9 +19,9 @@ separator = "⋮"
 left = ["mode", "spinner", "file-name", "file-encoding"]
 center = []
 right = ["diagnostics", "selections", "separator", "position", "separator", "position-percentage", "spacer"]
-mode.normal = "ห NORMAL"
-mode.insert = "ĭ INSERT"
-mode.select = "Ꮥ SELECT"
+mode.normal = "NΘRMΛL"
+mode.insert = "IΠSΞRT"
+mode.select = "SΞLΞCT"
 
 [editor.cursor-shape]
 insert = "bar"
