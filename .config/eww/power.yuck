@@ -25,15 +25,15 @@
         (box :valign "center" :halign "center"
           :spacing 40
           (command :class "blue"
-            :cmd "~/.local/bin/lockscreen && eww close powermenu" 
+            :cmd "eww close powermenu && ~/.local/bin/lockscreen" 
             :icon "" 
             :text "Lock")
           (command :class "blue" 
-            :cmd "pidof openbox && openbox --exit; pidof bspc && bspc quit; pidof Hyprland && hyprctl dispatch exit"
+            :cmd "eww close powermenu && hyprctl dispatch exit"
             :icon ""
             :text "Log out")
           (command :class "green"
-            :cmd "systemctl suspend && eww close powermenu" 
+            :cmd "eww close powermenu && systemctl suspend" 
             :icon "鈴"
             :text "Sleep")
           (command :class "red"

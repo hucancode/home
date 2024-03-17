@@ -18,7 +18,7 @@ cd yay-bin && makepkg -si && cd -
 THEME="sddm arc-gtk-theme"
 FONTS="ttf-fira-code ttf-firacode-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji"
 WM="hyprland hyprpaper mako grim slurp wl-clipboard"
-WM_AUR="eww-wayland ulauncher"
+WM_AUR="eww ulauncher"
 MEDIA="ario alsa-utils ffmpeg mpd mpc mpv gthumb firefox"
 FILE_MANAGER_AUR="joshuto"
 TERMINAL="alacritty helix exa git-delta"
