@@ -1,0 +1,34 @@
+filetype plugin indent on
+syntax on
+set expandtab tabstop=2 softtabstop=2 shiftwidth=2
+set nocompatible number autoindent smartindent cursorline showcmd wildmenu autoread nobackup
+set background=dark
+set clipboard+=unnamed
+set completeopt=menuone,longest
+set shortmess+=c
+set omnifunc=ccomplete#Complete
+highlight EndOfBuffer ctermfg=darkgray
+highlight CursorLine ctermbg=black term=none cterm=none
+highlight CursorLineNr term=none cterm=none
+highlight LineNr ctermfg=black term=none cterm=none
+let &t_SI = "\<Esc>[6 q" " set cursor to a vertical bar in insert mode
+let &t_EI = "\<Esc>[2 q" " set cursor to a block in normal mode
+if !has('gui_running')
+	set t_Co=256
+endif
+" Navigate buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <leader>sb :buffers<CR>:buffer<Space>
+" nice try, Ex mode
+map Q <Nop>
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+nnoremap <Space>b :buffers<CR>:b<Space>
+" delete single character without copying into register
+nnoremap x "_x
+nnoremap <Esc> :noh<CR>
