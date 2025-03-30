@@ -11,24 +11,27 @@ highlight EndOfBuffer ctermfg=darkgray
 highlight CursorLine ctermbg=black term=none cterm=none
 highlight CursorLineNr term=none cterm=none
 highlight LineNr ctermfg=black term=none cterm=none
+" better window split style
+set fillchars+=vert:\▏
+highlight VertSplit cterm=NONE
 let &t_SI = "\<Esc>[6 q" " set cursor to a vertical bar in insert mode
 let &t_EI = "\<Esc>[2 q" " set cursor to a block in normal mode
 if !has('gui_running')
 	set t_Co=256
 endif
 " Navigate buffers
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <leader>sb :buffers<CR>:buffer<Space>
+nnoremap <Tab> :b#<CR>
+nnoremap <Space>b :buffers<CR>:b<Space>
+" Navigate windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+" FZF
+nnoremap <Space>f :FZF<CR>
+nnoremap <Space><Space> :Ag<CR>
 " nice try, Ex mode
 map Q <Nop>
-" Netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-nnoremap <Space>b :buffers<CR>:b<Space>
 " delete single character without copying into register
 nnoremap x "_x
 nnoremap <Esc> :noh<CR>
