@@ -7,8 +7,8 @@ set clipboard+=unnamed
 set completeopt=menuone,longest
 set shortmess+=c
 set omnifunc=ccomplete#Complete
-highlight EndOfBuffer ctermfg=darkgray
-highlight CursorLine ctermbg=black term=none cterm=none
+highlight EndOfBuffer ctermfg=16
+highlight CursorLine ctermbg=16 term=none cterm=none
 highlight CursorLineNr term=none cterm=none
 highlight LineNr ctermfg=black term=none cterm=none
 " better window split style
@@ -32,6 +32,10 @@ nnoremap <Space>f :FZF<CR>
 nnoremap <Space><Space> :Ag<CR>
 " nice try, Ex mode
 map Q <Nop>
+map q: :
 " delete single character without copying into register
 nnoremap x "_x
 nnoremap <Esc> :noh<CR>
+" vim-airline + vim-airline-themes is required
+let g:airline_symbols_ascii = 1
+let g:airline_theme='papercolor'
