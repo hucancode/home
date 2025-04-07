@@ -19,6 +19,10 @@ let &t_EI = "\<Esc>[2 q" " set cursor to a block in normal mode
 if !has('gui_running')
 	set t_Co=256
 endif
+" Ctrl S to save
+nnoremap <C-s> :w<CR>
+nnoremap <C-S-s> :wa<CR>
+nnoremap <C-f> /
 " Navigate buffers
 nnoremap <Tab> :b#<CR>
 nnoremap <Space>b :buffers<CR>:b<Space>
@@ -29,6 +33,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 " FZF
 nnoremap <Space>f :FZF<CR>
+nnoremap <C-S-f> :Ag<CR>
 nnoremap <Space><Space> :Ag<CR>
 " nice try, Ex mode
 map Q <Nop>
